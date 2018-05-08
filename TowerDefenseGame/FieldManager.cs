@@ -26,8 +26,9 @@ namespace TowerDefenseGame
 
 		//Variables
 		List<List<Node>> nodeList;
-		
-		
+		List<Path> pathList;
+
+
 		//Methods
 		public void DrawNodes(Panel panelField)
 		{
@@ -73,7 +74,7 @@ namespace TowerDefenseGame
         
 		public void DesignPath(Panel panelField)
 		{
-            List<Path> pathList = new List<Path>();
+            pathList = new List<Path>();
             int pathIndex = 0;
 			DrawPathHorizontal(panelField, new Point(1, 1), new Point(6, 1), ref pathList, ref pathIndex);
 			DrawPathVertical(panelField, new Point(6, 2), new Point(6, 4), ref pathList, ref pathIndex);
@@ -87,21 +88,25 @@ namespace TowerDefenseGame
 			DrawPathVertical(panelField, new Point(4, 10), new Point(4, 13), ref pathList, ref pathIndex);
 			DrawPathHorizontal(panelField, new Point(5, 13), new Point(7, 13), ref pathList, ref pathIndex);
 			DrawPathHorizontal(panelField, new Point(7, 12), new Point(13, 12), ref pathList, ref pathIndex);
-
+			SetStartEnd();
+			Enemy enemy = new Enemy();
+			panelField.Controls.Add(enemy.pbEnemy);
+			enemy.pbEnemy.Location = new Point(pathList[0].pbPath.Location.X + 12, pathList[0].pbPath.Location.Y + 12);
+			enemy.pbEnemy.BringToFront();
 		}
 
 		void ReplaceNodeWithPath(Panel panelField, Node node, Path path)
 		{
 			Point pathLocation = node.picNode.Location;
 			panelField.Controls.Remove(node.picNode);
-			path.pbNode.Location = pathLocation;
-			panelField.Controls.Add(path.pbNode);
+			path.pbPath.Location = pathLocation;
+			panelField.Controls.Add(path.pbPath);
 		}
 		void DrawPathHorizontal(Panel panelField, Point startPoint, Point endPoint, ref List<Path> pathList, ref int pathIndex)
 		{
 			if (endPoint.X >= startPoint.X)
 			{
-				//Vẽ từ trên xuống
+				//Vẽ từ trái sang phải
 				for (int j = startPoint.X; j <= endPoint.X; j++)
 				{
 					Path path = new Path();
@@ -113,7 +118,7 @@ namespace TowerDefenseGame
 			}
 			else
 			{
-				//Vẽ từ dưới lên
+				//Vẽ từ phải sang trái
 				for (int j = startPoint.X; j >= endPoint.X; j--)
 				{
 					Path path = new Path();
@@ -128,7 +133,7 @@ namespace TowerDefenseGame
 		{
 			if (endPoint.Y >= startPoint.Y)
 			{
-				//Vẽ từ trái sang phải
+				//Vẽ từ trên xuống
 				for (int i = startPoint.Y; i <= endPoint.Y; i++)
 				{
 					Path path = new Path();
@@ -140,7 +145,7 @@ namespace TowerDefenseGame
 			}
 			else
 			{
-				//Vẽ từ phải sang trái
+				//Vẽ từ dưới lên
 				for (int i = startPoint.Y; i >= endPoint.Y; i--)
 				{
 					Path path = new Path();
@@ -150,6 +155,14 @@ namespace TowerDefenseGame
 					pathIndex++;
 				}
 			}
+		}
+
+		void SetStartEnd()
+		{
+			pathList[0].pbPath.Image = Image.FromFile(Application.StartupPath + "\\Resources\\start1.png");
+			pathList[0].pbPath.Tag = "Start";
+			pathList[pathList.Count - 1].pbPath.Image = Image.FromFile(Application.StartupPath + "\\Resources\\end1.png");
+			pathList[pathList.Count - 1].pbPath.Tag = "End";
 		}
 	}
 }

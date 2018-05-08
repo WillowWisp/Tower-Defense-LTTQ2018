@@ -12,5 +12,8 @@ namespace TowerDefenseGame
 		public static int NODE_WIDTH = 48;
 		public static int NODE_X_OFFSET = 0;//Khoảng cách chiều ngang giữa 2 node
 		public static int NODE_Y_OFFSET = 0;//Khoảng cách chiều dọc giữa 2 node
+
+		public static int ENEMY_HEIGHT = 24;
+		public static int ENEMY_WIDTH = 24;
 	}
 }

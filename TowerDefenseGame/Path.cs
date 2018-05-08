@@ -10,13 +10,13 @@ namespace TowerDefenseGame
 {
     public class Path
     {
-        public PictureBox pbNode;
+        public PictureBox pbPath;
         public int index;
         int height = Constant.NODE_HEIGHT;
         int width = Constant.NODE_WIDTH;
         public Path()
         {
-            pbNode = new PictureBox()
+            pbPath = new PictureBox()
             {
                 Height = height,
                 Width = width,
