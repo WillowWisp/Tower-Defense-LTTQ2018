@@ -28,9 +28,9 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.panelField = new System.Windows.Forms.Panel();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label15 = new System.Windows.Forms.Label();
 			this.label12 = new System.Windows.Forms.Label();
@@ -63,10 +63,11 @@
 			this.label20 = new System.Windows.Forms.Label();
 			this.label17 = new System.Windows.Forms.Label();
 			this.label16 = new System.Windows.Forms.Label();
+			this.tmrEnemyMoveRight = new System.Windows.Forms.Timer(this.components);
+			this.label31 = new System.Windows.Forms.Label();
 			this.button1 = new System.Windows.Forms.Button();
-			this.panelField.SuspendLayout();
+			this.label32 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.SuspendLayout();
@@ -74,7 +75,6 @@
 			// panelField
 			// 
 			this.panelField.BackColor = System.Drawing.SystemColors.Control;
-			this.panelField.Controls.Add(this.pictureBox2);
 			this.panelField.Location = new System.Drawing.Point(44, 39);
 			this.panelField.Name = "panelField";
 			this.panelField.Size = new System.Drawing.Size(720, 720);
@@ -85,20 +85,12 @@
 			this.pictureBox1.BackgroundImage = global::TowerDefenseGame.Properties.Resources.brick_grey;
 			this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.pictureBox1.Image = global::TowerDefenseGame.Properties.Resources.end1;
-			this.pictureBox1.Location = new System.Drawing.Point(781, 116);
+			this.pictureBox1.Location = new System.Drawing.Point(789, 39);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+			this.pictureBox1.Size = new System.Drawing.Size(48, 48);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox1.TabIndex = 5;
 			this.pictureBox1.TabStop = false;
-			// 
-			// pictureBox2
-			// 
-			this.pictureBox2.BackColor = System.Drawing.Color.Red;
-			this.pictureBox2.Location = new System.Drawing.Point(23, 169);
-			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(24, 24);
-			this.pictureBox2.TabIndex = 0;
-			this.pictureBox2.TabStop = false;
 			// 
 			// panel1
 			// 
@@ -414,15 +406,33 @@
 			this.label16.TabIndex = 0;
 			this.label16.Text = "0";
 			// 
+			// label31
+			// 
+			this.label31.AutoSize = true;
+			this.label31.Location = new System.Drawing.Point(789, 121);
+			this.label31.Name = "label31";
+			this.label31.Size = new System.Drawing.Size(41, 13);
+			this.label31.TabIndex = 6;
+			this.label31.Text = "label31";
+			// 
 			// button1
 			// 
-			this.button1.BackgroundImage = global::TowerDefenseGame.Properties.Resources.brick_grey;
-			this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.button1.Location = new System.Drawing.Point(781, 39);
+			this.button1.Location = new System.Drawing.Point(789, 151);
 			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(48, 48);
-			this.button1.TabIndex = 2;
+			this.button1.Size = new System.Drawing.Size(48, 23);
+			this.button1.TabIndex = 7;
+			this.button1.Text = "Debug";
 			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
+			// 
+			// label32
+			// 
+			this.label32.AutoSize = true;
+			this.label32.Location = new System.Drawing.Point(789, 198);
+			this.label32.Name = "label32";
+			this.label32.Size = new System.Drawing.Size(41, 13);
+			this.label32.TabIndex = 8;
+			this.label32.Text = "label32";
 			// 
 			// Form1
 			// 
@@ -430,29 +440,29 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.ActiveBorder;
 			this.ClientSize = new System.Drawing.Size(849, 765);
+			this.Controls.Add(this.label32);
+			this.Controls.Add(this.button1);
+			this.Controls.Add(this.label31);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.panel1);
-			this.Controls.Add(this.button1);
 			this.Controls.Add(this.panelField);
 			this.Controls.Add(this.panel2);
 			this.Name = "Form1";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Tower Defense Game";
-			this.panelField.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
 		#endregion
 
 		private System.Windows.Forms.Panel panelField;
-        private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label6;
@@ -486,7 +496,10 @@
 		private System.Windows.Forms.Label label29;
 		private System.Windows.Forms.Label label28;
 		private System.Windows.Forms.PictureBox pictureBox1;
-		private System.Windows.Forms.PictureBox pictureBox2;
+		private System.Windows.Forms.Timer tmrEnemyMoveRight;
+		private System.Windows.Forms.Label label31;
+		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Label label32;
 	}
 }
 

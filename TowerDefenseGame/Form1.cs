@@ -19,6 +19,11 @@ namespace TowerDefenseGame
 			FieldManager.Instance.DrawNodes(panelField);
             FieldManager.Instance.DesignPath(panelField);
 		}
-		
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			label31.Text = Enemy.waypointIndex.ToString();
+			label32.Text = FieldManager.Instance.waypointList.Count.ToString();
+		}
 	}
 }

@@ -24,5 +24,10 @@ namespace TowerDefenseGame
                 BackgroundImageLayout = ImageLayout.Stretch
             };
         }
-    }
+
+		public Point GetCenterPoint()
+		{
+			return new Point(pbPath.Location.X + 12, pbPath.Location.Y + 12);//12 là offset để căn enemy ra giữa, dựa vào size của enemy
+		}
+	}
 }

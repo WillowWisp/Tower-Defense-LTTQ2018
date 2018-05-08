@@ -28,6 +28,8 @@ namespace TowerDefenseGame
 		List<List<Node>> nodeList;
 		List<Path> pathList;
 
+		public List<Point> waypointList;
+
 
 		//Methods
 		public void DrawNodes(Panel panelField)
@@ -76,8 +78,13 @@ namespace TowerDefenseGame
 		{
             pathList = new List<Path>();
             int pathIndex = 0;
+
+			waypointList = new List<Point>();
+
 			DrawPathHorizontal(panelField, new Point(1, 1), new Point(6, 1), ref pathList, ref pathIndex);
+			waypointList.Add(pathList[pathIndex-1].GetCenterPoint());
 			DrawPathVertical(panelField, new Point(6, 2), new Point(6, 4), ref pathList, ref pathIndex);
+			waypointList.Add(pathList[pathIndex - 1].GetCenterPoint());
 			DrawPathHorizontal(panelField, new Point(5, 4), new Point(3, 4), ref pathList, ref pathIndex);
 			DrawPathVertical(panelField, new Point(3, 5), new Point(3, 6), ref pathList, ref pathIndex);
 			DrawPathHorizontal(panelField, new Point(4, 6), new Point(8, 6), ref pathList, ref pathIndex);
@@ -89,10 +96,10 @@ namespace TowerDefenseGame
 			DrawPathHorizontal(panelField, new Point(5, 13), new Point(7, 13), ref pathList, ref pathIndex);
 			DrawPathHorizontal(panelField, new Point(7, 12), new Point(13, 12), ref pathList, ref pathIndex);
 			SetStartEnd();
+
 			Enemy enemy = new Enemy();
-			panelField.Controls.Add(enemy.pbEnemy);
-			enemy.pbEnemy.Location = new Point(pathList[0].pbPath.Location.X + 12, pathList[0].pbPath.Location.Y + 12);
-			enemy.pbEnemy.BringToFront();
+			enemy.SpawnEnemy(panelField, pathList[0]);
+			enemy.MoveThroughWaypoints(waypointList);
 		}
 
 		void ReplaceNodeWithPath(Panel panelField, Node node, Path path)
@@ -163,6 +170,11 @@ namespace TowerDefenseGame
 			pathList[0].pbPath.Tag = "Start";
 			pathList[pathList.Count - 1].pbPath.Image = Image.FromFile(Application.StartupPath + "\\Resources\\end1.png");
 			pathList[pathList.Count - 1].pbPath.Tag = "End";
+		}
+		
+		void AddWaypoint(ref List<Point> waypointList, Path path)
+		{
+			waypointList.Add(path.GetCenterPoint());
 		}
 	}
 }
