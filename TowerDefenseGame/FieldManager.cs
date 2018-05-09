@@ -26,7 +26,7 @@ namespace TowerDefenseGame
 
 		//Variables
 		List<List<Node>> nodeList;
-		List<Path> pathList;
+		public List<Path> pathList;
 
 		public List<Point> waypointList;
 
@@ -81,20 +81,19 @@ namespace TowerDefenseGame
 
 			waypointList = new List<Point>();
 
-			DrawPathHorizontal(panelField, new Point(1, 1), new Point(6, 1), ref pathList, ref pathIndex);
-			waypointList.Add(pathList[pathIndex-1].GetCenterPoint());
-			DrawPathVertical(panelField, new Point(6, 2), new Point(6, 4), ref pathList, ref pathIndex);
-			waypointList.Add(pathList[pathIndex - 1].GetCenterPoint());
-			DrawPathHorizontal(panelField, new Point(5, 4), new Point(3, 4), ref pathList, ref pathIndex);
-			DrawPathVertical(panelField, new Point(3, 5), new Point(3, 6), ref pathList, ref pathIndex);
-			DrawPathHorizontal(panelField, new Point(4, 6), new Point(8, 6), ref pathList, ref pathIndex);
-			DrawPathVertical(panelField, new Point(8, 5), new Point(8, 2), ref pathList, ref pathIndex);
-			DrawPathHorizontal(panelField, new Point(9, 2), new Point(11, 2), ref pathList, ref pathIndex);
-			DrawPathVertical(panelField, new Point(11, 3), new Point(11, 9), ref pathList, ref pathIndex);
-			DrawPathHorizontal(panelField, new Point(10, 9), new Point(4, 9), ref pathList, ref pathIndex);
-			DrawPathVertical(panelField, new Point(4, 10), new Point(4, 13), ref pathList, ref pathIndex);
-			DrawPathHorizontal(panelField, new Point(5, 13), new Point(7, 13), ref pathList, ref pathIndex);
-			DrawPathHorizontal(panelField, new Point(7, 12), new Point(13, 12), ref pathList, ref pathIndex);
+			DrawPathHorizontal(panelField, new Point(1, 1), new Point(6, 1), ref pathIndex);
+			DrawPathVertical(panelField, new Point(6, 2), new Point(6, 4), ref pathIndex);
+			DrawPathHorizontal(panelField, new Point(5, 4), new Point(3, 4), ref pathIndex);
+			DrawPathVertical(panelField, new Point(3, 5), new Point(3, 6), ref pathIndex);
+			DrawPathHorizontal(panelField, new Point(4, 6), new Point(8, 6), ref pathIndex);
+			DrawPathVertical(panelField, new Point(8, 5), new Point(8, 2), ref pathIndex);
+			DrawPathHorizontal(panelField, new Point(9, 2), new Point(11, 2), ref pathIndex);
+			DrawPathVertical(panelField, new Point(11, 3), new Point(11, 9), ref pathIndex);
+			DrawPathHorizontal(panelField, new Point(10, 9), new Point(4, 9), ref pathIndex);
+			DrawPathVertical(panelField, new Point(4, 10), new Point(4, 13), ref pathIndex);
+			DrawPathHorizontal(panelField, new Point(5, 13), new Point(7, 13), ref pathIndex);
+			DrawOnlyOnePath(panelField, new Point(7, 12), ref pathIndex);//Xử lý trường hợp gấp khúc nhỏ
+			DrawPathHorizontal(panelField, new Point(8, 12), new Point(13, 12), ref pathIndex);
 			SetStartEnd();
 
 			Enemy enemy = new Enemy();
@@ -109,7 +108,7 @@ namespace TowerDefenseGame
 			path.pbPath.Location = pathLocation;
 			panelField.Controls.Add(path.pbPath);
 		}
-		void DrawPathHorizontal(Panel panelField, Point startPoint, Point endPoint, ref List<Path> pathList, ref int pathIndex)
+		void DrawPathHorizontal(Panel panelField, Point startPoint, Point endPoint, ref int pathIndex)
 		{
 			if (endPoint.X >= startPoint.X)
 			{
@@ -135,8 +134,9 @@ namespace TowerDefenseGame
 					pathIndex++;
 				}
 			}
+			waypointList.Add(pathList[pathIndex - 1].GetCenterPoint());//Gán waypoint bằng ô path cuối để tạo điểm đến cho enemy
 		}
-		void DrawPathVertical(Panel panelField, Point startPoint, Point endPoint, ref List<Path> pathList, ref int pathIndex)
+		void DrawPathVertical(Panel panelField, Point startPoint, Point endPoint, ref int pathIndex)
 		{
 			if (endPoint.Y >= startPoint.Y)
 			{
@@ -162,6 +162,16 @@ namespace TowerDefenseGame
 					pathIndex++;
 				}
 			}
+			waypointList.Add(pathList[pathIndex - 1].GetCenterPoint());
+		}
+		void DrawOnlyOnePath(Panel panelField, Point point, ref int pathIndex)
+		{
+			Path path = new Path();
+			ReplaceNodeWithPath(panelField, nodeList[point.Y][point.X], path);
+			pathList.Add(path);
+			path.index = pathIndex;
+			pathIndex++;
+			waypointList.Add(pathList[pathIndex - 1].GetCenterPoint());
 		}
 
 		void SetStartEnd()

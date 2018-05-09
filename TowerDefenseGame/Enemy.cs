@@ -15,12 +15,14 @@ namespace TowerDefenseGame
 		int width = Constant.ENEMY_WIDTH;
 
 		Timer tmrMoveRight;
+		Timer tmrMoveLeft;
 		Timer tmrMoveDown;
+		Timer tmrMoveUp;
 		Timer tmrCheckWaypoint;
 
-		public static int waypointIndex = 0;
+		public int waypointIndex = 0;
 
-		public static Point target;//Vị trí waypoint đang đi tới
+		public Point target;//Vị trí waypoint đang đi tới
 
 		public Enemy()
 		{
@@ -42,13 +44,35 @@ namespace TowerDefenseGame
 		public void MoveThroughWaypoints(List<Point> waypointList)
 		{
 			target = FieldManager.Instance.waypointList[0];
-			MoveRight();
+			HeadToTarget();
 
 			tmrCheckWaypoint = new Timer();
 			tmrCheckWaypoint.Interval = 10;
 			tmrCheckWaypoint.Start();
 			tmrCheckWaypoint.Tick += CheckWaypoint_Tick;
 		}
+		void CheckWaypoint_Tick(object sender, EventArgs e)
+		{
+			if (pbEnemy.Location == target)
+			{
+				ClearMovement();
+				waypointIndex++;
+
+
+				if (waypointIndex >= FieldManager.Instance.waypointList.Count)
+				{
+					DamageDoor();
+					return;
+				}
+				else
+				{
+					target = FieldManager.Instance.waypointList[waypointIndex];
+					
+					HeadToTarget();
+				}
+			}
+		}
+
 
 		void MoveRight()
 		{
@@ -60,6 +84,18 @@ namespace TowerDefenseGame
 		void MoveRight_Tick(object sender, EventArgs e)
 		{
 			pbEnemy.Left += 1;
+		}
+
+		void MoveLeft()
+		{
+			tmrMoveLeft = new Timer();
+			tmrMoveLeft.Interval = 10;
+			tmrMoveLeft.Start();
+			tmrMoveLeft.Tick += MoveLeft_Tick;
+		}
+		void MoveLeft_Tick(object sender, EventArgs e)
+		{
+			pbEnemy.Left -= 1;
 		}
 
 		void MoveDown()
@@ -74,31 +110,63 @@ namespace TowerDefenseGame
 			pbEnemy.Top += 1;
 		}
 
-		void CheckWaypoint_Tick(object sender, EventArgs e)
+		void MoveUp()
 		{
-			if (pbEnemy.Location == target)
-			{
-				ClearMovement();
-				waypointIndex++;
-				
+			tmrMoveUp = new Timer();
+			tmrMoveUp.Interval = 1;
+			tmrMoveUp.Start();
+			tmrMoveUp.Tick += MoveUp_Tick;
+		}
+		void MoveUp_Tick(object sender, EventArgs e)
+		{
+			pbEnemy.Top -= 1;
+		}
 
-				if (waypointIndex >= FieldManager.Instance.waypointList.Count)
-				{
-					ClearMovement();
-				}
-				else
-				{
-					MoveDown();
-					target = FieldManager.Instance.waypointList[waypointIndex];
-				}
+
+		string GetDirectionToTarget()
+		{
+			if (target.Y == pbEnemy.Location.Y)
+			{
+				if (target.X >= pbEnemy.Location.X)
+					return "E";
+				else return "W";
 			}
+			else if (target.X == pbEnemy.Location.X)
+			{
+				if (target.Y <= pbEnemy.Location.Y)
+					return "N";
+				else return "S";
+			}
+			else return "0";
+		}
+		void HeadToTarget()
+		{
+			if (GetDirectionToTarget() == "E")
+				MoveRight();
+			if (GetDirectionToTarget() == "W")
+				MoveLeft();
+			if (GetDirectionToTarget() == "S")
+				MoveDown();
+			if (GetDirectionToTarget() == "N")
+				MoveUp();
 		}
 
 		void ClearMovement()
 		{
-			tmrMoveRight.Enabled = false;
+			if (tmrMoveRight != null)
+				tmrMoveRight.Enabled = false;
+			if (tmrMoveLeft != null)
+				tmrMoveLeft.Enabled = false;
 			if (tmrMoveDown != null)
 				tmrMoveDown.Enabled = false;
+			if (tmrMoveUp != null)
+				tmrMoveUp.Enabled = false;
+		}
+
+		void DamageDoor()
+		{
+			pbEnemy.Dispose();
 		}
 	}
 }
+//Transparent, Destroy enemy, Speedup enemy

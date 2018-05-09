@@ -66,7 +66,7 @@
 			this.tmrEnemyMoveRight = new System.Windows.Forms.Timer(this.components);
 			this.label31 = new System.Windows.Forms.Label();
 			this.button1 = new System.Windows.Forms.Button();
-			this.label32 = new System.Windows.Forms.Label();
+			this.label33 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
@@ -85,7 +85,7 @@
 			this.pictureBox1.BackgroundImage = global::TowerDefenseGame.Properties.Resources.brick_grey;
 			this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.pictureBox1.Image = global::TowerDefenseGame.Properties.Resources.end1;
-			this.pictureBox1.Location = new System.Drawing.Point(789, 39);
+			this.pictureBox1.Location = new System.Drawing.Point(773, 39);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(48, 48);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -409,7 +409,7 @@
 			// label31
 			// 
 			this.label31.AutoSize = true;
-			this.label31.Location = new System.Drawing.Point(789, 121);
+			this.label31.Location = new System.Drawing.Point(770, 110);
 			this.label31.Name = "label31";
 			this.label31.Size = new System.Drawing.Size(41, 13);
 			this.label31.TabIndex = 6;
@@ -417,7 +417,7 @@
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(789, 151);
+			this.button1.Location = new System.Drawing.Point(773, 146);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(48, 23);
 			this.button1.TabIndex = 7;
@@ -425,14 +425,14 @@
 			this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
-			// label32
+			// label33
 			// 
-			this.label32.AutoSize = true;
-			this.label32.Location = new System.Drawing.Point(789, 198);
-			this.label32.Name = "label32";
-			this.label32.Size = new System.Drawing.Size(41, 13);
-			this.label32.TabIndex = 8;
-			this.label32.Text = "label32";
+			this.label33.AutoSize = true;
+			this.label33.Location = new System.Drawing.Point(770, 199);
+			this.label33.Name = "label33";
+			this.label33.Size = new System.Drawing.Size(41, 13);
+			this.label33.TabIndex = 9;
+			this.label33.Text = "label33";
 			// 
 			// Form1
 			// 
@@ -440,7 +440,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.ActiveBorder;
 			this.ClientSize = new System.Drawing.Size(849, 765);
-			this.Controls.Add(this.label32);
+			this.Controls.Add(this.label33);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.label31);
 			this.Controls.Add(this.pictureBox1);
@@ -499,7 +499,7 @@
 		private System.Windows.Forms.Timer tmrEnemyMoveRight;
 		private System.Windows.Forms.Label label31;
 		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.Label label32;
+		private System.Windows.Forms.Label label33;
 	}
 }
 
