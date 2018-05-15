@@ -16,8 +16,9 @@ namespace TowerDefenseGame
 		{
 			InitializeComponent();
 
-			FieldManager.Instance.DrawNodes(panelField);
-            FieldManager.Instance.DesignPath(panelField);
+			FieldManager.panelField = panelField;
+			FieldManager.Instance.DrawNodes();
+            FieldManager.Instance.DesignPath();
 
 			lblWaveLevel.Text = "Wave   Level   " + WaveSpawner.level.ToString();
 		}
@@ -25,8 +26,7 @@ namespace TowerDefenseGame
 		private void button1_Click(object sender, EventArgs e)
 		{
 			lblWaveLevel.Text = "Wave   Level   " + WaveSpawner.level.ToString();
-			WaveSpawner waveSpawner = new WaveSpawner(panelField);
-			waveSpawner.SpawnWave();
+			WaveSpawner.Instance.SpawnWave();
 		}
 	}
 }

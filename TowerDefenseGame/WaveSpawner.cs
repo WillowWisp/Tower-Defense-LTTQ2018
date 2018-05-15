@@ -10,26 +10,23 @@ namespace TowerDefenseGame
 	public class WaveSpawner
 	{
 		#region Singleton
-		//private static WaveSpawner instance;
-		//public static WaveSpawner Instance
-		//{
-		//	get
-		//	{
-		//		return instance;
-		//	}
-		//}
+		private static WaveSpawner instance;
+
+		public static WaveSpawner Instance
+		{
+			get
+			{
+				if (instance == null)
+					instance = new WaveSpawner();
+				return instance;
+			}
+		}
 		#endregion
-		
+
 		public static int level = 1;
 		public static int enemyLeft;
-		Panel panelField;
 
 		Timer tmrSpawnEnemy;
-
-		public WaveSpawner(Panel _panelField)
-		{
-			panelField = _panelField;
-		}
 
 		public void SpawnWave()
 		{
@@ -50,7 +47,7 @@ namespace TowerDefenseGame
 				return;
 			}
 			Enemy enemy = new Enemy();
-			enemy.SpawnEnemy(panelField, FieldManager.Instance.pathList[0]);
+			enemy.SpawnEnemy(FieldManager.Instance.pathList[0]);
 			enemy.MoveThroughWaypoints(FieldManager.Instance.waypointList);
 			enemyLeft--;
 		}

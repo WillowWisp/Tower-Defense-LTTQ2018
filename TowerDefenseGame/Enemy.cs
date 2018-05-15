@@ -34,9 +34,9 @@ namespace TowerDefenseGame
 			};
 		}
 
-		public void SpawnEnemy(Panel panelField, Path path)
+		public void SpawnEnemy(Path path)
 		{
-			panelField.Controls.Add(pbEnemy);
+			FieldManager.panelField.Controls.Add(pbEnemy);
 			pbEnemy.Location = path.GetCenterPoint();
 			pbEnemy.BringToFront();
 		}

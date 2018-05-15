@@ -23,8 +23,9 @@ namespace TowerDefenseGame
 			}
 		}
 
-
 		//Variables
+		public static Panel panelField;
+
 		List<List<Node>> nodeList;
 		public List<Path> pathList;
 
@@ -32,7 +33,7 @@ namespace TowerDefenseGame
 
 
 		//Methods
-		public void DrawNodes(Panel panelField)
+		public void DrawNodes()
 		{
 			nodeList = new List<List<Node>>();
 
@@ -74,37 +75,37 @@ namespace TowerDefenseGame
 		}
 
         
-		public void DesignPath(Panel panelField)
+		public void DesignPath()
 		{
             pathList = new List<Path>();
             int pathIndex = 0;
 
 			waypointList = new List<Point>();
 
-			DrawPathHorizontal(panelField, new Point(1, 1), new Point(6, 1), ref pathIndex);
-			DrawPathVertical(panelField, new Point(6, 2), new Point(6, 4), ref pathIndex);
-			DrawPathHorizontal(panelField, new Point(5, 4), new Point(3, 4), ref pathIndex);
-			DrawPathVertical(panelField, new Point(3, 5), new Point(3, 6), ref pathIndex);
-			DrawPathHorizontal(panelField, new Point(4, 6), new Point(8, 6), ref pathIndex);
-			DrawPathVertical(panelField, new Point(8, 5), new Point(8, 2), ref pathIndex);
-			DrawPathHorizontal(panelField, new Point(9, 2), new Point(11, 2), ref pathIndex);
-			DrawPathVertical(panelField, new Point(11, 3), new Point(11, 9), ref pathIndex);
-			DrawPathHorizontal(panelField, new Point(10, 9), new Point(4, 9), ref pathIndex);
-			DrawPathVertical(panelField, new Point(4, 10), new Point(4, 13), ref pathIndex);
-			DrawPathHorizontal(panelField, new Point(5, 13), new Point(7, 13), ref pathIndex);
-			DrawOnlyOnePath(panelField, new Point(7, 12), ref pathIndex);//Xử lý trường hợp gấp khúc nhỏ
-			DrawPathHorizontal(panelField, new Point(8, 12), new Point(13, 12), ref pathIndex);
+			DrawPathHorizontal(new Point(1, 1), new Point(6, 1), ref pathIndex);
+			DrawPathVertical(new Point(6, 2), new Point(6, 4), ref pathIndex);
+			DrawPathHorizontal(new Point(5, 4), new Point(3, 4), ref pathIndex);
+			DrawPathVertical(new Point(3, 5), new Point(3, 6), ref pathIndex);
+			DrawPathHorizontal(new Point(4, 6), new Point(8, 6), ref pathIndex);
+			DrawPathVertical(new Point(8, 5), new Point(8, 2), ref pathIndex);
+			DrawPathHorizontal(new Point(9, 2), new Point(11, 2), ref pathIndex);
+			DrawPathVertical(new Point(11, 3), new Point(11, 9), ref pathIndex);
+			DrawPathHorizontal(new Point(10, 9), new Point(4, 9), ref pathIndex);
+			DrawPathVertical(new Point(4, 10), new Point(4, 13), ref pathIndex);
+			DrawPathHorizontal(new Point(5, 13), new Point(7, 13), ref pathIndex);
+			DrawOnlyOnePath(new Point(7, 12), ref pathIndex);//Xử lý trường hợp gấp khúc nhỏ
+			DrawPathHorizontal(new Point(8, 12), new Point(13, 12), ref pathIndex);
 			SetStartEnd();
 		}
 
-		void ReplaceNodeWithPath(Panel panelField, Node node, Path path)
+		void ReplaceNodeWithPath(Node node, Path path)
 		{
 			Point pathLocation = node.picNode.Location;
 			panelField.Controls.Remove(node.picNode);
 			path.pbPath.Location = pathLocation;
 			panelField.Controls.Add(path.pbPath);
 		}
-		void DrawPathHorizontal(Panel panelField, Point startPoint, Point endPoint, ref int pathIndex)
+		void DrawPathHorizontal(Point startPoint, Point endPoint, ref int pathIndex)
 		{
 			if (endPoint.X >= startPoint.X)
 			{
@@ -112,7 +113,7 @@ namespace TowerDefenseGame
 				for (int j = startPoint.X; j <= endPoint.X; j++)
 				{
 					Path path = new Path();
-					ReplaceNodeWithPath(panelField, nodeList[startPoint.Y][j], path);
+					ReplaceNodeWithPath(nodeList[startPoint.Y][j], path);
 					pathList.Add(path);
 					path.index = pathIndex;
 					pathIndex++;
@@ -124,7 +125,7 @@ namespace TowerDefenseGame
 				for (int j = startPoint.X; j >= endPoint.X; j--)
 				{
 					Path path = new Path();
-					ReplaceNodeWithPath(panelField, nodeList[startPoint.Y][j], path);
+					ReplaceNodeWithPath(nodeList[startPoint.Y][j], path);
 					pathList.Add(path);
 					path.index = pathIndex;
 					pathIndex++;
@@ -132,7 +133,7 @@ namespace TowerDefenseGame
 			}
 			waypointList.Add(pathList[pathIndex - 1].GetCenterPoint());//Gán waypoint bằng ô path cuối để tạo điểm đến cho enemy
 		}
-		void DrawPathVertical(Panel panelField, Point startPoint, Point endPoint, ref int pathIndex)
+		void DrawPathVertical(Point startPoint, Point endPoint, ref int pathIndex)
 		{
 			if (endPoint.Y >= startPoint.Y)
 			{
@@ -140,7 +141,7 @@ namespace TowerDefenseGame
 				for (int i = startPoint.Y; i <= endPoint.Y; i++)
 				{
 					Path path = new Path();
-					ReplaceNodeWithPath(panelField, nodeList[i][startPoint.X], path);
+					ReplaceNodeWithPath(nodeList[i][startPoint.X], path);
 					pathList.Add(path);
 					path.index = pathIndex;
 					pathIndex++;
@@ -152,7 +153,7 @@ namespace TowerDefenseGame
 				for (int i = startPoint.Y; i >= endPoint.Y; i--)
 				{
 					Path path = new Path();
-					ReplaceNodeWithPath(panelField, nodeList[i][startPoint.X], path);
+					ReplaceNodeWithPath(nodeList[i][startPoint.X], path);
 					pathList.Add(path);
 					path.index = pathIndex;
 					pathIndex++;
@@ -160,10 +161,10 @@ namespace TowerDefenseGame
 			}
 			waypointList.Add(pathList[pathIndex - 1].GetCenterPoint());
 		}
-		void DrawOnlyOnePath(Panel panelField, Point point, ref int pathIndex)
+		void DrawOnlyOnePath(Point point, ref int pathIndex)
 		{
 			Path path = new Path();
-			ReplaceNodeWithPath(panelField, nodeList[point.Y][point.X], path);
+			ReplaceNodeWithPath(nodeList[point.Y][point.X], path);
 			pathList.Add(path);
 			path.index = pathIndex;
 			pathIndex++;
