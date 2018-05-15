@@ -63,6 +63,26 @@ namespace TowerDefenseGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _68420986_arcade_wallpapers {
+            get {
+                object obj = ResourceManager.GetObject("68420986-arcade-wallpapers", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arcade_stick_by_gfball84887_d9i3x9t {
+            get {
+                object obj = ResourceManager.GetObject("arcade_stick_by_gfball84887-d9i3x9t", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap brick_grey {
             get {
                 object obj = ResourceManager.GetObject("brick_grey", resourceCulture);

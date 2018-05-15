@@ -95,10 +95,6 @@ namespace TowerDefenseGame
 			DrawOnlyOnePath(panelField, new Point(7, 12), ref pathIndex);//Xử lý trường hợp gấp khúc nhỏ
 			DrawPathHorizontal(panelField, new Point(8, 12), new Point(13, 12), ref pathIndex);
 			SetStartEnd();
-
-			Enemy enemy = new Enemy();
-			enemy.SpawnEnemy(panelField, pathList[0]);
-			enemy.MoveThroughWaypoints(waypointList);
 		}
 
 		void ReplaceNodeWithPath(Panel panelField, Node node, Path path)

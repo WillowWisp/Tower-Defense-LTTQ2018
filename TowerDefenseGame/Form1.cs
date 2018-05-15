@@ -18,13 +18,15 @@ namespace TowerDefenseGame
 
 			FieldManager.Instance.DrawNodes(panelField);
             FieldManager.Instance.DesignPath(panelField);
+
+			lblWaveLevel.Text = "Wave   Level   " + WaveSpawner.level.ToString();
 		}
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			Enemy enemy = new Enemy();
-			enemy.SpawnEnemy(panelField, FieldManager.Instance.pathList[0]);
-			enemy.MoveThroughWaypoints(FieldManager.Instance.waypointList);
+			lblWaveLevel.Text = "Wave   Level   " + WaveSpawner.level.ToString();
+			WaveSpawner waveSpawner = new WaveSpawner(panelField);
+			waveSpawner.SpawnWave();
 		}
 	}
 }
