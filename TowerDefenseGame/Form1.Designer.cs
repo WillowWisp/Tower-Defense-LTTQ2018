@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.panelField = new System.Windows.Forms.Panel();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label15 = new System.Windows.Forms.Label();
@@ -65,9 +66,13 @@
 			this.btnSpawnWave = new System.Windows.Forms.Button();
 			this.lblMoney = new System.Windows.Forms.Label();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
+			this.timer1 = new System.Windows.Forms.Timer(this.components);
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.label31 = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panelField
@@ -440,12 +445,38 @@
 			this.pictureBox2.TabIndex = 10;
 			this.pictureBox2.TabStop = false;
 			// 
+			// timer1
+			// 
+			this.timer1.Enabled = true;
+			this.timer1.Interval = 10;
+			this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+			this.pictureBox1.Location = new System.Drawing.Point(843, 316);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(46, 40);
+			this.pictureBox1.TabIndex = 11;
+			this.pictureBox1.TabStop = false;
+			// 
+			// label31
+			// 
+			this.label31.AutoSize = true;
+			this.label31.Location = new System.Drawing.Point(824, 180);
+			this.label31.Name = "label31";
+			this.label31.Size = new System.Drawing.Size(41, 13);
+			this.label31.TabIndex = 12;
+			this.label31.Text = "label31";
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.ActiveBorder;
 			this.ClientSize = new System.Drawing.Size(1000, 804);
+			this.Controls.Add(this.label31);
+			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.pictureBox2);
 			this.Controls.Add(this.lblMoney);
 			this.Controls.Add(this.btnSpawnWave);
@@ -462,6 +493,7 @@
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -506,6 +538,9 @@
 		private System.Windows.Forms.Button btnSpawnWave;
 		private System.Windows.Forms.Label lblMoney;
 		private System.Windows.Forms.PictureBox pictureBox2;
+		private System.Windows.Forms.Timer timer1;
+		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.Label label31;
 	}
 }
 

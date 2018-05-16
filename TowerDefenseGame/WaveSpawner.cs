@@ -48,6 +48,7 @@ namespace TowerDefenseGame
 			}
 			Enemy enemy = new Enemy();
 			enemy.SpawnEnemy(FieldManager.Instance.pathList[0]);
+			ObjectManager.Instance.enemyList.Add(enemy);
 			enemy.MoveThroughWaypoints(FieldManager.Instance.waypointList);
 			enemyLeft--;
 		}

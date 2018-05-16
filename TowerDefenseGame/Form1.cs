@@ -28,5 +28,13 @@ namespace TowerDefenseGame
 			lblWaveLevel.Text = "Wave   Level   " + WaveSpawner.level.ToString();
 			WaveSpawner.Instance.SpawnWave();
 		}
+
+		private void timer1_Tick(object sender, EventArgs e)
+		{
+			label31.Text = ObjectManager.Instance.enemyList.Count.ToString();
+			if (ObjectManager.Instance.enemyList.Count == 0)
+				return;
+			pictureBox1.BackColor = ObjectManager.Instance.enemyList[0].picEnemy.BackColor;
+		}
 	}
 }

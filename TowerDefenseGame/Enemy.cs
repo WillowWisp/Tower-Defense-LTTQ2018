@@ -10,7 +10,7 @@ namespace TowerDefenseGame
 {
 	public class Enemy
 	{
-		public PictureBox pbEnemy;
+		public PictureBox picEnemy;
 		int height = Constant.ENEMY_HEIGHT;
 		int width = Constant.ENEMY_WIDTH;
 
@@ -20,13 +20,15 @@ namespace TowerDefenseGame
 		Timer tmrMoveUp;
 		Timer tmrCheckWaypoint;
 
+		public bool isAlive = true;
+
 		public int waypointIndex = 0;
 
 		public Point target;//Vị trí waypoint đang đi tới
 
 		public Enemy()
 		{
-			pbEnemy = new PictureBox()
+			picEnemy = new PictureBox()
 			{
 				Height = height,
 				Width = width,
@@ -36,9 +38,9 @@ namespace TowerDefenseGame
 
 		public void SpawnEnemy(Path path)
 		{
-			FieldManager.panelField.Controls.Add(pbEnemy);
-			pbEnemy.Location = path.GetCenterPoint();
-			pbEnemy.BringToFront();
+			FieldManager.panelField.Controls.Add(picEnemy);
+			picEnemy.Location = path.GetCenterPoint();
+			picEnemy.BringToFront();
 		}
 
 		public void MoveThroughWaypoints(List<Point> waypointList)
@@ -53,7 +55,7 @@ namespace TowerDefenseGame
 		}
 		void CheckWaypoint_Tick(object sender, EventArgs e)
 		{
-			if (pbEnemy.Location == target)
+			if (picEnemy.Location == target)
 			{
 				ClearMovement();
 				waypointIndex++;
@@ -83,7 +85,7 @@ namespace TowerDefenseGame
 		}
 		void MoveRight_Tick(object sender, EventArgs e)
 		{
-			pbEnemy.Left += 1;
+			picEnemy.Left += 1;
 		}
 
 		void MoveLeft()
@@ -95,7 +97,7 @@ namespace TowerDefenseGame
 		}
 		void MoveLeft_Tick(object sender, EventArgs e)
 		{
-			pbEnemy.Left -= 1;
+			picEnemy.Left -= 1;
 		}
 
 		void MoveDown()
@@ -107,7 +109,7 @@ namespace TowerDefenseGame
 		}
 		void MoveDown_Tick(object sender, EventArgs e)
 		{
-			pbEnemy.Top += 1;
+			picEnemy.Top += 1;
 		}
 
 		void MoveUp()
@@ -119,21 +121,21 @@ namespace TowerDefenseGame
 		}
 		void MoveUp_Tick(object sender, EventArgs e)
 		{
-			pbEnemy.Top -= 1;
+			picEnemy.Top -= 1;
 		}
 
 
 		string GetDirectionToTarget()
 		{
-			if (target.Y == pbEnemy.Location.Y)
+			if (target.Y == picEnemy.Location.Y)
 			{
-				if (target.X >= pbEnemy.Location.X)
+				if (target.X >= picEnemy.Location.X)
 					return "E";
 				else return "W";
 			}
-			else if (target.X == pbEnemy.Location.X)
+			else if (target.X == picEnemy.Location.X)
 			{
-				if (target.Y <= pbEnemy.Location.Y)
+				if (target.Y <= picEnemy.Location.Y)
 					return "N";
 				else return "S";
 			}
@@ -165,7 +167,14 @@ namespace TowerDefenseGame
 
 		void DamageDoor()
 		{
-			pbEnemy.Dispose();
+			Die();
+			ObjectManager.Instance.enemyList.Remove(this);
+		}
+
+		public void Die()
+		{
+			picEnemy.Dispose();
+			isAlive = false;
 		}
 	}
 }
