@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuildManager.cs" />
     <Compile Include="Bullet.cs" />
     <Compile Include="Constant.cs" />
     <Compile Include="Enemy.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="Node.cs" />
     <Compile Include="ObjectManager.cs" />
     <Compile Include="Path.cs" />
+    <Compile Include="PlayerStats.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Turret.cs" />
@@ -108,6 +110,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\arcade_stick_by_gfball84887-d9i3x9t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chamander.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -23,18 +23,28 @@ namespace TowerDefenseGame
 			lblWaveLevel.Text = "Wave   Level   " + WaveSpawner.level.ToString();
 		}
 
-		private void button1_Click(object sender, EventArgs e)
+		private void btnSpawnWave_Click(object sender, EventArgs e)
 		{
 			lblWaveLevel.Text = "Wave   Level   " + WaveSpawner.level.ToString();
 			WaveSpawner.Instance.SpawnWave();
 		}
 
-		private void timer1_Tick(object sender, EventArgs e)
+		private void tmrUpdateUI_Tick(object sender, EventArgs e)
 		{
 			label31.Text = ObjectManager.Instance.enemyList.Count.ToString();
-			if (ObjectManager.Instance.enemyList.Count == 0)
-				return;
-			pictureBox1.BackColor = ObjectManager.Instance.enemyList[0].picEnemy.BackColor;
+
+			if (PlayerStats.money < int.Parse(btnChamander.Tag.ToString()))
+				btnChamander.Enabled = false;
+			else btnChamander.Enabled = true;
+
+			lblMoney.Text = "Money   $" + PlayerStats.money;
+
+			lblLives.Text = "Lives : " + PlayerStats.lives.ToString();
+		}
+		
+		private void btnChamander_Click(object sender, EventArgs e)
+		{
+			BuildManager.Instance.turretToBuild = "chamander";
 		}
 	}
 }

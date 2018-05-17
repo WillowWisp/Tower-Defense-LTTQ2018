@@ -11,6 +11,7 @@ namespace TowerDefenseGame
 	public class Turret
 	{
 		public PictureBox picTurret;
+		public int cost = 50;
 
 		Timer tmrShooting;
 
@@ -23,6 +24,8 @@ namespace TowerDefenseGame
 				BackColor = Color.Transparent,
 				Image = Image.FromFile(Application.StartupPath + "\\Resources\\start1.png")
 			};
+
+			//Chamander
 
 			tmrShooting = new Timer();
 			tmrShooting.Interval = 1000;

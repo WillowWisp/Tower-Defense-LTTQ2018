@@ -16,7 +16,7 @@ namespace TowerDefenseGame
         int height = Constant.NODE_HEIGHT;
         int width = Constant.NODE_WIDTH;
 
-		Turret currentTurret;
+		public Turret currentTurret;
 
         public Node()
         {
@@ -37,17 +37,10 @@ namespace TowerDefenseGame
 			{
 				return;
 			}
-			BuildTurret();
-		}
-		
-		void BuildTurret()
-		{
-			Turret turret = new Turret();
-			//picNode.Controls.Add(turret.picTurret);
-			FieldManager.panelField.Controls.Add(turret.picTurret);
-			turret.picTurret.BringToFront();
-			turret.picTurret.Location = this.picNode.Location;
-			currentTurret = turret;
+			if (BuildManager.Instance.turretToBuild == "none")
+				return;
+			BuildManager.Instance.BuildTurretOn(this);
+			BuildManager.Instance.turretToBuild = "none";
 		}
 	}
 }

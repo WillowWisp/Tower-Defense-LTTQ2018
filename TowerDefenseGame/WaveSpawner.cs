@@ -32,7 +32,7 @@ namespace TowerDefenseGame
 		{
 			enemyLeft = level * 2;
 			tmrSpawnEnemy = new Timer();
-			tmrSpawnEnemy.Interval = 1000;
+			tmrSpawnEnemy.Interval = 500;
 			tmrSpawnEnemy.Start();
 			tmrSpawnEnemy.Tick += SpawnEnemy_Tick;
 

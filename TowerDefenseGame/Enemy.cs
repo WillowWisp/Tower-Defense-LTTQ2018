@@ -13,6 +13,7 @@ namespace TowerDefenseGame
 		public PictureBox picEnemy;
 		int height = Constant.ENEMY_HEIGHT;
 		int width = Constant.ENEMY_WIDTH;
+		int moneyDrop = 25;
 
 		Timer tmrMoveRight;
 		Timer tmrMoveLeft;
@@ -49,7 +50,7 @@ namespace TowerDefenseGame
 			HeadToTarget();
 
 			tmrCheckWaypoint = new Timer();
-			tmrCheckWaypoint.Interval = 10;
+			tmrCheckWaypoint.Interval = 1;
 			tmrCheckWaypoint.Start();
 			tmrCheckWaypoint.Tick += CheckWaypoint_Tick;
 		}
@@ -63,7 +64,11 @@ namespace TowerDefenseGame
 
 				if (waypointIndex >= FieldManager.Instance.waypointList.Count)
 				{
-					DamageDoor();
+					if (isAlive)
+					{
+						DamageDoor();
+					}
+					tmrCheckWaypoint.Stop();
 					return;
 				}
 				else
@@ -85,7 +90,7 @@ namespace TowerDefenseGame
 		}
 		void MoveRight_Tick(object sender, EventArgs e)
 		{
-			picEnemy.Left += 1;
+			picEnemy.Left += 2;
 		}
 
 		void MoveLeft()
@@ -97,7 +102,7 @@ namespace TowerDefenseGame
 		}
 		void MoveLeft_Tick(object sender, EventArgs e)
 		{
-			picEnemy.Left -= 1;
+			picEnemy.Left -= 2;
 		}
 
 		void MoveDown()
@@ -109,7 +114,7 @@ namespace TowerDefenseGame
 		}
 		void MoveDown_Tick(object sender, EventArgs e)
 		{
-			picEnemy.Top += 1;
+			picEnemy.Top += 2;
 		}
 
 		void MoveUp()
@@ -121,7 +126,7 @@ namespace TowerDefenseGame
 		}
 		void MoveUp_Tick(object sender, EventArgs e)
 		{
-			picEnemy.Top -= 1;
+			picEnemy.Top -= 2;
 		}
 
 
@@ -167,14 +172,17 @@ namespace TowerDefenseGame
 
 		void DamageDoor()
 		{
-			Die();
+			picEnemy.Dispose();
+			isAlive = false;
 			ObjectManager.Instance.enemyList.Remove(this);
+			PlayerStats.lives -= 1;
 		}
 
-		public void Die()
+		public void Die() //Chỉ dùng khi enemy bị trụ giết
 		{
 			picEnemy.Dispose();
 			isAlive = false;
+			PlayerStats.money += moneyDrop;
 		}
 	}
 }
