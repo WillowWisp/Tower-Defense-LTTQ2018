@@ -96,14 +96,23 @@ namespace TowerDefenseGame
 			DrawOnlyOnePath(new Point(7, 12), ref pathIndex);//Xử lý trường hợp gấp khúc nhỏ
 			DrawPathHorizontal(new Point(8, 12), new Point(13, 12), ref pathIndex);
 			SetStartEnd();
+			ClearAllPath();
+		}
+
+		void ClearAllPath()
+		{
+			foreach (Path path in pathList)
+			{
+				path.picPath.Dispose();
+			}
 		}
 
 		void ReplaceNodeWithPath(Node node, Path path)
 		{
 			Point pathLocation = node.picNode.Location;
 			panelField.Controls.Remove(node.picNode);
-			path.pbPath.Location = pathLocation;
-			panelField.Controls.Add(path.pbPath);
+			path.picPath.Location = pathLocation;
+			panelField.Controls.Add(path.picPath);
 		}
 		void DrawPathHorizontal(Point startPoint, Point endPoint, ref int pathIndex)
 		{
@@ -173,10 +182,10 @@ namespace TowerDefenseGame
 
 		void SetStartEnd()
 		{
-			pathList[0].pbPath.Image = Image.FromFile(Application.StartupPath + "\\Resources\\start1.png");
-			pathList[0].pbPath.Tag = "Start";
-			pathList[pathList.Count - 1].pbPath.Image = Image.FromFile(Application.StartupPath + "\\Resources\\end1.png");
-			pathList[pathList.Count - 1].pbPath.Tag = "End";
+			pathList[0].picPath.Image = Image.FromFile(Application.StartupPath + "\\Resources\\start1.png");
+			pathList[0].picPath.Tag = "Start";
+			pathList[pathList.Count - 1].picPath.Image = Image.FromFile(Application.StartupPath + "\\Resources\\end1.png");
+			pathList[pathList.Count - 1].picPath.Tag = "End";
 		}
 		
 		void AddWaypoint(ref List<Point> waypointList, Path path)

@@ -10,13 +10,13 @@ namespace TowerDefenseGame
 {
     public class Path
     {
-        public PictureBox pbPath;
+        public PictureBox picPath;
         public int index;
         int height = Constant.NODE_HEIGHT;
         int width = Constant.NODE_WIDTH;
         public Path()
         {
-            pbPath = new PictureBox()
+            picPath = new PictureBox()
             {
                 Height = height,
                 Width = width,
@@ -27,7 +27,7 @@ namespace TowerDefenseGame
 
 		public Point GetCenterPoint()
 		{
-			return new Point(pbPath.Location.X + 6, pbPath.Location.Y + 6);//12 là offset để căn enemy ra giữa, dựa vào size của enemy
+			return new Point(picPath.Location.X + 6, picPath.Location.Y + 6);//12 là offset để căn enemy ra giữa, dựa vào size của enemy
 		}
 	}
 }

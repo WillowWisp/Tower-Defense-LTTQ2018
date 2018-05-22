@@ -15,6 +15,7 @@ namespace TowerDefenseGame
 		int height = Constant.ENEMY_HEIGHT;
 		int width = Constant.ENEMY_WIDTH;
 		int moneyDrop = 25;
+		int moveSpeed = 2;
 
 		Timer tmrMoveRight;
 		Timer tmrMoveLeft;
@@ -92,11 +93,11 @@ namespace TowerDefenseGame
 		}
 		void MoveRight_Tick(object sender, EventArgs e)
 		{
-			picEnemy.Left += 1;
-			if ((string)(picEnemy.Tag) != "right")
+			picEnemy.Left += moveSpeed;
+			if ((string)picEnemy.Tag != "FaceRight")
 			{
 				picEnemy.Image = Properties.Resources.Pik_Right;
-				picEnemy.Tag = "right";
+				picEnemy.Tag = "FaceRight";
 			}
 		}
 
@@ -109,11 +110,11 @@ namespace TowerDefenseGame
 		}
 		void MoveLeft_Tick(object sender, EventArgs e)
 		{
-			picEnemy.Left -= 1;
-			if ((string)(picEnemy.Tag) != "left")
+			picEnemy.Left -= moveSpeed;
+			if ((string)picEnemy.Tag != "FaceLeft")
 			{
 				picEnemy.Image = Properties.Resources.Pik_Left;
-				picEnemy.Tag = "left";
+				picEnemy.Tag = "FaceLeft";
 			}
 		}
 
@@ -126,11 +127,11 @@ namespace TowerDefenseGame
 		}
 		void MoveDown_Tick(object sender, EventArgs e)
 		{
-			picEnemy.Top += 1;
-			if ((string)(picEnemy.Tag) != "down")
+			picEnemy.Top += moveSpeed;
+			if ((string)picEnemy.Tag != "FaceDown")
 			{
 				picEnemy.Image = Properties.Resources.Pik_Down;
-				picEnemy.Tag = "down";
+				picEnemy.Tag = "FaceDown";
 			}
 		}
 
@@ -143,11 +144,11 @@ namespace TowerDefenseGame
 		}
 		void MoveUp_Tick(object sender, EventArgs e)
 		{
-			picEnemy.Top -= 1;
-			if ((string)(picEnemy.Tag) != "up")
+			picEnemy.Top -= moveSpeed;
+			if ((string)picEnemy.Tag != "FaceUp")
 			{
 				picEnemy.Image = Properties.Resources.Pik_Up;
-				picEnemy.Tag = "up";
+				picEnemy.Tag = "FaceUp";
 			}
 		}
 
