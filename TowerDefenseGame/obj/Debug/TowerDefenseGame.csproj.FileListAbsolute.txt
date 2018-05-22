@@ -38,3 +38,13 @@ D:\TaiLieu\Projects\GitHub\Tower-Defense-LTTQ2018\TowerDefenseGame\obj\Debug\Tow
 D:\TaiLieu\Projects\GitHub\Tower-Defense-LTTQ2018\TowerDefenseGame\obj\Debug\TowerDefenseGame.csproj.CoreCompileInputs.cache
 D:\TaiLieu\Projects\GitHub\Tower-Defense-LTTQ2018\TowerDefenseGame\obj\Debug\TowerDefenseGame.exe
 D:\TaiLieu\Projects\GitHub\Tower-Defense-LTTQ2018\TowerDefenseGame\obj\Debug\TowerDefenseGame.pdb
+C:\Users\Beatless\Tower-Defense-LTTQ2018\TowerDefenseGame\bin\Debug\TowerDefenseGame.exe.config
+C:\Users\Beatless\Tower-Defense-LTTQ2018\TowerDefenseGame\bin\Debug\TowerDefenseGame.exe
+C:\Users\Beatless\Tower-Defense-LTTQ2018\TowerDefenseGame\bin\Debug\TowerDefenseGame.pdb
+C:\Users\Beatless\Tower-Defense-LTTQ2018\TowerDefenseGame\obj\Debug\TowerDefenseGame.csprojResolveAssemblyReference.cache
+C:\Users\Beatless\Tower-Defense-LTTQ2018\TowerDefenseGame\obj\Debug\TowerDefenseGame.Form1.resources
+C:\Users\Beatless\Tower-Defense-LTTQ2018\TowerDefenseGame\obj\Debug\TowerDefenseGame.Properties.Resources.resources
+C:\Users\Beatless\Tower-Defense-LTTQ2018\TowerDefenseGame\obj\Debug\TowerDefenseGame.csproj.GenerateResource.cache
+C:\Users\Beatless\Tower-Defense-LTTQ2018\TowerDefenseGame\obj\Debug\TowerDefenseGame.csproj.CoreCompileInputs.cache
+C:\Users\Beatless\Tower-Defense-LTTQ2018\TowerDefenseGame\obj\Debug\TowerDefenseGame.exe
+C:\Users\Beatless\Tower-Defense-LTTQ2018\TowerDefenseGame\obj\Debug\TowerDefenseGame.pdb

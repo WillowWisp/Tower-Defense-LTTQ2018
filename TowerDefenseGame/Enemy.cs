@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TowerDefenseGame.Properties;
 
 namespace TowerDefenseGame
 {
@@ -20,7 +21,7 @@ namespace TowerDefenseGame
 		Timer tmrMoveDown;
 		Timer tmrMoveUp;
 		Timer tmrCheckWaypoint;
-
+		
 		public bool isAlive = true;
 
 		public int waypointIndex = 0;
@@ -28,15 +29,16 @@ namespace TowerDefenseGame
 		public Point target;//Vị trí waypoint đang đi tới
 
 		public Enemy()
-		{
+		{			
 			picEnemy = new PictureBox()
 			{
 				Height = height,
 				Width = width,
-				BackColor = Color.Red
+				BackColor = Color.Transparent,
+				SizeMode = PictureBoxSizeMode.Zoom,
 			};
 		}
-
+			
 		public void SpawnEnemy(Path path)
 		{
 			FieldManager.panelField.Controls.Add(picEnemy);
@@ -90,7 +92,12 @@ namespace TowerDefenseGame
 		}
 		void MoveRight_Tick(object sender, EventArgs e)
 		{
-			picEnemy.Left += 2;
+			picEnemy.Left += 1;
+			if ((string)(picEnemy.Tag) != "right")
+			{
+				picEnemy.Image = Properties.Resources.Pik_Right;
+				picEnemy.Tag = "right";
+			}
 		}
 
 		void MoveLeft()
@@ -102,7 +109,12 @@ namespace TowerDefenseGame
 		}
 		void MoveLeft_Tick(object sender, EventArgs e)
 		{
-			picEnemy.Left -= 2;
+			picEnemy.Left -= 1;
+			if ((string)(picEnemy.Tag) != "left")
+			{
+				picEnemy.Image = Properties.Resources.Pik_Left;
+				picEnemy.Tag = "left";
+			}
 		}
 
 		void MoveDown()
@@ -114,7 +126,12 @@ namespace TowerDefenseGame
 		}
 		void MoveDown_Tick(object sender, EventArgs e)
 		{
-			picEnemy.Top += 2;
+			picEnemy.Top += 1;
+			if ((string)(picEnemy.Tag) != "down")
+			{
+				picEnemy.Image = Properties.Resources.Pik_Down;
+				picEnemy.Tag = "down";
+			}
 		}
 
 		void MoveUp()
@@ -126,7 +143,12 @@ namespace TowerDefenseGame
 		}
 		void MoveUp_Tick(object sender, EventArgs e)
 		{
-			picEnemy.Top -= 2;
+			picEnemy.Top -= 1;
+			if ((string)(picEnemy.Tag) != "up")
+			{
+				picEnemy.Image = Properties.Resources.Pik_Up;
+				picEnemy.Tag = "up";
+			}
 		}
 
 

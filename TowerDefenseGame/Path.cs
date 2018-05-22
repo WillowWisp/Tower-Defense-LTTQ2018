@@ -27,7 +27,7 @@ namespace TowerDefenseGame
 
 		public Point GetCenterPoint()
 		{
-			return new Point(pbPath.Location.X + 12, pbPath.Location.Y + 12);//12 là offset để căn enemy ra giữa, dựa vào size của enemy
+			return new Point(pbPath.Location.X + 6, pbPath.Location.Y + 6);//12 là offset để căn enemy ra giữa, dựa vào size của enemy
 		}
 	}
 }

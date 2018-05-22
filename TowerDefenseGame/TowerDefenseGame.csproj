@@ -114,5 +114,11 @@
   <ItemGroup>
     <None Include="Resources\chamander.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Pik_Down.gif" />
+    <Content Include="Resources\Pik_Left.gif" />
+    <Content Include="Resources\Pik_Right.gif" />
+    <Content Include="Resources\Pik_Up.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
