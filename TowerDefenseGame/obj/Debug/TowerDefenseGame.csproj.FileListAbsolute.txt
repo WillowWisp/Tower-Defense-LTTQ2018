@@ -48,3 +48,4 @@ C:\Users\Beatless\Tower-Defense-LTTQ2018\TowerDefenseGame\obj\Debug\TowerDefense
 C:\Users\Beatless\Tower-Defense-LTTQ2018\TowerDefenseGame\obj\Debug\TowerDefenseGame.csproj.CoreCompileInputs.cache
 C:\Users\Beatless\Tower-Defense-LTTQ2018\TowerDefenseGame\obj\Debug\TowerDefenseGame.exe
 C:\Users\Beatless\Tower-Defense-LTTQ2018\TowerDefenseGame\obj\Debug\TowerDefenseGame.pdb
+C:\Users\Beatless\Tower-Defense-LTTQ2018\TowerDefenseGame\obj\Debug\TowerDefenseGame.Resources.Start.resources
