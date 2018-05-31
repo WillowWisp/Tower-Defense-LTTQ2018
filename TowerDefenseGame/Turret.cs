@@ -39,19 +39,19 @@ namespace TowerDefenseGame
 
 				if (direction == "Left")
 				{
-					picTurret.Image = Image.FromFile(Application.StartupPath + "\\Resources\\CharmanderLeft.gif");
+					picTurret.Image = Properties.Resources.CharmanderLeft;
 				}
 				if (direction == "Right")
 				{
-					picTurret.Image = Image.FromFile(Application.StartupPath + "\\Resources\\CharmanderRight.gif");
+					picTurret.Image = Properties.Resources.CharmanderRight;
 				}
 				if (direction == "Up")
 				{
-					picTurret.Image = Image.FromFile(Application.StartupPath + "\\Resources\\CharmanderUp.gif");
+					picTurret.Image = Properties.Resources.CharmanderUp;
 				}
 				if (direction == "Down")
 				{
-					picTurret.Image = Image.FromFile(Application.StartupPath + "\\Resources\\CharmanderDown.gif");
+					picTurret.Image = Properties.Resources.CharmanderDown;
 				}
 
 				tmrChamanderShoot = new Timer();

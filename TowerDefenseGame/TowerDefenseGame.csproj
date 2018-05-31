@@ -125,6 +125,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\Resources\panelField_background.png" />
+    <Content Include="Resources\CharmanderDown.gif" />
+    <Content Include="Resources\CharmanderLeft.gif" />
+    <Content Include="Resources\CharmanderRight.gif" />
+    <Content Include="Resources\CharmanderUp.gif" />
     <Content Include="Resources\down.png" />
     <Content Include="Resources\Pik_Down.gif" />
     <Content Include="Resources\Pik_Left.gif" />
