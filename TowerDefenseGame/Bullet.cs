@@ -26,33 +26,33 @@ namespace TowerDefenseGame
 
 		public Bullet(string turretType, string direction = null)
 		{
-			if (turretType == "Chamander")
+			if (turretType == "Charmander")
 			{
 				picBullet = new PictureBox()
 				{
 					Height = 3,
-					Width = 12,
-					BackColor = Color.Black
+					Width = 6,
+					BackColor = Color.White
 				};
 				bulletRange = 30;
 				bulletSpeed = 4;
+			}
 
-				if (direction == "Left")
-					FlyLeft();
-				if (direction == "Right")
-					FlyRight();
-				if (direction == "Up")
-				{
-					picBullet.Height = 12;
-					picBullet.Width = 3;
-					FlyUp();
-				}
-				if (direction == "Down")
-				{
-					picBullet.Height = 12;
-					picBullet.Width = 3;
-					FlyDown();
-				}
+			if (direction == "Left")
+				FlyLeft();
+			if (direction == "Right")
+				FlyRight();
+			if (direction == "Up")
+			{
+				picBullet.Height = 6;
+				picBullet.Width = 3;
+				FlyUp();
+			}
+			if (direction == "Down")
+			{
+				picBullet.Height = 6;
+				picBullet.Width = 3;
+				FlyDown();
 			}
 
 			tmrCheckCollision = new Timer();

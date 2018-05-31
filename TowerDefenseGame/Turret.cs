@@ -32,27 +32,26 @@ namespace TowerDefenseGame
 			};
 
 			//Chamander
-			if (turretType == "Chamander")
+			if (turretType == "Charmander")
 			{
 				cost = 50;
 				delayPerShot = 800;
 
 				if (direction == "Left")
 				{
-					picTurret.BackColor = Color.Red;
-					picTurret.Image = Image.FromFile(Application.StartupPath + "\\Resources\\start1.png");
+					picTurret.Image = Image.FromFile(Application.StartupPath + "\\Resources\\CharmanderLeft.gif");
 				}
 				if (direction == "Right")
 				{
-					picTurret.BackColor = Color.Green;
+					picTurret.Image = Image.FromFile(Application.StartupPath + "\\Resources\\CharmanderRight.gif");
 				}
 				if (direction == "Up")
 				{
-					picTurret.BackColor = Color.Aqua;
+					picTurret.Image = Image.FromFile(Application.StartupPath + "\\Resources\\CharmanderUp.gif");
 				}
 				if (direction == "Down")
 				{
-					picTurret.BackColor = Color.Gray;
+					picTurret.Image = Image.FromFile(Application.StartupPath + "\\Resources\\CharmanderDown.gif");
 				}
 
 				tmrChamanderShoot = new Timer();

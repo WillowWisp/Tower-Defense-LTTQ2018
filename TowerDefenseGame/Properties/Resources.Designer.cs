@@ -133,6 +133,16 @@ namespace TowerDefenseGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap panelField_background {
+            get {
+                object obj = ResourceManager.GetObject("panelField_background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Pik_Down {
             get {
                 object obj = ResourceManager.GetObject("Pik_Down", resourceCulture);

@@ -29,7 +29,6 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			this.panelField = new System.Windows.Forms.Panel();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label15 = new System.Windows.Forms.Label();
 			this.label12 = new System.Windows.Forms.Label();
@@ -67,21 +66,14 @@
 			this.lblMoney = new System.Windows.Forms.Label();
 			this.tmrUpdateUI = new System.Windows.Forms.Timer(this.components);
 			this.label31 = new System.Windows.Forms.Label();
-			this.pictureBox2 = new System.Windows.Forms.PictureBox();
-			this.btnChamander = new System.Windows.Forms.Button();
 			this.lblLives = new System.Windows.Forms.Label();
+			this.btnChamander = new System.Windows.Forms.Button();
+			this.pictureBox2 = new System.Windows.Forms.PictureBox();
+			this.panelField = new System.Windows.Forms.Panel();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			this.SuspendLayout();
-			// 
-			// panelField
-			// 
-			this.panelField.BackColor = System.Drawing.SystemColors.Control;
-			this.panelField.Location = new System.Drawing.Point(44, 39);
-			this.panelField.Name = "panelField";
-			this.panelField.Size = new System.Drawing.Size(720, 720);
-			this.panelField.TabIndex = 0;
 			// 
 			// panel1
 			// 
@@ -449,16 +441,15 @@
 			this.label31.TabIndex = 12;
 			this.label31.Text = "label31";
 			// 
-			// pictureBox2
+			// lblLives
 			// 
-			this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-			this.pictureBox2.BackgroundImage = global::TowerDefenseGame.Properties.Resources.arcade_stick_by_gfball84887_d9i3x9t;
-			this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-			this.pictureBox2.Location = new System.Drawing.Point(770, 634);
-			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(218, 211);
-			this.pictureBox2.TabIndex = 10;
-			this.pictureBox2.TabStop = false;
+			this.lblLives.AutoSize = true;
+			this.lblLives.BackColor = System.Drawing.Color.Transparent;
+			this.lblLives.Location = new System.Drawing.Point(770, 592);
+			this.lblLives.Name = "lblLives";
+			this.lblLives.Size = new System.Drawing.Size(53, 13);
+			this.lblLives.TabIndex = 14;
+			this.lblLives.Text = "Lives : 10";
 			// 
 			// btnChamander
 			// 
@@ -473,15 +464,26 @@
 			this.btnChamander.UseVisualStyleBackColor = true;
 			this.btnChamander.Click += new System.EventHandler(this.btnChamander_Click);
 			// 
-			// lblLives
+			// pictureBox2
 			// 
-			this.lblLives.AutoSize = true;
-			this.lblLives.BackColor = System.Drawing.Color.Transparent;
-			this.lblLives.Location = new System.Drawing.Point(770, 592);
-			this.lblLives.Name = "lblLives";
-			this.lblLives.Size = new System.Drawing.Size(53, 13);
-			this.lblLives.TabIndex = 14;
-			this.lblLives.Text = "Lives : 10";
+			this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox2.BackgroundImage = global::TowerDefenseGame.Properties.Resources.arcade_stick_by_gfball84887_d9i3x9t;
+			this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+			this.pictureBox2.Location = new System.Drawing.Point(770, 634);
+			this.pictureBox2.Name = "pictureBox2";
+			this.pictureBox2.Size = new System.Drawing.Size(218, 211);
+			this.pictureBox2.TabIndex = 10;
+			this.pictureBox2.TabStop = false;
+			// 
+			// panelField
+			// 
+			this.panelField.BackColor = System.Drawing.SystemColors.Control;
+			this.panelField.BackgroundImage = global::TowerDefenseGame.Properties.Resources.panelField_background;
+			this.panelField.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+			this.panelField.Location = new System.Drawing.Point(44, 39);
+			this.panelField.Name = "panelField";
+			this.panelField.Size = new System.Drawing.Size(720, 720);
+			this.panelField.TabIndex = 0;
 			// 
 			// Form1
 			// 

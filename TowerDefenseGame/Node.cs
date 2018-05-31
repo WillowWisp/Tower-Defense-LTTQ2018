@@ -41,6 +41,7 @@ namespace TowerDefenseGame
 				return;
 			BuildManager.Instance.BuildTurretOn(this);
 			BuildManager.Instance.turretToBuild = "none";
+			BuildManager.Instance.turretToBuildDirection = null;
 			Form1.ActiveForm.Cursor = Cursors.Default;
 		}
 	}
