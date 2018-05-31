@@ -11,22 +11,49 @@ namespace TowerDefenseGame
 	public class Bullet
 	{
 		public PictureBox picBullet;
-		int flyRange = 50;
+		int bulletRange;
+		int bulletSpeed;
 
-		Timer tmrFlyLeft;
+		//Khởi tạo trước để ta có thể dừng timer ở bất cứ đâu
+		Timer tmrFlyLeft = new Timer();
+		Timer tmrFlyRight = new Timer();
+		Timer tmrFlyUp = new Timer();
+		Timer tmrFlyDown = new Timer();
 
 		Timer tmrCheckCollision;
 
 		bool isDisposed = false;
 
-		public Bullet()
+		public Bullet(string turretType, string direction = null)
 		{
-			picBullet = new PictureBox()
+			if (turretType == "Chamander")
 			{
-				Height = 12,
-				Width = 12,
-				BackColor = Color.Black
-			};
+				picBullet = new PictureBox()
+				{
+					Height = 3,
+					Width = 12,
+					BackColor = Color.Black
+				};
+				bulletRange = 30;
+				bulletSpeed = 4;
+
+				if (direction == "Left")
+					FlyLeft();
+				if (direction == "Right")
+					FlyRight();
+				if (direction == "Up")
+				{
+					picBullet.Height = 12;
+					picBullet.Width = 3;
+					FlyUp();
+				}
+				if (direction == "Down")
+				{
+					picBullet.Height = 12;
+					picBullet.Width = 3;
+					FlyDown();
+				}
+			}
 
 			tmrCheckCollision = new Timer();
 			tmrCheckCollision.Interval = 30;
@@ -52,8 +79,7 @@ namespace TowerDefenseGame
 				if (picBullet.Bounds.IntersectsWith(enemy.picEnemy.Bounds) && !isDisposed && enemy.isAlive)
 				//isDisposed và isAlive để fix lỗi khi Dispose, control ko mất hoàn toàn			
 				{
-					this.picBullet.Dispose();
-					this.isDisposed = true;
+					this.Destroy();
 					enemy.Die();
 					enemiesToRemove.Add(enemy);
 					//Vì ta không xóa trực tiếp enemyList.Remove(enemy) trong foreach được nên phải xài List trung gian
@@ -73,22 +99,78 @@ namespace TowerDefenseGame
 			picBullet.BringToFront();
 		}
 
-		public void FlyLeft()
+		void Destroy()
 		{
-			tmrFlyLeft = new Timer();
+			this.picBullet.Dispose();
+			this.isDisposed = true;
+			tmrCheckCollision.Stop();
+			tmrFlyLeft.Stop();
+			tmrFlyRight.Stop();
+			tmrFlyUp.Stop();
+			tmrFlyDown.Stop();
+		}
+
+		void FlyLeft()
+		{
 			tmrFlyLeft.Interval = 10;
 			tmrFlyLeft.Start();
 			tmrFlyLeft.Tick += TmrFlyLeft_Tick;
 		}
 		private void TmrFlyLeft_Tick(object sender, EventArgs e)
 		{
-			picBullet.Left -= 3;
-			flyRange--;
-			if (flyRange <= 0)
+			picBullet.Left -= bulletSpeed;
+			bulletRange--;
+			if (bulletRange <= 0)
 			{
-				tmrFlyLeft.Stop();
-				picBullet.Dispose();
-				isDisposed = true;
+				Destroy();
+			}
+		}
+
+		void FlyRight()
+		{
+			tmrFlyRight.Interval = 10;
+			tmrFlyRight.Start();
+			tmrFlyRight.Tick += TmrFlyRight_Tick;
+		}
+		private void TmrFlyRight_Tick(object sender, EventArgs e)
+		{
+			picBullet.Left += bulletSpeed;
+			bulletRange--;
+			if (bulletRange <= 0)
+			{
+				Destroy();
+			}
+		}
+
+		void FlyUp()
+		{
+			tmrFlyUp.Interval = 10;
+			tmrFlyUp.Start();
+			tmrFlyUp.Tick += TmrFlyUp_Tick;
+		}
+		private void TmrFlyUp_Tick(object sender, EventArgs e)
+		{
+			picBullet.Top -= bulletSpeed;
+			bulletRange--;
+			if (bulletRange <= 0)
+			{
+				Destroy();
+			}
+		}
+
+		void FlyDown()
+		{
+			tmrFlyDown.Interval = 10;
+			tmrFlyDown.Start();
+			tmrFlyDown.Tick += TmrFlyDown_Tick;
+		}
+		private void TmrFlyDown_Tick(object sender, EventArgs e)
+		{
+			picBullet.Top += bulletSpeed;
+			bulletRange--;
+			if (bulletRange <= 0)
+			{
+				Destroy();
 			}
 		}
 	}

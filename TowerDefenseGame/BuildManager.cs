@@ -23,11 +23,12 @@ namespace TowerDefenseGame
 		#endregion
 
 		public string turretToBuild = "none";
-		
+		public string turretToBuildDirection;
+
 
 		public void BuildTurretOn(Node node)
 		{
-			Turret turret = new Turret();
+			Turret turret = new Turret(turretToBuild, turretToBuildDirection);
 			FieldManager.panelField.Controls.Add(turret.picTurret);
 			turret.picTurret.BringToFront();
 			turret.picTurret.Location = node.picNode.Location;

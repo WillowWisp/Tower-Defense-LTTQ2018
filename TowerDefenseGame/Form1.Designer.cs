@@ -70,6 +70,7 @@
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.btnChamander = new System.Windows.Forms.Button();
 			this.lblLives = new System.Windows.Forms.Label();
+			this.button1 = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -469,6 +470,7 @@
 			this.btnChamander.Size = new System.Drawing.Size(64, 64);
 			this.btnChamander.TabIndex = 13;
 			this.btnChamander.Tag = "50";
+			this.btnChamander.Text = "Trái";
 			this.btnChamander.UseVisualStyleBackColor = true;
 			this.btnChamander.Click += new System.EventHandler(this.btnChamander_Click);
 			// 
@@ -482,6 +484,19 @@
 			this.lblLives.TabIndex = 14;
 			this.lblLives.Text = "Lives : 10";
 			// 
+			// button1
+			// 
+			this.button1.BackgroundImage = global::TowerDefenseGame.Properties.Resources.chamander;
+			this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.button1.Location = new System.Drawing.Point(790, 222);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(64, 64);
+			this.button1.TabIndex = 13;
+			this.button1.Tag = "50";
+			this.button1.Text = "Phải";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -489,6 +504,7 @@
 			this.BackColor = System.Drawing.SystemColors.ActiveBorder;
 			this.ClientSize = new System.Drawing.Size(1000, 804);
 			this.Controls.Add(this.lblLives);
+			this.Controls.Add(this.button1);
 			this.Controls.Add(this.btnChamander);
 			this.Controls.Add(this.label31);
 			this.Controls.Add(this.pictureBox2);
@@ -555,6 +571,7 @@
 		private System.Windows.Forms.Label label31;
 		private System.Windows.Forms.Button btnChamander;
 		private System.Windows.Forms.Label lblLives;
+		private System.Windows.Forms.Button button1;
 	}
 }
 

@@ -30,7 +30,7 @@ namespace TowerDefenseGame
 		public Point target;//Vị trí waypoint đang đi tới
 
 		public Enemy()
-		{			
+		{
 			picEnemy = new PictureBox()
 			{
 				Height = height,

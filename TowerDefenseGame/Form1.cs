@@ -44,7 +44,14 @@ namespace TowerDefenseGame
 		
 		private void btnChamander_Click(object sender, EventArgs e)
 		{
-			BuildManager.Instance.turretToBuild = "chamander";
+			BuildManager.Instance.turretToBuild = "Chamander";
+			BuildManager.Instance.turretToBuildDirection = "Left";
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			BuildManager.Instance.turretToBuild = "Chamander";
+			BuildManager.Instance.turretToBuildDirection = "Right";
 		}
 	}
 }

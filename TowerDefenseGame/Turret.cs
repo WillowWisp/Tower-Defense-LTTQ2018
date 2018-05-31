@@ -11,38 +11,66 @@ namespace TowerDefenseGame
 	public class Turret
 	{
 		public PictureBox picTurret;
-		public int cost = 50;
+		string turretType = "none";
+		string direction;
 
-		Timer tmrShooting;
+		public int cost;
+		int delayPerShot;
+		
 
-		public Turret()
+		Timer tmrChamanderShoot;
+
+		public Turret(string _turretType, string _direction = null)
 		{
+			turretType = _turretType;
+			direction = _direction;
+
 			picTurret = new PictureBox()
 			{
 				Height = Constant.NODE_HEIGHT,
-				Width = Constant.NODE_WIDTH,
-				BackColor = Color.Transparent,
-				Image = Image.FromFile(Application.StartupPath + "\\Resources\\start1.png")
+				Width = Constant.NODE_WIDTH
 			};
 
 			//Chamander
+			if (turretType == "Chamander")
+			{
+				cost = 50;
+				delayPerShot = 800;
 
-			tmrShooting = new Timer();
-			tmrShooting.Interval = 1000;
-			tmrShooting.Start();
-			tmrShooting.Tick += TmrShooting_Tick;
+				if (direction == "Left")
+				{
+					picTurret.BackColor = Color.Red;
+					picTurret.Image = Image.FromFile(Application.StartupPath + "\\Resources\\start1.png");
+				}
+				if (direction == "Right")
+				{
+					picTurret.BackColor = Color.Green;
+				}
+				if (direction == "Up")
+				{
+					picTurret.BackColor = Color.Aqua;
+				}
+				if (direction == "Down")
+				{
+					picTurret.BackColor = Color.Gray;
+				}
+
+				tmrChamanderShoot = new Timer();
+				tmrChamanderShoot.Interval = delayPerShot;
+				tmrChamanderShoot.Start();
+				tmrChamanderShoot.Tick += TmrChamanderShoot_Tick;
+			}
 		}
 
-		private void TmrShooting_Tick(object sender, EventArgs e)
+		private void TmrChamanderShoot_Tick(object sender, EventArgs e)
 		{
-			Bullet bullet = new Bullet();
+			Bullet bullet = new Bullet(turretType, direction);
 			bullet.SpawnBulletAt(LeftCannonPoint());
-			bullet.FlyLeft();
 		}
 
 		Point LeftCannonPoint()
 		{
-			return new Point(picTurret.Location.X + 12, picTurret.Location.Y + 18);
+			return new Point(picTurret.Location.X + 21, picTurret.Location.Y + 21);
 		}
 	}
 }
