@@ -65,10 +65,10 @@ namespace TowerDefenseGame
 		private void TmrChamanderShoot_Tick(object sender, EventArgs e)
 		{
 			Bullet bullet = new Bullet(turretType, direction);
-			bullet.SpawnBulletAt(LeftCannonPoint());
+			bullet.SpawnBulletAt(ChamanderCenterPoint());
 		}
 
-		Point LeftCannonPoint()
+		Point ChamanderCenterPoint()
 		{
 			return new Point(picTurret.Location.X + 21, picTurret.Location.Y + 21);
 		}

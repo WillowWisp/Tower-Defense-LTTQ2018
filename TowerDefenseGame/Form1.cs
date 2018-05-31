@@ -15,6 +15,7 @@ namespace TowerDefenseGame
 		public Form1()
 		{
 			InitializeComponent();
+			KeyPreview = true;//Thuộc tính này phải được kích hoạt nếu muốn Form1 nhận KeyDown
 
 			FieldManager.panelField = panelField;
 			FieldManager.Instance.DrawNodes();
@@ -31,7 +32,7 @@ namespace TowerDefenseGame
 
 		private void tmrUpdateUI_Tick(object sender, EventArgs e)
 		{
-			label31.Text = ObjectManager.Instance.enemyList.Count.ToString();
+			label31.Text = BuildManager.Instance.turretToBuildDirection;
 
 			if (PlayerStats.money < int.Parse(btnChamander.Tag.ToString()))
 				btnChamander.Enabled = false;
@@ -46,12 +47,36 @@ namespace TowerDefenseGame
 		{
 			BuildManager.Instance.turretToBuild = "Chamander";
 			BuildManager.Instance.turretToBuildDirection = "Left";
+			Cursor = Cursors.PanWest;
 		}
 
-		private void button1_Click(object sender, EventArgs e)
+		private void Form1_KeyDown(object sender, KeyEventArgs e)
 		{
-			BuildManager.Instance.turretToBuild = "Chamander";
-			BuildManager.Instance.turretToBuildDirection = "Right";
+			if (e.KeyCode == Keys.R)
+			{
+				if (BuildManager.Instance.turretToBuild == "none")
+					return;
+				if (BuildManager.Instance.turretToBuildDirection == "Left")
+				{
+					BuildManager.Instance.turretToBuildDirection = "Up";
+					Cursor = Cursors.PanNorth;
+				}
+				else if (BuildManager.Instance.turretToBuildDirection == "Up")
+				{
+					BuildManager.Instance.turretToBuildDirection = "Right";
+					Cursor = Cursors.PanEast;
+				}
+				else if (BuildManager.Instance.turretToBuildDirection == "Right")
+				{
+					BuildManager.Instance.turretToBuildDirection = "Down";
+					Cursor = Cursors.PanSouth;
+				}
+				else if (BuildManager.Instance.turretToBuildDirection == "Down")
+				{
+					BuildManager.Instance.turretToBuildDirection = "Left";
+					Cursor = Cursors.PanWest;
+				}
+			}
 		}
 	}
 }
