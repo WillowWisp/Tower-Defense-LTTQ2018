@@ -205,6 +205,7 @@ namespace TowerDefenseGame
 		{
 			picEnemy.Dispose();
 			isAlive = false;
+			ClearMovement();
 			PlayerStats.money += moneyDrop;
 		}
 	}
