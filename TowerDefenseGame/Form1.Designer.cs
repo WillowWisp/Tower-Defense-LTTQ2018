@@ -38,16 +38,17 @@
 			this.btnChamander = new System.Windows.Forms.Button();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.panelField = new System.Windows.Forms.Panel();
+			this.btnKoffing = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// lblWaveLevel
 			// 
 			this.lblWaveLevel.AutoSize = true;
-			this.lblWaveLevel.Font = new System.Drawing.Font("ArcadeClassic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblWaveLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblWaveLevel.Location = new System.Drawing.Point(-1, 729);
 			this.lblWaveLevel.Name = "lblWaveLevel";
-			this.lblWaveLevel.Size = new System.Drawing.Size(152, 23);
+			this.lblWaveLevel.Size = new System.Drawing.Size(172, 29);
 			this.lblWaveLevel.TabIndex = 6;
 			this.lblWaveLevel.Text = "Wave  Level  X";
 			// 
@@ -56,7 +57,7 @@
 			this.btnSpawnWave.BackColor = System.Drawing.SystemColors.Control;
 			this.btnSpawnWave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 			this.btnSpawnWave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnSpawnWave.Font = new System.Drawing.Font("ArcadeClassic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnSpawnWave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSpawnWave.ForeColor = System.Drawing.SystemColors.ControlText;
 			this.btnSpawnWave.Location = new System.Drawing.Point(282, 726);
 			this.btnSpawnWave.Name = "btnSpawnWave";
@@ -69,10 +70,10 @@
 			// lblMoney
 			// 
 			this.lblMoney.AutoSize = true;
-			this.lblMoney.Font = new System.Drawing.Font("ArcadeClassic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblMoney.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblMoney.Location = new System.Drawing.Point(590, 729);
 			this.lblMoney.Name = "lblMoney";
-			this.lblMoney.Size = new System.Drawing.Size(133, 23);
+			this.lblMoney.Size = new System.Drawing.Size(155, 29);
 			this.lblMoney.TabIndex = 9;
 			this.lblMoney.Text = "Money   $100";
 			// 
@@ -110,14 +111,13 @@
 			this.btnChamander.Size = new System.Drawing.Size(64, 64);
 			this.btnChamander.TabIndex = 13;
 			this.btnChamander.Tag = "50";
-			this.btnChamander.Text = "Trái";
 			this.btnChamander.UseVisualStyleBackColor = true;
 			this.btnChamander.Click += new System.EventHandler(this.btnChamander_Click);
 			// 
 			// pictureBox2
 			// 
 			this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-			this.pictureBox2.BackgroundImage = global::TowerDefenseGame.Properties.Resources.arcade_stick_by_gfball84887_d9i3x9t;
+			this.pictureBox2.BackgroundImage = global::TowerDefenseGame.Properties.Resources.arcade_stick;
 			this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
 			this.pictureBox2.Location = new System.Drawing.Point(729, 512);
 			this.pictureBox2.Name = "pictureBox2";
@@ -128,12 +128,23 @@
 			// panelField
 			// 
 			this.panelField.BackColor = System.Drawing.SystemColors.Control;
-			this.panelField.BackgroundImage = global::TowerDefenseGame.Properties.Resources.panelField_background;
 			this.panelField.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
 			this.panelField.Location = new System.Drawing.Point(3, 3);
 			this.panelField.Name = "panelField";
 			this.panelField.Size = new System.Drawing.Size(720, 720);
 			this.panelField.TabIndex = 0;
+			// 
+			// btnKoffing
+			// 
+			this.btnKoffing.BackgroundImage = global::TowerDefenseGame.Properties.Resources.chamander;
+			this.btnKoffing.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.btnKoffing.Location = new System.Drawing.Point(729, 165);
+			this.btnKoffing.Name = "btnKoffing";
+			this.btnKoffing.Size = new System.Drawing.Size(64, 64);
+			this.btnKoffing.TabIndex = 13;
+			this.btnKoffing.Tag = "150";
+			this.btnKoffing.UseVisualStyleBackColor = true;
+			this.btnKoffing.Click += new System.EventHandler(this.btnKoffing_Click);
 			// 
 			// Form1
 			// 
@@ -142,6 +153,7 @@
 			this.BackColor = System.Drawing.SystemColors.ActiveBorder;
 			this.ClientSize = new System.Drawing.Size(950, 760);
 			this.Controls.Add(this.lblLives);
+			this.Controls.Add(this.btnKoffing);
 			this.Controls.Add(this.btnChamander);
 			this.Controls.Add(this.label31);
 			this.Controls.Add(this.pictureBox2);
@@ -171,6 +183,7 @@
 		private System.Windows.Forms.Label label31;
 		private System.Windows.Forms.Button btnChamander;
 		private System.Windows.Forms.Label lblLives;
+		private System.Windows.Forms.Button btnKoffing;
 	}
 }
 

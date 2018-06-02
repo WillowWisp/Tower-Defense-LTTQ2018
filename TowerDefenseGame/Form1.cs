@@ -54,7 +54,7 @@ namespace TowerDefenseGame
 		{
 			if (e.KeyCode == Keys.R)
 			{
-				if (BuildManager.Instance.turretToBuild == "none")
+				if (BuildManager.Instance.turretToBuild != "Charmander")
 					return;
 				if (BuildManager.Instance.turretToBuildDirection == "Left")
 				{
@@ -77,6 +77,11 @@ namespace TowerDefenseGame
 					Cursor = Cursors.PanWest;
 				}
 			}
+		}
+
+		private void btnKoffing_Click(object sender, EventArgs e)
+		{
+			BuildManager.Instance.turretToBuild = "Sniper";
 		}
 	}
 }

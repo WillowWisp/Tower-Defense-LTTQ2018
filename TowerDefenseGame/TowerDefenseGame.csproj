@@ -115,10 +115,10 @@
     <None Include="Resources\end1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\68420986-arcade-wallpapers.png" />
+    <None Include="Resources\arcade_wallpaper.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\arcade_stick_by_gfball84887-d9i3x9t.png" />
+    <None Include="Resources\arcade_stick.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\chamander.png" />

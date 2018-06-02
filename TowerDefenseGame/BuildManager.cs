@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace TowerDefenseGame
 {
@@ -32,6 +33,7 @@ namespace TowerDefenseGame
 			FieldManager.panelField.Controls.Add(turret.picTurret);
 			turret.picTurret.BringToFront();
 			turret.picTurret.Location = node.picNode.Location;
+			turret.rangeRectangle = new Rectangle((turret.picTurret.Location.X + 24) - 150, (turret.picTurret.Location.Y + 24) - 150, 300, 300);//Set tầm bắn cho turret = hình vuông cạnh 300
 			node.currentTurret = turret;
 
 			PlayerStats.money -= turret.cost;

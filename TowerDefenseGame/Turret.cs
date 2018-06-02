@@ -17,8 +17,14 @@ namespace TowerDefenseGame
 		public int cost;
 		int delayPerShot;
 		
-
+		//Chamander
 		Timer tmrChamanderShoot;
+
+
+		//Sniper
+		Timer tmrSeekAndShoot;
+		Enemy target;
+		public Rectangle rangeRectangle = new Rectangle();
 
 		public Turret(string _turretType, string _direction = null)
 		{
@@ -59,8 +65,23 @@ namespace TowerDefenseGame
 				tmrChamanderShoot.Start();
 				tmrChamanderShoot.Tick += TmrChamanderShoot_Tick;
 			}
+
+			//Sniper
+			if (turretType == "Sniper")
+			{
+				cost = 100;
+				delayPerShot = 400;
+
+				tmrSeekAndShoot = new Timer();
+				tmrSeekAndShoot.Interval = delayPerShot;
+				tmrSeekAndShoot.Tick += TmrSeekAndShoot_Tick;
+				tmrSeekAndShoot.Start();
+			}
 		}
 
+		
+
+		#region Chamander
 		private void TmrChamanderShoot_Tick(object sender, EventArgs e)
 		{
 			Bullet bullet = new Bullet(turretType, direction);
@@ -71,5 +92,34 @@ namespace TowerDefenseGame
 		{
 			return new Point(picTurret.Location.X + 21, picTurret.Location.Y + 21);
 		}
+		#endregion
+
+		#region Sniper
+		private void TmrSeekAndShoot_Tick(object sender, EventArgs e)
+		{
+			for (int i = 0; i < ObjectManager.Instance.enemyList.Count; i++)
+			{
+				target = ObjectManager.Instance.enemyList[i];
+
+				if (!target.isAlive)
+				{
+					ObjectManager.Instance.enemyList.RemoveAt(i);
+					i--;
+					continue;
+				}
+				if (rangeRectangle.Contains(target.picEnemy.Bounds))
+				{
+					Shoot(target);
+					break;
+				}
+			}
+		}
+		void Shoot(Enemy _target)
+		{
+			Bullet bullet = new Bullet("Sniper");
+			bullet.SeekTarget(target);
+			bullet.SpawnBulletAt(ChamanderCenterPoint());
+		}
+		#endregion
 	}
 }

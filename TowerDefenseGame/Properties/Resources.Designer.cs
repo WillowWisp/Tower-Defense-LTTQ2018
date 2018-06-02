@@ -63,9 +63,9 @@ namespace TowerDefenseGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _68420986_arcade_wallpapers {
+        internal static System.Drawing.Bitmap arcade_stick {
             get {
-                object obj = ResourceManager.GetObject("68420986-arcade-wallpapers", resourceCulture);
+                object obj = ResourceManager.GetObject("arcade_stick", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace TowerDefenseGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap arcade_stick_by_gfball84887_d9i3x9t {
+        internal static System.Drawing.Bitmap arcade_wallpaper {
             get {
-                object obj = ResourceManager.GetObject("arcade_stick_by_gfball84887-d9i3x9t", resourceCulture);
+                object obj = ResourceManager.GetObject("arcade_wallpaper", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -166,16 +166,6 @@ namespace TowerDefenseGame.Properties {
         internal static System.Drawing.Bitmap end1 {
             get {
                 object obj = ResourceManager.GetObject("end1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap panelField_background {
-            get {
-                object obj = ResourceManager.GetObject("panelField_background", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
