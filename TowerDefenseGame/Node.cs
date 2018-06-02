@@ -24,7 +24,7 @@ namespace TowerDefenseGame
             {
                 Height = height,
                 Width = width,
-                BackgroundImage = Image.FromFile(Application.StartupPath + "\\Resources\\cactus_top.png"),
+                BackgroundImage = Properties.Resources.cactus_top,
                 BackgroundImageLayout = ImageLayout.Stretch
             };
 

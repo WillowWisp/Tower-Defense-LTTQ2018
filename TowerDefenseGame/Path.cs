@@ -20,7 +20,7 @@ namespace TowerDefenseGame
             {
                 Height = height,
                 Width = width,
-                BackgroundImage = Image.FromFile(Application.StartupPath + "\\Resources\\brick_grey.png"),
+                BackgroundImage = Properties.Resources.brick_grey,
                 BackgroundImageLayout = ImageLayout.Stretch
             };
         }
