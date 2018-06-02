@@ -130,6 +130,7 @@
     <Content Include="Resources\CharmanderRight.gif" />
     <Content Include="Resources\CharmanderUp.gif" />
     <Content Include="Resources\down.png" />
+    <None Include="Resources\panelField_background.png" />
     <Content Include="Resources\Pik_Down.gif" />
     <Content Include="Resources\Pik_Left.gif" />
     <Content Include="Resources\Pik_Right.gif" />

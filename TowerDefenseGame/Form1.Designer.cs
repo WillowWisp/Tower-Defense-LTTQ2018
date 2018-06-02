@@ -128,6 +128,7 @@
 			// panelField
 			// 
 			this.panelField.BackColor = System.Drawing.SystemColors.Control;
+			this.panelField.BackgroundImage = global::TowerDefenseGame.Properties.Resources.panelField_background;
 			this.panelField.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
 			this.panelField.Location = new System.Drawing.Point(3, 3);
 			this.panelField.Name = "panelField";
