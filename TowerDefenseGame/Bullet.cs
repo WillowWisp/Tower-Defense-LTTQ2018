@@ -14,6 +14,7 @@ namespace TowerDefenseGame
 
 		Timer tmrCheckCollision;
 
+		float bulletDamage = 0;
 		bool isDisposed = false;
 
 		//Chamander
@@ -40,6 +41,7 @@ namespace TowerDefenseGame
 					Width = 6,
 					BackColor = Color.White
 				};
+				bulletDamage = 10;
 				bulletRange = 30;
 				bulletSpeed = 4;
 				
@@ -65,10 +67,11 @@ namespace TowerDefenseGame
 			{
 				picBullet = new PictureBox()
 				{
-					Height = 6,
-					Width = 6,
+					Height = 4,
+					Width = 4,
 					BackColor = Color.Black
 				};
+				bulletDamage = 5;
 
 				tmrChaseTarget.Interval = 10;
 				tmrChaseTarget.Tick += TmrChaseTarget_Tick;
@@ -100,16 +103,21 @@ namespace TowerDefenseGame
 				if (picBullet.Bounds.IntersectsWith(enemy.picEnemy.Bounds) && !isDisposed && enemy.isAlive)
 				//isDisposed và isAlive để fix lỗi khi Dispose, control ko mất hoàn toàn			
 				{
+					enemy.currentHP -= bulletDamage;
+					enemy.picCurrentHP.Width = (int)((enemy.currentHP / Enemy.totalHP)*36);//Giảm thanh máu của enemy
 					this.Destroy();
-					enemy.Die();
-					enemiesToRemove.Add(enemy);
-					//Vì ta không xóa trực tiếp enemyList.Remove(enemy) trong foreach được nên phải xài List trung gian
+					if (enemy.currentHP <= 0)
+					{
+						enemy.Die();
+						enemiesToRemove.Add(enemy);
+						//Vì ta không xóa trực tiếp enemyList.Remove(enemy) trong foreach được nên phải xài List trung gian
+					}
 				}
 			}
 
 			foreach (Enemy enemyToRemove in enemiesToRemove)
 			{
-				enemyList.Remove(enemyToRemove);
+				enemyList.Remove(enemyToRemove);//Xóa enemy đã chết trong enemyList thông qua list trung gian
 			}
 		}
 
@@ -130,6 +138,7 @@ namespace TowerDefenseGame
 			tmrFlyUp.Stop();
 			tmrFlyDown.Stop();
 		}
+
 
 		#region Chamander
 		void FlyLeft()

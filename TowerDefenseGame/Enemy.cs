@@ -14,6 +14,14 @@ namespace TowerDefenseGame
 		public PictureBox picEnemy;
 		int height = Constant.ENEMY_HEIGHT;
 		int width = Constant.ENEMY_WIDTH;
+
+		#region HP bar variables
+		PictureBox picTotalHP;
+		public PictureBox picCurrentHP;
+		#endregion
+
+		public static float totalHP = 50;
+		public float currentHP;
 		int moneyDrop = 25;
 		int moveSpeed = 2;
 
@@ -38,6 +46,26 @@ namespace TowerDefenseGame
 				BackColor = Color.Transparent,
 				SizeMode = PictureBoxSizeMode.Zoom,
 			};
+			currentHP = totalHP;
+
+			picTotalHP = new PictureBox()
+			{
+				Height = 5,
+				Width = 36,
+				BackColor = Color.Red
+			};
+			picEnemy.Controls.Add(picTotalHP);
+			picTotalHP.Location = new Point(0, 0);
+
+			picCurrentHP = new PictureBox()
+			{
+				Height = 5,
+				Width = 36,
+				BackColor = Color.Green
+			};
+			picTotalHP.Controls.Add(picCurrentHP);
+			picCurrentHP.Location = new Point(0, 0);
+			//picTotalHP chồng lên picEnemy; picCurrentHP chồng lên picTotalHP; Khi mất máu thì set lại Width picCurrentHP
 		}
 			
 		public void SpawnEnemy(Path path)
