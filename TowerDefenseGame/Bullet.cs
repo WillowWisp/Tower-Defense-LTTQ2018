@@ -25,7 +25,7 @@ namespace TowerDefenseGame
 		Timer tmrFlyUp = new Timer();
 		Timer tmrFlyDown = new Timer();
 
-		//Sniper
+		//Koffing
 		Enemy target;
 		Timer tmrChaseTarget = new Timer();
 		Point vectorToTarget = new Point(-1, -1);
@@ -63,13 +63,13 @@ namespace TowerDefenseGame
 				}
 			}
 
-			if (turretType == "Sniper")
+			if (turretType == "Koffing")
 			{
 				picBullet = new PictureBox()
 				{
-					Height = 4,
-					Width = 4,
-					BackColor = Color.Black
+					Height = 5,
+					Width = 5,
+					BackColor = Color.Orange
 				};
 				bulletDamage = 5;
 
@@ -206,7 +206,7 @@ namespace TowerDefenseGame
 		}
 		#endregion
 
-		#region Sniper
+		#region Koffing
 		public void SeekTarget(Enemy _target)
 		{
 			this.target = _target;

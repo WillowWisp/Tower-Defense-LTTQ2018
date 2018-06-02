@@ -21,7 +21,7 @@ namespace TowerDefenseGame
 		Timer tmrChamanderShoot;
 
 
-		//Sniper
+		//Koffing
 		Timer tmrSeekAndShoot;
 		Enemy target;
 		public Rectangle rangeRectangle = new Rectangle();
@@ -66,11 +66,13 @@ namespace TowerDefenseGame
 				tmrChamanderShoot.Tick += TmrChamanderShoot_Tick;
 			}
 
-			//Sniper
-			if (turretType == "Sniper")
+			//Koffing
+			if (turretType == "Koffing")
 			{
 				cost = 100;
 				delayPerShot = 400;
+
+				picTurret.Image = Properties.Resources.KoffingIdle;
 
 				tmrSeekAndShoot = new Timer();
 				tmrSeekAndShoot.Interval = delayPerShot;
@@ -94,9 +96,16 @@ namespace TowerDefenseGame
 		}
 		#endregion
 
-		#region Sniper
+		#region Koffing
 		private void TmrSeekAndShoot_Tick(object sender, EventArgs e)
 		{
+			if (ObjectManager.Instance.enemyList.Count <= 0)
+			//Xử lý 1 số trường hợp lag game khiến Koffing ko idle
+			{
+				picTurret.Image = Properties.Resources.KoffingIdle;
+				return;
+			}
+
 			for (int i = 0; i < ObjectManager.Instance.enemyList.Count; i++)
 			{
 				target = ObjectManager.Instance.enemyList[i];
@@ -107,16 +116,20 @@ namespace TowerDefenseGame
 					i--;
 					continue;
 				}
+
 				if (rangeRectangle.Contains(target.picEnemy.Bounds))
 				{
+					if (picTurret.Image != Properties.Resources.KoffingAttack)
+						picTurret.Image = Properties.Resources.KoffingAttack;
 					Shoot(target);
 					break;
 				}
+				else picTurret.Image = Properties.Resources.KoffingIdle;
 			}
 		}
 		void Shoot(Enemy _target)
 		{
-			Bullet bullet = new Bullet("Sniper");
+			Bullet bullet = new Bullet("Koffing");
 			bullet.SeekTarget(target);
 			bullet.SpawnBulletAt(ChamanderCenterPoint());
 		}

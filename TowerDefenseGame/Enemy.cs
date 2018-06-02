@@ -50,7 +50,7 @@ namespace TowerDefenseGame
 
 			picTotalHP = new PictureBox()
 			{
-				Height = 5,
+				Height = 4,
 				Width = 36,
 				BackColor = Color.Red
 			};
@@ -59,7 +59,7 @@ namespace TowerDefenseGame
 
 			picCurrentHP = new PictureBox()
 			{
-				Height = 5,
+				Height = 4,
 				Width = 36,
 				BackColor = Color.Green
 			};

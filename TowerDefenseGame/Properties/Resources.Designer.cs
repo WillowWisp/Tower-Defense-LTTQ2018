@@ -173,6 +173,36 @@ namespace TowerDefenseGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap KoffingAttack {
+            get {
+                object obj = ResourceManager.GetObject("KoffingAttack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap KoffingButton {
+            get {
+                object obj = ResourceManager.GetObject("KoffingButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap KoffingIdle {
+            get {
+                object obj = ResourceManager.GetObject("KoffingIdle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap panelField_background {
             get {
                 object obj = ResourceManager.GetObject("panelField_background", resourceCulture);

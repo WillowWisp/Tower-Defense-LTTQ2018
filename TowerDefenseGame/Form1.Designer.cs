@@ -35,10 +35,10 @@
 			this.tmrUpdateUI = new System.Windows.Forms.Timer(this.components);
 			this.label31 = new System.Windows.Forms.Label();
 			this.lblLives = new System.Windows.Forms.Label();
+			this.btnKoffing = new System.Windows.Forms.Button();
 			this.btnChamander = new System.Windows.Forms.Button();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.panelField = new System.Windows.Forms.Panel();
-			this.btnKoffing = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -86,7 +86,7 @@
 			// label31
 			// 
 			this.label31.AutoSize = true;
-			this.label31.Location = new System.Drawing.Point(729, 130);
+			this.label31.Location = new System.Drawing.Point(729, 268);
 			this.label31.Name = "label31";
 			this.label31.Size = new System.Drawing.Size(41, 13);
 			this.label31.TabIndex = 12;
@@ -101,6 +101,18 @@
 			this.lblLives.Size = new System.Drawing.Size(53, 13);
 			this.lblLives.TabIndex = 14;
 			this.lblLives.Text = "Lives : 10";
+			// 
+			// btnKoffing
+			// 
+			this.btnKoffing.BackgroundImage = global::TowerDefenseGame.Properties.Resources.KoffingButton;
+			this.btnKoffing.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.btnKoffing.Location = new System.Drawing.Point(729, 73);
+			this.btnKoffing.Name = "btnKoffing";
+			this.btnKoffing.Size = new System.Drawing.Size(64, 64);
+			this.btnKoffing.TabIndex = 13;
+			this.btnKoffing.Tag = "150";
+			this.btnKoffing.UseVisualStyleBackColor = true;
+			this.btnKoffing.Click += new System.EventHandler(this.btnKoffing_Click);
 			// 
 			// btnChamander
 			// 
@@ -134,18 +146,6 @@
 			this.panelField.Name = "panelField";
 			this.panelField.Size = new System.Drawing.Size(720, 720);
 			this.panelField.TabIndex = 0;
-			// 
-			// btnKoffing
-			// 
-			this.btnKoffing.BackgroundImage = global::TowerDefenseGame.Properties.Resources.chamander;
-			this.btnKoffing.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.btnKoffing.Location = new System.Drawing.Point(729, 165);
-			this.btnKoffing.Name = "btnKoffing";
-			this.btnKoffing.Size = new System.Drawing.Size(64, 64);
-			this.btnKoffing.TabIndex = 13;
-			this.btnKoffing.Tag = "150";
-			this.btnKoffing.UseVisualStyleBackColor = true;
-			this.btnKoffing.Click += new System.EventHandler(this.btnKoffing_Click);
 			// 
 			// Form1
 			// 

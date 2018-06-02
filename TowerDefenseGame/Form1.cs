@@ -20,7 +20,7 @@ namespace TowerDefenseGame
 			FieldManager.panelField = panelField;
 			FieldManager.Instance.DrawNodes();
             FieldManager.Instance.DesignPath();
-
+			
 			lblWaveLevel.Text = "Wave   Level   " + WaveSpawner.level.ToString();
 		}
 
@@ -37,6 +37,10 @@ namespace TowerDefenseGame
 			if (PlayerStats.money < int.Parse(btnChamander.Tag.ToString()))
 				btnChamander.Enabled = false;
 			else btnChamander.Enabled = true;
+
+			if (PlayerStats.money < int.Parse(btnKoffing.Tag.ToString()))
+				btnKoffing.Enabled = false;
+			else btnKoffing.Enabled = true;
 
 			lblMoney.Text = "Money   $" + PlayerStats.money;
 
@@ -81,7 +85,8 @@ namespace TowerDefenseGame
 
 		private void btnKoffing_Click(object sender, EventArgs e)
 		{
-			BuildManager.Instance.turretToBuild = "Sniper";
+			BuildManager.Instance.turretToBuild = "Koffing";
+			Cursor = Cursors.Default;
 		}
 	}
 }
