@@ -27,6 +27,11 @@ namespace TowerDefenseGame.Resources
 			timer.Interval = 30;
 			timer.Tick += Timer_Tick;
 			timer.Start();
+
+			pcbStart.Controls.Add(lbName);
+			pcbStart.Controls.Add(pcbUp);
+			pcbStart.Controls.Add(lbOption);
+			pcbStart.Controls.Add(pcbDown);
 		}
 
 		private void Timer_Tick(object sender, EventArgs e)

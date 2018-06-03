@@ -138,6 +138,7 @@
     <Content Include="Resources\Pik_Left.gif" />
     <Content Include="Resources\Pik_Right.gif" />
     <Content Include="Resources\Pik_Up.gif" />
+    <Content Include="Resources\pokeball.gif" />
     <Content Include="Resources\up.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
