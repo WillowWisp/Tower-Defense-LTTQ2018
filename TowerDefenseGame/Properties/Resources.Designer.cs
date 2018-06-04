@@ -63,26 +63,6 @@ namespace TowerDefenseGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap arcade_stick {
-            get {
-                object obj = ResourceManager.GetObject("arcade_stick", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap arcade_wallpaper {
-            get {
-                object obj = ResourceManager.GetObject("arcade_wallpaper", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap brick_grey {
             get {
                 object obj = ResourceManager.GetObject("brick_grey", resourceCulture);
@@ -163,16 +143,6 @@ namespace TowerDefenseGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap end1 {
-            get {
-                object obj = ResourceManager.GetObject("end1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap KoffingAttack {
             get {
                 object obj = ResourceManager.GetObject("KoffingAttack", resourceCulture);
@@ -196,6 +166,26 @@ namespace TowerDefenseGame.Properties {
         internal static System.Drawing.Bitmap KoffingIdle {
             get {
                 object obj = ResourceManager.GetObject("KoffingIdle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lMMX2resized {
+            get {
+                object obj = ResourceManager.GetObject("lMMX2resized", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Megaevo {
+            get {
+                object obj = ResourceManager.GetObject("Megaevo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -256,26 +246,6 @@ namespace TowerDefenseGame.Properties {
         internal static System.Drawing.Bitmap pokeball {
             get {
                 object obj = ResourceManager.GetObject("pokeball", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap start {
-            get {
-                object obj = ResourceManager.GetObject("start", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap start1 {
-            get {
-                object obj = ResourceManager.GetObject("start1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

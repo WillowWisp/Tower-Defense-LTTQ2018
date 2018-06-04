@@ -41,7 +41,7 @@ namespace TowerDefenseGame
 					Width = 6,
 					BackColor = Color.White
 				};
-				bulletDamage = 10;
+				bulletDamage = 20;
 				bulletRange = 30;
 				bulletSpeed = 4;
 				

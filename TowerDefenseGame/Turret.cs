@@ -69,7 +69,7 @@ namespace TowerDefenseGame
 			//Koffing
 			if (turretType == "Koffing")
 			{
-				cost = 100;
+				cost = 150;
 				delayPerShot = 400;
 
 				picTurret.Image = Properties.Resources.KoffingIdle;

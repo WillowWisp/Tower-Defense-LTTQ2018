@@ -182,9 +182,7 @@ namespace TowerDefenseGame
 
 		void SetStartEnd()
 		{
-			pathList[0].picPath.Image = Properties.Resources.start1;
 			pathList[0].picPath.Tag = "Start";
-			pathList[pathList.Count - 1].picPath.Image = Properties.Resources.end1;
 			pathList[pathList.Count - 1].picPath.Tag = "End";
 		}
 		
