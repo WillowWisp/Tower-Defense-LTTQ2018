@@ -31,47 +31,67 @@ namespace TowerDefenseGame
 		Point vectorToTarget = new Point(-1, -1);
 		int step = 30;
 
-		public Bullet(string turretType, string direction = null)
+		public Bullet(string turretType, int evolveStage, string direction = null)
 		{
 			if (turretType == "Charmander")
 			{
-				picBullet = new PictureBox()
+				if (evolveStage == 1)
 				{
-					Height = 3,
-					Width = 6,
-					BackColor = Color.White
-				};
-				bulletDamage = 20;
-				bulletRange = 30;
-				bulletSpeed = 4;
-				
+					picBullet = new PictureBox()
+					{
+						Height = 4,
+						Width = 4,
+						BackColor = Color.White
+					};
+					bulletDamage = 20;
+					bulletRange = 30;
+					bulletSpeed = 4;
+				}
+
+				if (evolveStage == 2)
+				{
+					picBullet = new PictureBox()
+					{
+						Height = 6,
+						Width = 6,
+						BackColor = Color.Red
+					};
+					bulletDamage = 30;
+					bulletRange = 50;
+					bulletSpeed = 5;
+				}
+
 				if (direction == "Left")
 					FlyLeft();
 				if (direction == "Right")
 					FlyRight();
-				if (direction == "Up")
-				{
-					picBullet.Height = 6;
-					picBullet.Width = 3;
-					FlyUp();
-				}
+				if (direction == "Up")FlyUp();
 				if (direction == "Down")
-				{
-					picBullet.Height = 6;
-					picBullet.Width = 3;
 					FlyDown();
-				}
 			}
 
 			if (turretType == "Koffing")
 			{
-				picBullet = new PictureBox()
+				if (evolveStage == 1)
 				{
-					Height = 5,
-					Width = 5,
-					BackColor = Color.Orange
-				};
-				bulletDamage = 5;
+					picBullet = new PictureBox()
+					{
+						Height = 5,
+						Width = 5,
+						BackColor = Color.Orange
+					};
+					bulletDamage = 5;
+				}
+				if (evolveStage == 2)
+				{
+					picBullet = new PictureBox()
+					{
+						Height = 7,
+						Width = 7,
+						BackColor = Color.Orange
+					};
+					bulletDamage = 7;
+				}
 
 				tmrChaseTarget.Interval = 10;
 				tmrChaseTarget.Tick += TmrChaseTarget_Tick;

@@ -52,6 +52,7 @@
 			this.label6 = new System.Windows.Forms.Label();
 			this.picKoffingShop = new System.Windows.Forms.PictureBox();
 			this.tmrEvolutionRainbow = new System.Windows.Forms.Timer(this.components);
+			this.label1 = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.panel2.SuspendLayout();
@@ -176,6 +177,7 @@
 			this.btnEvolution.TabIndex = 3;
 			this.btnEvolution.Text = "Select";
 			this.btnEvolution.UseVisualStyleBackColor = true;
+			this.btnEvolution.Click += new System.EventHandler(this.btnEvolution_Click);
 			// 
 			// label2
 			// 
@@ -299,6 +301,15 @@
 			this.tmrEvolutionRainbow.Interval = 50;
 			this.tmrEvolutionRainbow.Tick += new System.EventHandler(this.tmrEvolutionRainbow_Tick);
 			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(56, 498);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(35, 13);
+			this.label1.TabIndex = 16;
+			this.label1.Text = "label1";
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -307,6 +318,7 @@
 			this.BackgroundImage = global::TowerDefenseGame.Properties.Resources.lMMX2resized;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(1227, 743);
+			this.Controls.Add(this.label1);
 			this.Controls.Add(this.panel3);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel1);
@@ -359,6 +371,7 @@
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.PictureBox picKoffingShop;
 		private System.Windows.Forms.Timer tmrEvolutionRainbow;
+		private System.Windows.Forms.Label label1;
 	}
 }
 

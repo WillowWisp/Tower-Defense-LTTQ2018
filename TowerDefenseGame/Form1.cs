@@ -33,17 +33,19 @@ namespace TowerDefenseGame
 		private void tmrUpdateUI_Tick(object sender, EventArgs e)
 		{
 
-			if (PlayerStats.money < int.Parse(btnChamander.Tag.ToString()))
+			if (PlayerStats.money < Constant.CHARMANDER_COST)
 				btnChamander.Enabled = false;
 			else btnChamander.Enabled = true;
 
-			if (PlayerStats.money < int.Parse(btnKoffing.Tag.ToString()))
+			if (PlayerStats.money < Constant.KOFFING_COST)
 				btnKoffing.Enabled = false;
 			else btnKoffing.Enabled = true;
 
 			lblMoney.Text = "Money   $" + PlayerStats.money;
 
 			lblLives.Text = "Lives : " + PlayerStats.lives.ToString();
+
+			label1.Text = BuildManager.Instance.turretToBuild;
 		}
 		
 		private void btnChamander_Click(object sender, EventArgs e)
@@ -192,6 +194,11 @@ namespace TowerDefenseGame
 			ColorRGB c = HSL2RGB(rainbowIndex, 0.5, 0.5);
 			lblEvolutionTitle.ForeColor = c;
 			rainbowIndex += 0.1;
+		}
+
+		private void btnEvolution_Click(object sender, EventArgs e)
+		{
+			BuildManager.Instance.turretToBuild = "Evolution";
 		}
 	}
 }

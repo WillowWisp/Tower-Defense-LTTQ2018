@@ -15,5 +15,8 @@ namespace TowerDefenseGame
 
 		public static int ENEMY_HEIGHT = 36;
 		public static int ENEMY_WIDTH = 36;
+
+		public static int CHARMANDER_COST = 50;
+		public static int KOFFING_COST = 150;
 	}
 }

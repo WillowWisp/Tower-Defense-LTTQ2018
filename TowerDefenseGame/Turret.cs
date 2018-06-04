@@ -12,6 +12,7 @@ namespace TowerDefenseGame
 	{
 		public PictureBox picTurret;
 		string turretType = "none";
+		int evolveStage = 1;
 		string direction;
 
 		public int cost;
@@ -40,7 +41,7 @@ namespace TowerDefenseGame
 			//Chamander
 			if (turretType == "Charmander")
 			{
-				cost = 50;
+				cost = Constant.CHARMANDER_COST;
 				delayPerShot = 800;
 
 				if (direction == "Left")
@@ -69,8 +70,8 @@ namespace TowerDefenseGame
 			//Koffing
 			if (turretType == "Koffing")
 			{
-				cost = 150;
-				delayPerShot = 400;
+				cost = Constant.KOFFING_COST;
+				delayPerShot = 600;
 
 				picTurret.Image = Properties.Resources.KoffingIdle;
 
@@ -79,14 +80,41 @@ namespace TowerDefenseGame
 				tmrSeekAndShoot.Tick += TmrSeekAndShoot_Tick;
 				tmrSeekAndShoot.Start();
 			}
+
+			//Evolution
+			picTurret.MouseClick += PicTurret_MouseClick;
 		}
 
-		
+		private void PicTurret_MouseClick(object sender, MouseEventArgs e)
+		{
+			if (BuildManager.Instance.turretToBuild != "Evolution")
+				return;
+			if (turretType == "Charmander" && evolveStage == 1)
+			{
+				if (PlayerStats.money < 100)
+					return;
+				PlayerStats.money -= 100;
+				delayPerShot = 500;
+				tmrChamanderShoot.Interval = delayPerShot;
+				evolveStage = 2;
+			}
+			if (turretType == "Koffing" && evolveStage == 1)
+			{
+				if (PlayerStats.money < 150)
+					return;
+				PlayerStats.money -= 150;
+				delayPerShot = 400;
+				tmrSeekAndShoot.Interval = delayPerShot;
+				evolveStage = 2;
+			}
+		}
+
+
 
 		#region Chamander
 		private void TmrChamanderShoot_Tick(object sender, EventArgs e)
 		{
-			Bullet bullet = new Bullet(turretType, direction);
+			Bullet bullet = new Bullet(turretType, evolveStage, direction);
 			bullet.SpawnBulletAt(ChamanderCenterPoint());
 		}
 
@@ -129,7 +157,7 @@ namespace TowerDefenseGame
 		}
 		void Shoot(Enemy _target)
 		{
-			Bullet bullet = new Bullet("Koffing");
+			Bullet bullet = new Bullet("Koffing", evolveStage);
 			bullet.SeekTarget(target);
 			bullet.SpawnBulletAt(ChamanderCenterPoint());
 		}

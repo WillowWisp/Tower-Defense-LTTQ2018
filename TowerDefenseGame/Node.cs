@@ -37,7 +37,7 @@ namespace TowerDefenseGame
 			{
 				return;
 			}
-			if (BuildManager.Instance.turretToBuild == "none")
+			if (BuildManager.Instance.turretToBuild == "none" || BuildManager.Instance.turretToBuild == "Evolution")
 				return;
 			BuildManager.Instance.BuildTurretOn(this);
 			BuildManager.Instance.turretToBuild = "none";
