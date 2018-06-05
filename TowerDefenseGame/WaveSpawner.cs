@@ -25,12 +25,22 @@ namespace TowerDefenseGame
 
 		public static int level = 1;
 		public static int enemyLeft;
+		bool isBossWave = false;
 
 		Timer tmrSpawnEnemy;
 
 		public void SpawnWave()
 		{
-			enemyLeft = level * 2;
+			if (level >= 5)
+			{
+				isBossWave = true;
+				enemyLeft = 1;
+			}
+			else
+			{
+				enemyLeft = level * 3;
+				Constant.PIKACHU_HP += (level * 40);
+			}
 			tmrSpawnEnemy = new Timer();
 			tmrSpawnEnemy.Interval = 500;
 			tmrSpawnEnemy.Start();
@@ -46,7 +56,7 @@ namespace TowerDefenseGame
 				tmrSpawnEnemy.Stop();
 				return;
 			}
-			Enemy enemy = new Enemy();
+			Enemy enemy = new Enemy(isBossWave);
 			enemy.SpawnEnemy(FieldManager.Instance.pathList[0]);
 			ObjectManager.Instance.enemyList.Add(enemy);
 			enemy.MoveThroughWaypoints(FieldManager.Instance.waypointList);

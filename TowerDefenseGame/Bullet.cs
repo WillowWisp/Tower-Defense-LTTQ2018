@@ -56,7 +56,7 @@ namespace TowerDefenseGame
 						Width = 6,
 						BackColor = Color.OrangeRed
 					};
-					bulletDamage = 30;
+					bulletDamage = 50;
 					bulletRange = 50;
 					bulletSpeed = 5;
 				}
@@ -81,17 +81,17 @@ namespace TowerDefenseGame
 						Width = 5,
 						BackColor = Color.Orange
 					};
-					bulletDamage = 5;
+					bulletDamage = 6;
 				}
 				if (evolveStage == 2)
 				{
 					picBullet = new PictureBox()
 					{
 						Height = 7,
-						Width = 7,
+						Width = 9,
 						BackColor = Color.Orange
 					};
-					bulletDamage = 7;
+					bulletDamage = 15;
 				}
 
 				tmrChaseTarget.Interval = 10;
@@ -125,7 +125,7 @@ namespace TowerDefenseGame
 				//isDisposed và isAlive để fix lỗi khi Dispose, control ko mất hoàn toàn			
 				{
 					enemy.currentHP -= bulletDamage;
-					enemy.picCurrentHP.Width = (int)((enemy.currentHP / Enemy.totalHP)*36);//Giảm thanh máu của enemy
+					enemy.picCurrentHP.Width = (int)((enemy.currentHP / enemy.totalHP) *36);//Giảm thanh máu của enemy
 					this.Destroy();
 					if (enemy.currentHP <= 0)
 					{

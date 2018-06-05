@@ -20,7 +20,7 @@ namespace TowerDefenseGame
 		public PictureBox picCurrentHP;
 		#endregion
 
-		public static float totalHP = 50;
+		public float totalHP = 50;
 		public float currentHP;
 		int moneyDrop = 25;
 		int moveSpeed = 2;
@@ -30,6 +30,11 @@ namespace TowerDefenseGame
 		Timer tmrMoveDown;
 		Timer tmrMoveUp;
 		Timer tmrCheckWaypoint;
+
+		Image enemyUpGif;
+		Image enemyDownGif;
+		Image enemyLeftGif;
+		Image enemyRightGif;
 		
 		public bool isAlive = true;
 
@@ -37,8 +42,27 @@ namespace TowerDefenseGame
 
 		public Point target;//Vị trí waypoint đang đi tới
 
-		public Enemy()
+		public Enemy(bool isBoss = false)
 		{
+			if (!isBoss)
+			{
+				enemyUpGif = Properties.Resources.Pik_Up;
+				enemyDownGif = Properties.Resources.Pik_Down;
+				enemyLeftGif = Properties.Resources.Pik_Left;
+				enemyRightGif = Properties.Resources.Pik_Right;
+				totalHP = Constant.PIKACHU_HP;
+				moneyDrop += (WaveSpawner.level - 1) * 20;
+			}
+			else
+			{
+				enemyUpGif = Properties.Resources.EnteiUp;
+				enemyDownGif = Properties.Resources.EnteiDown;
+				enemyLeftGif = Properties.Resources.EnteiLeft;
+				enemyRightGif = Properties.Resources.EnteiRight;
+				moveSpeed = 1;
+				totalHP = 5000;
+			}
+
 			picEnemy = new PictureBox()
 			{
 				Height = height,
@@ -124,7 +148,7 @@ namespace TowerDefenseGame
 			picEnemy.Left += moveSpeed;
 			if ((string)picEnemy.Tag != "FaceRight")
 			{
-				picEnemy.Image = Properties.Resources.Pik_Right;
+				picEnemy.Image = enemyRightGif;
 				picEnemy.Tag = "FaceRight";
 			}
 		}
@@ -141,7 +165,7 @@ namespace TowerDefenseGame
 			picEnemy.Left -= moveSpeed;
 			if ((string)picEnemy.Tag != "FaceLeft")
 			{
-				picEnemy.Image = Properties.Resources.Pik_Left;
+				picEnemy.Image = enemyLeftGif;
 				picEnemy.Tag = "FaceLeft";
 			}
 		}
@@ -158,7 +182,7 @@ namespace TowerDefenseGame
 			picEnemy.Top += moveSpeed;
 			if ((string)picEnemy.Tag != "FaceDown")
 			{
-				picEnemy.Image = Properties.Resources.Pik_Down;
+				picEnemy.Image = enemyDownGif;
 				picEnemy.Tag = "FaceDown";
 			}
 		}
@@ -175,7 +199,7 @@ namespace TowerDefenseGame
 			picEnemy.Top -= moveSpeed;
 			if ((string)picEnemy.Tag != "FaceUp")
 			{
-				picEnemy.Image = Properties.Resources.Pik_Up;
+				picEnemy.Image = enemyUpGif;
 				picEnemy.Tag = "FaceUp";
 			}
 		}

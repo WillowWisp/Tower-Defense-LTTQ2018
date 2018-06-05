@@ -42,11 +42,11 @@
 			this.lblEvolutionDesc = new System.Windows.Forms.Label();
 			this.lblEvolutionTitle = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.panel2 = new System.Windows.Forms.Panel();
+			this.pnlCharmander = new System.Windows.Forms.Panel();
 			this.lblCharDesc = new System.Windows.Forms.Label();
 			this.lblCharTitle = new System.Windows.Forms.Label();
 			this.picChamanderShop = new System.Windows.Forms.PictureBox();
-			this.panel3 = new System.Windows.Forms.Panel();
+			this.pnlKoffing = new System.Windows.Forms.Panel();
 			this.lblKofDesc = new System.Windows.Forms.Label();
 			this.lblKoffTitle = new System.Windows.Forms.Label();
 			this.picKoffingShop = new System.Windows.Forms.PictureBox();
@@ -56,9 +56,9 @@
 			this.picSelecting = new System.Windows.Forms.PictureBox();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-			this.panel2.SuspendLayout();
+			this.pnlCharmander.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.picChamanderShop)).BeginInit();
-			this.panel3.SuspendLayout();
+			this.pnlKoffing.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.picKoffingShop)).BeginInit();
 			this.panel4.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.picSelecting)).BeginInit();
@@ -213,18 +213,18 @@
 			this.pictureBox1.TabIndex = 0;
 			this.pictureBox1.TabStop = false;
 			// 
-			// panel2
+			// pnlCharmander
 			// 
-			this.panel2.BackColor = System.Drawing.Color.Transparent;
-			this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel2.Controls.Add(this.lblCharDesc);
-			this.panel2.Controls.Add(this.lblCharTitle);
-			this.panel2.Controls.Add(this.picChamanderShop);
-			this.panel2.Controls.Add(this.btnChamander);
-			this.panel2.Location = new System.Drawing.Point(12, 12);
-			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(289, 122);
-			this.panel2.TabIndex = 15;
+			this.pnlCharmander.BackColor = System.Drawing.Color.Transparent;
+			this.pnlCharmander.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.pnlCharmander.Controls.Add(this.lblCharDesc);
+			this.pnlCharmander.Controls.Add(this.lblCharTitle);
+			this.pnlCharmander.Controls.Add(this.picChamanderShop);
+			this.pnlCharmander.Controls.Add(this.btnChamander);
+			this.pnlCharmander.Location = new System.Drawing.Point(12, 12);
+			this.pnlCharmander.Name = "pnlCharmander";
+			this.pnlCharmander.Size = new System.Drawing.Size(289, 122);
+			this.pnlCharmander.TabIndex = 15;
 			// 
 			// lblCharDesc
 			// 
@@ -232,7 +232,7 @@
 			this.lblCharDesc.Name = "lblCharDesc";
 			this.lblCharDesc.Size = new System.Drawing.Size(167, 56);
 			this.lblCharDesc.TabIndex = 2;
-			this.lblCharDesc.Text = "- Shoot in a line\r\n- Attack speed : 0,8/s\r\n- Damage : 20\r\n- Cost : $50";
+			this.lblCharDesc.Text = "- Shoot in a line\r\n- Attack speed : Normal\r\n- Damage : 20\r\n- Cost : $50";
 			// 
 			// lblCharTitle
 			// 
@@ -256,18 +256,18 @@
 			this.picChamanderShop.TabIndex = 0;
 			this.picChamanderShop.TabStop = false;
 			// 
-			// panel3
+			// pnlKoffing
 			// 
-			this.panel3.BackColor = System.Drawing.Color.Transparent;
-			this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel3.Controls.Add(this.lblKofDesc);
-			this.panel3.Controls.Add(this.lblKoffTitle);
-			this.panel3.Controls.Add(this.picKoffingShop);
-			this.panel3.Controls.Add(this.btnKoffing);
-			this.panel3.Location = new System.Drawing.Point(12, 140);
-			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(289, 122);
-			this.panel3.TabIndex = 15;
+			this.pnlKoffing.BackColor = System.Drawing.Color.Transparent;
+			this.pnlKoffing.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.pnlKoffing.Controls.Add(this.lblKofDesc);
+			this.pnlKoffing.Controls.Add(this.lblKoffTitle);
+			this.pnlKoffing.Controls.Add(this.picKoffingShop);
+			this.pnlKoffing.Controls.Add(this.btnKoffing);
+			this.pnlKoffing.Location = new System.Drawing.Point(12, 140);
+			this.pnlKoffing.Name = "pnlKoffing";
+			this.pnlKoffing.Size = new System.Drawing.Size(289, 122);
+			this.pnlKoffing.TabIndex = 15;
 			// 
 			// lblKofDesc
 			// 
@@ -275,7 +275,7 @@
 			this.lblKofDesc.Name = "lblKofDesc";
 			this.lblKofDesc.Size = new System.Drawing.Size(167, 56);
 			this.lblKofDesc.TabIndex = 2;
-			this.lblKofDesc.Text = "- Seek target around\r\n- Attack speed : 0.4/s\r\n- Damage : 5\r\n- Cost : $150";
+			this.lblKofDesc.Text = "- Seek target around\r\n- Attack speed : Fast\r\n- Damage : 5\r\n- Cost : $75";
 			// 
 			// lblKoffTitle
 			// 
@@ -330,9 +330,9 @@
 			// 
 			this.picSelecting.BackColor = System.Drawing.Color.Transparent;
 			this.picSelecting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-			this.picSelecting.Location = new System.Drawing.Point(284, 517);
+			this.picSelecting.Location = new System.Drawing.Point(269, 502);
 			this.picSelecting.Name = "picSelecting";
-			this.picSelecting.Size = new System.Drawing.Size(100, 100);
+			this.picSelecting.Size = new System.Drawing.Size(128, 128);
 			this.picSelecting.TabIndex = 0;
 			this.picSelecting.TabStop = false;
 			// 
@@ -345,8 +345,8 @@
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(1227, 743);
 			this.Controls.Add(this.panel4);
-			this.Controls.Add(this.panel3);
-			this.Controls.Add(this.panel2);
+			this.Controls.Add(this.pnlKoffing);
+			this.Controls.Add(this.pnlCharmander);
 			this.Controls.Add(this.picSelecting);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.lblLives);
@@ -363,11 +363,11 @@
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-			this.panel2.ResumeLayout(false);
-			this.panel2.PerformLayout();
+			this.pnlCharmander.ResumeLayout(false);
+			this.pnlCharmander.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.picChamanderShop)).EndInit();
-			this.panel3.ResumeLayout(false);
-			this.panel3.PerformLayout();
+			this.pnlKoffing.ResumeLayout(false);
+			this.pnlKoffing.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.picKoffingShop)).EndInit();
 			this.panel4.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.picSelecting)).EndInit();
@@ -391,11 +391,11 @@
 		private System.Windows.Forms.Label lblEvolutionTitle;
 		private System.Windows.Forms.Label lblEvolutionDesc;
 		private System.Windows.Forms.Button btnEvolution;
-		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.Panel pnlCharmander;
 		private System.Windows.Forms.Label lblCharDesc;
 		private System.Windows.Forms.Label lblCharTitle;
 		private System.Windows.Forms.PictureBox picChamanderShop;
-		private System.Windows.Forms.Panel panel3;
+		private System.Windows.Forms.Panel pnlKoffing;
 		private System.Windows.Forms.Label lblKofDesc;
 		private System.Windows.Forms.Label lblKoffTitle;
 		private System.Windows.Forms.PictureBox picKoffingShop;

@@ -199,4 +199,16 @@
   <data name="Koffing_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\koffing_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="EnteiDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\animation\enteidown.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EnteiUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\animation\enteiup.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EnteiLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\animation\enteileft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EnteiRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\animation\enteiright.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -118,6 +118,10 @@
     <Content Include="Resources\Animation\CharmanderLeft.gif" />
     <Content Include="Resources\Animation\CharmanderRight.gif" />
     <Content Include="Resources\Animation\CharmanderUp.gif" />
+    <Content Include="Resources\Animation\EnteiDown.gif" />
+    <Content Include="Resources\Animation\EnteiLeft.gif" />
+    <Content Include="Resources\Animation\EnteiRight.gif" />
+    <Content Include="Resources\Animation\EnteiUp.gif" />
     <Content Include="Resources\Animation\WeezingAtk.gif" />
     <Content Include="Resources\Animation\WeezingIdle.gif" />
     <None Include="Resources\Charmander_Icon.png" />

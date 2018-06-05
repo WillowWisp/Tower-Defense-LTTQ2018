@@ -35,12 +35,26 @@ namespace TowerDefenseGame
 		{
 
 			if (PlayerStats.money < Constant.CHARMANDER_COST)
+			{
+				pnlCharmander.BackColor = Color.LightGray;
 				btnChamander.Enabled = false;
-			else btnChamander.Enabled = true;
+			}
+			else
+			{
+				pnlCharmander.BackColor = Color.Transparent;
+				btnChamander.Enabled = true;
+			}
 
 			if (PlayerStats.money < Constant.KOFFING_COST)
+			{
+				pnlKoffing.BackColor = Color.LightGray;
 				btnKoffing.Enabled = false;
-			else btnKoffing.Enabled = true;
+			}
+			else
+			{
+				pnlKoffing.BackColor = Color.Transparent;
+				btnKoffing.Enabled = true;
+			}
 
 			lblMoney.Text = "Money : $" + PlayerStats.money;
 
