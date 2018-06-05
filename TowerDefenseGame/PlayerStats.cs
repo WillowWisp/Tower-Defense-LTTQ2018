@@ -8,7 +8,7 @@ namespace TowerDefenseGame
 {
 	class PlayerStats
 	{
-		public static int money = 300;
+		public static int money = 600;
 		public static int lives = 2;
 	}
 }

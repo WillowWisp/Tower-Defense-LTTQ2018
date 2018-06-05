@@ -93,6 +93,56 @@ namespace TowerDefenseGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CharizardDown {
+            get {
+                object obj = ResourceManager.GetObject("CharizardDown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CharizardLeft {
+            get {
+                object obj = ResourceManager.GetObject("CharizardLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CharizardRight {
+            get {
+                object obj = ResourceManager.GetObject("CharizardRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CharizardUp {
+            get {
+                object obj = ResourceManager.GetObject("CharizardUp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Charmander_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Charmander_Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CharmanderDown {
             get {
                 object obj = ResourceManager.GetObject("CharmanderDown", resourceCulture);
@@ -143,9 +193,9 @@ namespace TowerDefenseGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap KoffingAttack {
+        internal static System.Drawing.Bitmap Koffing_Icon {
             get {
-                object obj = ResourceManager.GetObject("KoffingAttack", resourceCulture);
+                object obj = ResourceManager.GetObject("Koffing_Icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +203,9 @@ namespace TowerDefenseGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap KoffingButton {
+        internal static System.Drawing.Bitmap KoffingAttack {
             get {
-                object obj = ResourceManager.GetObject("KoffingButton", resourceCulture);
+                object obj = ResourceManager.GetObject("KoffingAttack", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -256,6 +306,26 @@ namespace TowerDefenseGame.Properties {
         internal static System.Drawing.Bitmap up {
             get {
                 object obj = ResourceManager.GetObject("up", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WeezingAtk {
+            get {
+                object obj = ResourceManager.GetObject("WeezingAtk", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WeezingIdle {
+            get {
+                object obj = ResourceManager.GetObject("WeezingIdle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

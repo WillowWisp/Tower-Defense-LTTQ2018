@@ -18,5 +18,8 @@ namespace TowerDefenseGame
 
 		public static int CHARMANDER_COST = 50;
 		public static int KOFFING_COST = 150;
+
+		public static int CHARIZARD_COST = 100;
+		public static int WEEZING_COST = 150;
 	}
 }

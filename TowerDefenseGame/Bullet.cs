@@ -54,7 +54,7 @@ namespace TowerDefenseGame
 					{
 						Height = 6,
 						Width = 6,
-						BackColor = Color.Red
+						BackColor = Color.OrangeRed
 					};
 					bulletDamage = 30;
 					bulletRange = 50;
@@ -65,7 +65,8 @@ namespace TowerDefenseGame
 					FlyLeft();
 				if (direction == "Right")
 					FlyRight();
-				if (direction == "Up")FlyUp();
+				if (direction == "Up")
+					FlyUp();
 				if (direction == "Down")
 					FlyDown();
 			}

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,12 +22,12 @@ namespace TowerDefenseGame
 			FieldManager.Instance.DrawNodes();
             FieldManager.Instance.DesignPath();
 			
-			lblWaveLevel.Text = "Wave   Level   " + WaveSpawner.level.ToString();
+			lblWaveLevel.Text = "Wave Level : " + WaveSpawner.level.ToString();
 		}
 
 		private void btnSpawnWave_Click(object sender, EventArgs e)
 		{
-			lblWaveLevel.Text = "Wave   Level   " + WaveSpawner.level.ToString();
+			lblWaveLevel.Text = "Wave Level : " + WaveSpawner.level.ToString();
 			WaveSpawner.Instance.SpawnWave();
 		}
 
@@ -41,11 +42,31 @@ namespace TowerDefenseGame
 				btnKoffing.Enabled = false;
 			else btnKoffing.Enabled = true;
 
-			lblMoney.Text = "Money   $" + PlayerStats.money;
+			lblMoney.Text = "Money : $" + PlayerStats.money;
 
 			lblLives.Text = "Lives : " + PlayerStats.lives.ToString();
 
-			label1.Text = BuildManager.Instance.turretToBuild;
+
+			if (BuildManager.Instance.turretToBuild == "none")
+			{
+				lblMessage.Text = "Select an item...";
+				picSelecting.BackgroundImage = null;
+			}
+			if (BuildManager.Instance.turretToBuild == "Charmander")
+			{
+				lblMessage.Text = "Press R to Rotate.\nClick on an empty node to build.\nCost : $" + Constant.CHARMANDER_COST;
+				picSelecting.BackgroundImage = Properties.Resources.Charmander_Icon;
+			}
+			if (BuildManager.Instance.turretToBuild == "Koffing")
+			{
+				lblMessage.Text = "Click on an empty node to build.\nCost : $" + Constant.KOFFING_COST;
+				picSelecting.BackgroundImage = Properties.Resources.Koffing_Icon;
+			}
+			if (BuildManager.Instance.turretToBuild == "Evolution")
+			{
+				lblMessage.Text = Turret.messageText;
+				picSelecting.BackgroundImage = Properties.Resources.Megaevo;
+			}
 		}
 		
 		private void btnChamander_Click(object sender, EventArgs e)
@@ -88,6 +109,13 @@ namespace TowerDefenseGame
 		{
 			BuildManager.Instance.turretToBuild = "Koffing";
 			Cursor = Cursors.Hand;
+		}
+
+		private void btnEvolution_Click(object sender, EventArgs e)
+		{
+			BuildManager.Instance.turretToBuild = "Evolution";
+			Cursor = Cursors.Default;
+			Turret.messageText = "Hover to a pokemon to see information...";
 		}
 
 
@@ -196,9 +224,5 @@ namespace TowerDefenseGame
 			rainbowIndex += 0.1;
 		}
 
-		private void btnEvolution_Click(object sender, EventArgs e)
-		{
-			BuildManager.Instance.turretToBuild = "Evolution";
-		}
 	}
 }

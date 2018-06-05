@@ -110,21 +110,28 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\Resources\panelField_background.png" />
-    <Content Include="Resources\CharmanderDown.gif" />
-    <Content Include="Resources\CharmanderLeft.gif" />
-    <Content Include="Resources\CharmanderRight.gif" />
-    <Content Include="Resources\CharmanderUp.gif" />
+    <Content Include="Resources\Animation\CharizardDown.gif" />
+    <Content Include="Resources\Animation\CharizardLeft.gif" />
+    <Content Include="Resources\Animation\CharizardRight.gif" />
+    <Content Include="Resources\Animation\CharizardUp.gif" />
+    <Content Include="Resources\Animation\CharmanderDown.gif" />
+    <Content Include="Resources\Animation\CharmanderLeft.gif" />
+    <Content Include="Resources\Animation\CharmanderRight.gif" />
+    <Content Include="Resources\Animation\CharmanderUp.gif" />
+    <Content Include="Resources\Animation\WeezingAtk.gif" />
+    <Content Include="Resources\Animation\WeezingIdle.gif" />
+    <None Include="Resources\Charmander_Icon.png" />
     <Content Include="Resources\down.png" />
     <None Include="Resources\panelField_background.png" />
-    <Content Include="Resources\KoffingAttack.gif" />
-    <None Include="Resources\KoffingButton.png" />
-    <Content Include="Resources\KoffingIdle.gif" />
+    <Content Include="Resources\Animation\KoffingAttack.gif" />
+    <None Include="Resources\Koffing_Icon.png" />
+    <Content Include="Resources\Animation\KoffingIdle.gif" />
     <None Include="Resources\lMMX2resized.jpg" />
     <None Include="Resources\Megaevo.png" />
-    <Content Include="Resources\Pik_Down.gif" />
-    <Content Include="Resources\Pik_Left.gif" />
-    <Content Include="Resources\Pik_Right.gif" />
-    <Content Include="Resources\Pik_Up.gif" />
+    <Content Include="Resources\Animation\Pik_Down.gif" />
+    <Content Include="Resources\Animation\Pik_Left.gif" />
+    <Content Include="Resources\Animation\Pik_Right.gif" />
+    <Content Include="Resources\Animation\Pik_Up.gif" />
     <Content Include="Resources\pokeball.gif" />
     <Content Include="Resources\up.png" />
   </ItemGroup>
