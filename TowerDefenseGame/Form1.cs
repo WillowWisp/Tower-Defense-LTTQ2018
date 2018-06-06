@@ -8,11 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace TowerDefenseGame
 {
 	public partial class Form1 : Form
 	{
+		int indexTheme = 0;
 		public Form1()
 		{
 			InitializeComponent();
@@ -29,6 +31,10 @@ namespace TowerDefenseGame
 		{
 			lblWaveLevel.Text = "Wave Level : " + WaveSpawner.level.ToString();
 			WaveSpawner.Instance.SpawnWave();
+
+			wmpTheme.URL = Application.StartupPath.Substring(0, Application.StartupPath.IndexOf("bin")) + "\\Resources\\Sounds\\Soundtrack\\" + indexTheme + ".mp3";
+			wmpTheme.Ctlcontrols.play();
+			indexTheme++;
 		}
 
 		private void tmrUpdateUI_Tick(object sender, EventArgs e)
@@ -88,6 +94,8 @@ namespace TowerDefenseGame
 			BuildManager.Instance.turretToBuild = "Charmander";
 			BuildManager.Instance.turretToBuildDirection = "Left";
 			Cursor = Cursors.PanWest;
+			SoundPlayer selectSound = new SoundPlayer(Properties.Resources.select_sound);
+			selectSound.Play();
 		}
 
 		private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -123,6 +131,8 @@ namespace TowerDefenseGame
 		{
 			BuildManager.Instance.turretToBuild = "Koffing";
 			Cursor = Cursors.Hand;
+			SoundPlayer selectSound = new SoundPlayer(Properties.Resources.select_sound);
+			selectSound.Play();
 		}
 
 		private void btnEvolution_Click(object sender, EventArgs e)
@@ -130,6 +140,8 @@ namespace TowerDefenseGame
 			BuildManager.Instance.turretToBuild = "Evolution";
 			Cursor = Cursors.Default;
 			Turret.messageText = "Hover to a pokemon to see information...";
+			SoundPlayer selectSound = new SoundPlayer(Properties.Resources.select_sound);
+			selectSound.Play();
 		}
 
 

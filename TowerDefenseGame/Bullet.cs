@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace TowerDefenseGame
 {
@@ -127,6 +128,8 @@ namespace TowerDefenseGame
 					enemy.currentHP -= bulletDamage;
 					enemy.picCurrentHP.Width = (int)((enemy.currentHP / enemy.totalHP) *36);//Giảm thanh máu của enemy
 					this.Destroy();
+					SoundPlayer hitSound = new SoundPlayer(Properties.Resources.hit_sound);
+					hitSound.Play();
 					if (enemy.currentHP <= 0)
 					{
 						enemy.Die();
