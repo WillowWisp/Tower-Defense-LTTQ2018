@@ -23,7 +23,7 @@ namespace TowerDefenseGame
 		}
 		#endregion
 
-		public static int level = 1;
+		public static int level = 0;
 		public static int enemyLeft;
 		bool isBossWave = false;
 
@@ -31,6 +31,8 @@ namespace TowerDefenseGame
 
 		public void SpawnWave()
 		{
+			level++;
+
 			if (level >= 5)
 			{
 				isBossWave = true;
@@ -45,8 +47,6 @@ namespace TowerDefenseGame
 			tmrSpawnEnemy.Interval = 500;
 			tmrSpawnEnemy.Start();
 			tmrSpawnEnemy.Tick += SpawnEnemy_Tick;
-
-			level++;
 		}
 
 		void SpawnEnemy_Tick(object sender, EventArgs e)

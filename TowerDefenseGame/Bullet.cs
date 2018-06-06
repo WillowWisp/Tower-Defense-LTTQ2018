@@ -46,7 +46,7 @@ namespace TowerDefenseGame
 						Width = 4,
 						BackColor = Color.White
 					};
-					bulletDamage = 20;
+					bulletDamage = 30;
 					bulletRange = 30;
 					bulletSpeed = 4;
 				}
@@ -84,7 +84,7 @@ namespace TowerDefenseGame
 						Width = 5,
 						BackColor = Color.Orange
 					};
-					bulletDamage = 6;
+					bulletDamage = 14;
 				}
 				if (evolveStage == 2)
 				{
@@ -94,7 +94,7 @@ namespace TowerDefenseGame
 						Width = 9,
 						BackColor = Color.Orange
 					};
-					bulletDamage = 15;
+					bulletDamage = 22;
 				}
 
 				tmrChaseTarget.Interval = 10;

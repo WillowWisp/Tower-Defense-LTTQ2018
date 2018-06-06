@@ -37,13 +37,15 @@ namespace TowerDefenseGame
 		Image enemyRightGif;
 		
 		public bool isAlive = true;
+		bool isBoss;
 
 		public int waypointIndex = 0;
 
 		public Point target;//Vị trí waypoint đang đi tới
 
-		public Enemy(bool isBoss = false)
+		public Enemy(bool _isBoss = false)
 		{
+			isBoss = _isBoss;
 			if (!isBoss)
 			{
 				enemyUpGif = Properties.Resources.Pik_Up;
@@ -251,6 +253,15 @@ namespace TowerDefenseGame
 			isAlive = false;
 			ObjectManager.Instance.enemyList.Remove(this);
 			PlayerStats.lives -= 1;
+			if (PlayerStats.lives <= 0)
+			{
+				PlayerStats.isLost = true;
+				return;
+			}
+			if (isBoss)
+			{
+				PlayerStats.isLost = true;
+			}
 		}
 
 		public void Die() //Chỉ dùng khi enemy bị trụ giết
@@ -259,6 +270,10 @@ namespace TowerDefenseGame
 			isAlive = false;
 			ClearMovement();
 			PlayerStats.money += moneyDrop;
+			if (isBoss)
+			{
+				PlayerStats.isVictory = true;
+			}
 		}
 	}
 }

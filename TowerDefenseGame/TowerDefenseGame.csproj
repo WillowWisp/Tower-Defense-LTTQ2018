@@ -126,7 +126,6 @@
     <Content Include="Resources\Animation\WeezingIdle.gif" />
     <None Include="Resources\Charmander_Icon.png" />
     <Content Include="Resources\down.png" />
-    <None Include="Resources\panelField_background.png" />
     <Content Include="Resources\Animation\KoffingAttack.gif" />
     <None Include="Resources\Koffing_Icon.png" />
     <Content Include="Resources\Animation\KoffingIdle.gif" />
@@ -136,6 +135,7 @@
     <Content Include="Resources\Animation\Pik_Left.gif" />
     <Content Include="Resources\Animation\Pik_Right.gif" />
     <Content Include="Resources\Animation\Pik_Up.gif" />
+    <Content Include="Resources\panelField_background.png" />
     <Content Include="Resources\pokeball.gif" />
     <None Include="Resources\Pokemon_Logo.png" />
     <Content Include="Resources\Sounds\SoundEffect\build_sound.wav" />

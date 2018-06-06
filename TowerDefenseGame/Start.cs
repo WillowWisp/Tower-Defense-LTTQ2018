@@ -28,7 +28,7 @@ namespace TowerDefenseGame.Resources
 			timer.Interval = 30;
 			timer.Tick += Timer_Tick;
 			timer.Start();
-
+			
 			pcbStart.Controls.Add(picPokemonLogo);
 			pcbStart.Controls.Add(pcbUp);
 			pcbStart.Controls.Add(lbOption);

@@ -15,8 +15,6 @@ namespace TowerDefenseGame
 {
 	public partial class Form1 : Form
 	{
-		int indexTheme = 0;
-
 		public Form1()
 		{
 			InitializeComponent();
@@ -32,22 +30,38 @@ namespace TowerDefenseGame
 
 		void LoadThemeSoundtrack()
 		{
-			wmpTheme.URL = Application.StartupPath.Substring(0, Application.StartupPath.IndexOf("bin")) + "\\Resources\\Sounds\\Soundtrack\\" + indexTheme + ".mp3";
+			wmpTheme.URL = Application.StartupPath.Substring(0, Application.StartupPath.IndexOf("bin")) + "\\Resources\\Sounds\\Soundtrack\\" + WaveSpawner.level.ToString() + ".mp3";
 			wmpTheme.Ctlcontrols.play();
-			indexTheme++;
 		}
 
 		private void btnSpawnWave_Click(object sender, EventArgs e)
 		{
-			lblWaveLevel.Text = "Wave Level : " + WaveSpawner.level.ToString();
 			WaveSpawner.Instance.SpawnWave();
+			lblWaveLevel.Text = "Wave Level : " + WaveSpawner.level.ToString();
 
 			LoadThemeSoundtrack();
 		}
 
 		private void tmrUpdateUI_Tick(object sender, EventArgs e)
 		{
+			#region WinLoseCheck
+			if (PlayerStats.isLost == true)
+			{
+				tmrUpdateUI.Stop();
+				MessageBox.Show("Sorry you lose...");
+				this.Close();
+			}
+			if (PlayerStats.isVictory == true)
+			{
+				tmrUpdateUI.Stop();
+				wmpTheme.URL = Application.StartupPath.Substring(0, Application.StartupPath.IndexOf("bin")) + "\\Resources\\Sounds\\Soundtrack\\victory.mp3";
+				wmpTheme.Ctlcontrols.play();
+				MessageBox.Show("You win!!\nThanks for playing our game ^_^");
+				this.Close();
+			}
+			#endregion
 
+			#region Shop
 			if (PlayerStats.money < Constant.CHARMANDER_COST)
 			{
 				pnlCharmander.BackColor = Color.LightGray;
@@ -69,12 +83,20 @@ namespace TowerDefenseGame
 				pnlKoffing.BackColor = Color.Transparent;
 				btnKoffing.Enabled = true;
 			}
+			#endregion
 
+			#region PlayerStats
 			lblMoney.Text = "Money : $" + PlayerStats.money;
-
 			lblLives.Text = "Lives : " + PlayerStats.lives.ToString();
+			#endregion
 
+			#region NextWave
+			if (ObjectManager.Instance.enemyList.Count > 0)
+				btnSpawnWave.Enabled = false;
+			else btnSpawnWave.Enabled = true;
+			#endregion
 
+			#region Message Show
 			if (BuildManager.Instance.turretToBuild == "none")
 			{
 				lblMessage.Text = "Select an item...";
@@ -95,6 +117,7 @@ namespace TowerDefenseGame
 				lblMessage.Text = Turret.messageText;
 				picSelecting.BackgroundImage = Properties.Resources.Megaevo;
 			}
+			#endregion
 		}
 		
 		private void btnChamander_Click(object sender, EventArgs e)
