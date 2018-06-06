@@ -74,12 +74,12 @@ namespace TowerDefenseGame.Resources
 			}
 			else if (lbOption.Text == "Help")
 			{
-				string help = "Bạn cần xây trụ để chống lại các đợt lính địch"
-					+ "\n"
-					+ "	Quy Tắc:"
-					+ "\n - Bắt đầu với $100, số tiền sẽ tăng dần dựa vào số địch bạn tiêu diệt được."
-					+ "\n - Số lượng địch sau mỗi đợt sẽ tăng dần về máu lẫn số lượng."
-					+ "\n - Bạn chỉ có '2 mạng' đồng nghĩa với 2 kẻ địch có thể tấn công vào thành, sau đó bạn sẽ thua.";
+				string help = "Bạn cần xây trụ để chống lại các đợt lính địch."
+					+ "\n\n"
+					+ "Quy Tắc:"
+					+ "\n - Bắt đầu với $600, số tiền sẽ tăng dần dựa vào số địch bạn tiêu diệt được."
+					+ "\n - Địch sẽ mạnh và đông hơn sau mỗi lượt. Lượng tiền thưởng cũng tăng theo"
+					+ "\n - Wave thứ 5 sẽ là wave cuối. Hãy chặn boss bằng mọi giá!";
 				MessageBox.Show(help, "Trợ Giúp");
 			}
 			else if (lbOption.Text == "Exit")
