@@ -29,7 +29,6 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.lblWaveLevel = new System.Windows.Forms.Label();
 			this.btnSpawnWave = new System.Windows.Forms.Button();
 			this.lblMoney = new System.Windows.Forms.Label();
@@ -55,7 +54,6 @@
 			this.panel4 = new System.Windows.Forms.Panel();
 			this.lblMessage = new System.Windows.Forms.Label();
 			this.picSelecting = new System.Windows.Forms.PictureBox();
-			this.wmpTheme = new AxWMPLib.AxWindowsMediaPlayer();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.pnlCharmander.SuspendLayout();
@@ -64,7 +62,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.picKoffingShop)).BeginInit();
 			this.panel4.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.picSelecting)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.wmpTheme)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// lblWaveLevel
@@ -338,16 +335,6 @@
 			this.picSelecting.TabIndex = 0;
 			this.picSelecting.TabStop = false;
 			// 
-			// wmpTheme
-			// 
-			this.wmpTheme.Enabled = true;
-			this.wmpTheme.Location = new System.Drawing.Point(226, 701);
-			this.wmpTheme.Name = "wmpTheme";
-			this.wmpTheme.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpTheme.OcxState")));
-			this.wmpTheme.Size = new System.Drawing.Size(75, 23);
-			this.wmpTheme.TabIndex = 17;
-			this.wmpTheme.Visible = false;
-			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -356,7 +343,6 @@
 			this.BackgroundImage = global::TowerDefenseGame.Properties.Resources.lMMX2resized;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(1227, 743);
-			this.Controls.Add(this.wmpTheme);
 			this.Controls.Add(this.panel4);
 			this.Controls.Add(this.pnlKoffing);
 			this.Controls.Add(this.pnlCharmander);
@@ -384,7 +370,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.picKoffingShop)).EndInit();
 			this.panel4.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.picSelecting)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.wmpTheme)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -417,7 +402,6 @@
 		private System.Windows.Forms.Panel panel4;
 		private System.Windows.Forms.Label lblMessage;
 		private System.Windows.Forms.PictureBox picSelecting;
-		private AxWMPLib.AxWindowsMediaPlayer wmpTheme;
 	}
 }
 

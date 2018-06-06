@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
-using AxWMPLib;
 
 namespace TowerDefenseGame
 {
@@ -23,23 +22,14 @@ namespace TowerDefenseGame
 			FieldManager.panelField = panelField;
 			FieldManager.Instance.DrawNodes();
             FieldManager.Instance.DesignPath();
-			LoadThemeSoundtrack();
 			
 			lblWaveLevel.Text = "Wave Level : " + WaveSpawner.level.ToString();
-		}
-
-		void LoadThemeSoundtrack()
-		{
-			wmpTheme.URL = Application.StartupPath.Substring(0, Application.StartupPath.IndexOf("bin")) + "\\Resources\\Sounds\\Soundtrack\\" + WaveSpawner.level.ToString() + ".mp3";
-			wmpTheme.Ctlcontrols.play();
 		}
 
 		private void btnSpawnWave_Click(object sender, EventArgs e)
 		{
 			WaveSpawner.Instance.SpawnWave();
 			lblWaveLevel.Text = "Wave Level : " + WaveSpawner.level.ToString();
-
-			LoadThemeSoundtrack();
 		}
 
 		private void tmrUpdateUI_Tick(object sender, EventArgs e)
@@ -54,8 +44,6 @@ namespace TowerDefenseGame
 			if (PlayerStats.isVictory == true)
 			{
 				tmrUpdateUI.Stop();
-				wmpTheme.URL = Application.StartupPath.Substring(0, Application.StartupPath.IndexOf("bin")) + "\\Resources\\Sounds\\Soundtrack\\victory.mp3";
-				wmpTheme.Ctlcontrols.play();
 				MessageBox.Show("You win!!\nThanks for playing our game ^_^");
 				this.Close();
 			}
