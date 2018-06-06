@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -42,6 +43,10 @@ namespace TowerDefenseGame
 			BuildManager.Instance.BuildTurretOn(this);
 			BuildManager.Instance.turretToBuild = "none";
 			BuildManager.Instance.turretToBuildDirection = null;
+
+			SoundPlayer buildSound = new SoundPlayer(Properties.Resources.build_sound);
+			buildSound.Play();
+
 			Form1.ActiveForm.Cursor = Cursors.Default;
 		}
 	}

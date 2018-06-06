@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
-using System.Media;
 
 namespace TowerDefenseGame
 {
@@ -37,8 +36,6 @@ namespace TowerDefenseGame
 			turret.rangeRectangle = new Rectangle((turret.picTurret.Location.X + 24) - 150, (turret.picTurret.Location.Y + 24) - 150, 300, 300);//Set tầm bắn cho turret = hình vuông cạnh 300
 			node.currentTurret = turret;
 
-			SoundPlayer buildSound = new SoundPlayer(Properties.Resources.build_sound);
-			buildSound.Play();
 
 			PlayerStats.money -= turret.cost;
 		}

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -181,6 +182,10 @@ namespace TowerDefenseGame
 				return;
 			EvolveTurret();
 			BuildManager.Instance.turretToBuild = "none";
+
+			SoundPlayer buildSound = new SoundPlayer(Properties.Resources.build_sound);
+			buildSound.Play();
+
 			Form1.ActiveForm.Cursor = Cursors.Default;
 		}
 
