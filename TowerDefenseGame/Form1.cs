@@ -9,12 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using AxWMPLib;
 
 namespace TowerDefenseGame
 {
 	public partial class Form1 : Form
 	{
 		int indexTheme = 0;
+
 		public Form1()
 		{
 			InitializeComponent();
@@ -23,8 +25,16 @@ namespace TowerDefenseGame
 			FieldManager.panelField = panelField;
 			FieldManager.Instance.DrawNodes();
             FieldManager.Instance.DesignPath();
+			LoadThemeSoundtrack();
 			
 			lblWaveLevel.Text = "Wave Level : " + WaveSpawner.level.ToString();
+		}
+
+		void LoadThemeSoundtrack()
+		{
+			wmpTheme.URL = Application.StartupPath.Substring(0, Application.StartupPath.IndexOf("bin")) + "\\Resources\\Sounds\\Soundtrack\\" + indexTheme + ".mp3";
+			wmpTheme.Ctlcontrols.play();
+			indexTheme++;
 		}
 
 		private void btnSpawnWave_Click(object sender, EventArgs e)
@@ -32,9 +42,7 @@ namespace TowerDefenseGame
 			lblWaveLevel.Text = "Wave Level : " + WaveSpawner.level.ToString();
 			WaveSpawner.Instance.SpawnWave();
 
-			wmpTheme.URL = Application.StartupPath.Substring(0, Application.StartupPath.IndexOf("bin")) + "\\Resources\\Sounds\\Soundtrack\\" + indexTheme + ".mp3";
-			wmpTheme.Ctlcontrols.play();
-			indexTheme++;
+			LoadThemeSoundtrack();
 		}
 
 		private void tmrUpdateUI_Tick(object sender, EventArgs e)
@@ -237,6 +245,7 @@ namespace TowerDefenseGame
 		#endregion
 
 		double rainbowIndex = 0;
+
 		private void tmrEvolutionRainbow_Tick(object sender, EventArgs e)
 			//Màu chữ cầu vồng cho Evolution
 		{

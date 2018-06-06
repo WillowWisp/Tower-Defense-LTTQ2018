@@ -137,6 +137,7 @@
     <Content Include="Resources\Animation\Pik_Right.gif" />
     <Content Include="Resources\Animation\Pik_Up.gif" />
     <Content Include="Resources\pokeball.gif" />
+    <None Include="Resources\Pokemon_Logo.png" />
     <Content Include="Resources\Sounds\SoundEffect\build_sound.wav" />
     <Content Include="Resources\Sounds\SoundEffect\hit_sound.wav" />
     <Content Include="Resources\Sounds\SoundEffect\select_sound.wav" />

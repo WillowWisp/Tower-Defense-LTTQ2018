@@ -18,6 +18,8 @@ namespace TowerDefenseGame
 		float bulletDamage = 0;
 		bool isDisposed = false;
 
+		
+
 		//Chamander
 		int bulletRange;
 		int bulletSpeed;
@@ -125,11 +127,12 @@ namespace TowerDefenseGame
 				if (picBullet.Bounds.IntersectsWith(enemy.picEnemy.Bounds) && !isDisposed && enemy.isAlive)
 				//isDisposed và isAlive để fix lỗi khi Dispose, control ko mất hoàn toàn			
 				{
+					SoundPlayer hitSound = new SoundPlayer(Properties.Resources.hit_sound);
+					hitSound.Play();
+
 					enemy.currentHP -= bulletDamage;
 					enemy.picCurrentHP.Width = (int)((enemy.currentHP / enemy.totalHP) *36);//Giảm thanh máu của enemy
 					this.Destroy();
-					SoundPlayer hitSound = new SoundPlayer(Properties.Resources.hit_sound);
-					hitSound.Play();
 					if (enemy.currentHP <= 0)
 					{
 						enemy.Die();

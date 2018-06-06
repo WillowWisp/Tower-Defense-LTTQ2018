@@ -118,124 +118,127 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="brick_grey" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\brick_grey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CharizardRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\animation\charizardright.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CharizardUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\animation\charizardup.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CharmanderLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\animation\charmanderleft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lMMX2resized" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lMMX2resized.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="down" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="panelField_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\panelField_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Megaevo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Megaevo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="KoffingIdle" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\animation\koffingidle.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="WeezingIdle" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\animation\weezingidle.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="WeezingAtk" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\animation\weezingatk.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="KoffingAttack" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\animation\koffingattack.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cactus_top" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cactus_top.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CharizardDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\animation\charizarddown.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Pik_Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\animation\pik_up.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CharmanderDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\animation\charmanderdown.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Pik_Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\animation\pik_right.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Pik_Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\animation\pik_down.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CharmanderRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\animation\charmanderright.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CharmanderUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\animation\charmanderup.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Pik_Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\animation\pik_left.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="chamander" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chamander.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CharizardLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\animation\charizardleft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pokeball" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\pokeball.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Charmander_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Charmander_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Koffing_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\koffing_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EnteiDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\animation\enteidown.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EnteiUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\animation\enteiup.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EnteiLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\animation\enteileft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EnteiRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\animation\enteiright.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="build_sound" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\sounds\soundeffect\build_sound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="hit_sound" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\sounds\soundeffect\hit_sound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="select_sound" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\sounds\soundeffect\select_sound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\sounds\soundtrack\0.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\sounds\soundtrack\1.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="WeezingAtk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\animation\weezingatk.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\sounds\soundtrack\2.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="CharmanderUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\animation\charmanderup.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\sounds\soundtrack\3.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="panelField_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\panelField_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CharmanderDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\animation\charmanderdown.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EnteiRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\animation\enteiright.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cactus_top" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cactus_top.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CharizardRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\animation\charizardright.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chamander" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chamander.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\sounds\soundtrack\4.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="EnteiLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\animation\enteileft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lMMX2resized" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lMMX2resized.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\sounds\soundtrack\1.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CharmanderRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\animation\charmanderright.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\sounds\soundtrack\2.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WeezingIdle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\animation\weezingidle.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EnteiDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\animation\enteidown.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="build_sound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\sounds\soundeffect\build_sound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="KoffingAttack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\animation\koffingattack.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CharizardUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\animation\charizardup.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pik_Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\animation\pik_up.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="brick_grey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\brick_grey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Charmander_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Charmander_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pik_Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\animation\pik_left.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="select_sound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\sounds\soundeffect\select_sound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\sounds\soundtrack\5.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Pik_Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\animation\pik_down.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CharizardDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\animation\charizarddown.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EnteiUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\animation\enteiup.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\sounds\soundtrack\3.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Koffing_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\koffing_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pokeball" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\pokeball.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CharizardLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\animation\charizardleft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pik_Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\animation\pik_right.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KoffingIdle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\animation\koffingidle.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Megaevo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Megaevo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CharmanderLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\animation\charmanderleft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pokemon_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pokemon_Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

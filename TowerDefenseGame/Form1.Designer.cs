@@ -56,6 +56,7 @@
 			this.lblMessage = new System.Windows.Forms.Label();
 			this.picSelecting = new System.Windows.Forms.PictureBox();
 			this.wmpTheme = new AxWMPLib.AxWindowsMediaPlayer();
+			this.wmpHitSound = new AxWMPLib.AxWindowsMediaPlayer();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.pnlCharmander.SuspendLayout();
@@ -65,6 +66,7 @@
 			this.panel4.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.picSelecting)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.wmpTheme)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.wmpHitSound)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// lblWaveLevel
@@ -349,6 +351,16 @@
 			this.wmpTheme.TabIndex = 17;
 			this.wmpTheme.Visible = false;
 			// 
+			// wmpHitSound
+			// 
+			this.wmpHitSound.Enabled = true;
+			this.wmpHitSound.Location = new System.Drawing.Point(364, 12);
+			this.wmpHitSound.Name = "wmpHitSound";
+			this.wmpHitSound.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpHitSound.OcxState")));
+			this.wmpHitSound.Size = new System.Drawing.Size(75, 23);
+			this.wmpHitSound.TabIndex = 17;
+			this.wmpHitSound.Visible = false;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -357,6 +369,7 @@
 			this.BackgroundImage = global::TowerDefenseGame.Properties.Resources.lMMX2resized;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(1227, 743);
+			this.Controls.Add(this.wmpHitSound);
 			this.Controls.Add(this.wmpTheme);
 			this.Controls.Add(this.panel4);
 			this.Controls.Add(this.pnlKoffing);
@@ -386,6 +399,7 @@
 			this.panel4.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.picSelecting)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.wmpTheme)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.wmpHitSound)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -419,6 +433,7 @@
 		private System.Windows.Forms.Label lblMessage;
 		private System.Windows.Forms.PictureBox picSelecting;
 		private AxWMPLib.AxWindowsMediaPlayer wmpTheme;
+		private AxWMPLib.AxWindowsMediaPlayer wmpHitSound;
 	}
 }
 
