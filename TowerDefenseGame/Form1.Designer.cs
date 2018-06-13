@@ -28,433 +28,380 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
+			this.lblWaveLevel = new System.Windows.Forms.Label();
+			this.btnSpawnWave = new System.Windows.Forms.Button();
+			this.lblMoney = new System.Windows.Forms.Label();
+			this.tmrUpdateUI = new System.Windows.Forms.Timer(this.components);
+			this.lblLives = new System.Windows.Forms.Label();
+			this.btnKoffing = new System.Windows.Forms.Button();
+			this.btnChamander = new System.Windows.Forms.Button();
 			this.panelField = new System.Windows.Forms.Panel();
-			this.button1 = new System.Windows.Forms.Button();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.label15 = new System.Windows.Forms.Label();
-			this.label12 = new System.Windows.Forms.Label();
-			this.label6 = new System.Windows.Forms.Label();
-			this.label11 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label14 = new System.Windows.Forms.Label();
-			this.label10 = new System.Windows.Forms.Label();
-			this.label5 = new System.Windows.Forms.Label();
-			this.label9 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label13 = new System.Windows.Forms.Label();
-			this.label8 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
-			this.label7 = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
-			this.panel2 = new System.Windows.Forms.Panel();
-			this.label27 = new System.Windows.Forms.Label();
-			this.label26 = new System.Windows.Forms.Label();
-			this.label23 = new System.Windows.Forms.Label();
-			this.label22 = new System.Windows.Forms.Label();
-			this.label25 = new System.Windows.Forms.Label();
-			this.label19 = new System.Windows.Forms.Label();
-			this.label21 = new System.Windows.Forms.Label();
-			this.label24 = new System.Windows.Forms.Label();
-			this.label18 = new System.Windows.Forms.Label();
-			this.label20 = new System.Windows.Forms.Label();
-			this.label17 = new System.Windows.Forms.Label();
-			this.label16 = new System.Windows.Forms.Label();
-			this.label28 = new System.Windows.Forms.Label();
-			this.label29 = new System.Windows.Forms.Label();
-			this.label30 = new System.Windows.Forms.Label();
+			this.btnEvolution = new System.Windows.Forms.Button();
+			this.lblEvolutionDesc = new System.Windows.Forms.Label();
+			this.lblEvolutionTitle = new System.Windows.Forms.Label();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.pnlCharmander = new System.Windows.Forms.Panel();
+			this.lblCharDesc = new System.Windows.Forms.Label();
+			this.lblCharTitle = new System.Windows.Forms.Label();
+			this.picChamanderShop = new System.Windows.Forms.PictureBox();
+			this.pnlKoffing = new System.Windows.Forms.Panel();
+			this.lblKofDesc = new System.Windows.Forms.Label();
+			this.lblKoffTitle = new System.Windows.Forms.Label();
+			this.picKoffingShop = new System.Windows.Forms.PictureBox();
+			this.tmrEvolutionRainbow = new System.Windows.Forms.Timer(this.components);
+			this.panel4 = new System.Windows.Forms.Panel();
+			this.lblMessage = new System.Windows.Forms.Label();
+			this.picSelecting = new System.Windows.Forms.PictureBox();
 			this.panel1.SuspendLayout();
-			this.panel2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			this.pnlCharmander.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.picChamanderShop)).BeginInit();
+			this.pnlKoffing.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.picKoffingShop)).BeginInit();
+			this.panel4.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.picSelecting)).BeginInit();
 			this.SuspendLayout();
+			// 
+			// lblWaveLevel
+			// 
+			this.lblWaveLevel.AutoSize = true;
+			this.lblWaveLevel.BackColor = System.Drawing.Color.Transparent;
+			this.lblWaveLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblWaveLevel.Location = new System.Drawing.Point(12, 664);
+			this.lblWaveLevel.Name = "lblWaveLevel";
+			this.lblWaveLevel.Size = new System.Drawing.Size(186, 29);
+			this.lblWaveLevel.TabIndex = 6;
+			this.lblWaveLevel.Text = "Wave Level : X";
+			// 
+			// btnSpawnWave
+			// 
+			this.btnSpawnWave.BackColor = System.Drawing.SystemColors.Control;
+			this.btnSpawnWave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.btnSpawnWave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnSpawnWave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnSpawnWave.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.btnSpawnWave.Location = new System.Drawing.Point(13, 696);
+			this.btnSpawnWave.Name = "btnSpawnWave";
+			this.btnSpawnWave.Size = new System.Drawing.Size(197, 35);
+			this.btnSpawnWave.TabIndex = 7;
+			this.btnSpawnWave.Text = "Next Wave";
+			this.btnSpawnWave.UseVisualStyleBackColor = false;
+			this.btnSpawnWave.Click += new System.EventHandler(this.btnSpawnWave_Click);
+			// 
+			// lblMoney
+			// 
+			this.lblMoney.AutoSize = true;
+			this.lblMoney.BackColor = System.Drawing.Color.Transparent;
+			this.lblMoney.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblMoney.Location = new System.Drawing.Point(11, 414);
+			this.lblMoney.Name = "lblMoney";
+			this.lblMoney.Size = new System.Drawing.Size(167, 29);
+			this.lblMoney.TabIndex = 9;
+			this.lblMoney.Text = "Money : $100";
+			// 
+			// tmrUpdateUI
+			// 
+			this.tmrUpdateUI.Enabled = true;
+			this.tmrUpdateUI.Tick += new System.EventHandler(this.tmrUpdateUI_Tick);
+			// 
+			// lblLives
+			// 
+			this.lblLives.AutoSize = true;
+			this.lblLives.BackColor = System.Drawing.Color.Transparent;
+			this.lblLives.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblLives.Location = new System.Drawing.Point(359, 699);
+			this.lblLives.Name = "lblLives";
+			this.lblLives.Size = new System.Drawing.Size(115, 25);
+			this.lblLives.TabIndex = 14;
+			this.lblLives.Text = "Lives : 10";
+			// 
+			// btnKoffing
+			// 
+			this.btnKoffing.BackColor = System.Drawing.Color.Transparent;
+			this.btnKoffing.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.btnKoffing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnKoffing.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnKoffing.Location = new System.Drawing.Point(209, 94);
+			this.btnKoffing.Name = "btnKoffing";
+			this.btnKoffing.Size = new System.Drawing.Size(75, 23);
+			this.btnKoffing.TabIndex = 13;
+			this.btnKoffing.Tag = "150";
+			this.btnKoffing.Text = "Select";
+			this.btnKoffing.UseVisualStyleBackColor = false;
+			this.btnKoffing.Click += new System.EventHandler(this.btnKoffing_Click);
+			// 
+			// btnChamander
+			// 
+			this.btnChamander.BackColor = System.Drawing.Color.Transparent;
+			this.btnChamander.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.btnChamander.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnChamander.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnChamander.Location = new System.Drawing.Point(209, 94);
+			this.btnChamander.Name = "btnChamander";
+			this.btnChamander.Size = new System.Drawing.Size(75, 23);
+			this.btnChamander.TabIndex = 13;
+			this.btnChamander.Tag = "50";
+			this.btnChamander.Text = "Select";
+			this.btnChamander.UseVisualStyleBackColor = false;
+			this.btnChamander.Click += new System.EventHandler(this.btnChamander_Click);
 			// 
 			// panelField
 			// 
 			this.panelField.BackColor = System.Drawing.SystemColors.Control;
-			this.panelField.Location = new System.Drawing.Point(44, 39);
+			this.panelField.BackgroundImage = global::TowerDefenseGame.Properties.Resources.panelField_background;
+			this.panelField.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+			this.panelField.Location = new System.Drawing.Point(489, 12);
 			this.panelField.Name = "panelField";
 			this.panelField.Size = new System.Drawing.Size(720, 720);
 			this.panelField.TabIndex = 0;
 			// 
-			// button1
-			// 
-			this.button1.BackgroundImage = global::TowerDefenseGame.Properties.Resources.brick_grey;
-			this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.button1.Location = new System.Drawing.Point(781, 39);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(48, 48);
-			this.button1.TabIndex = 2;
-			this.button1.UseVisualStyleBackColor = true;
-			// 
 			// panel1
 			// 
-			this.panel1.Controls.Add(this.label15);
-			this.panel1.Controls.Add(this.label12);
-			this.panel1.Controls.Add(this.label6);
-			this.panel1.Controls.Add(this.label11);
-			this.panel1.Controls.Add(this.label3);
-			this.panel1.Controls.Add(this.label14);
-			this.panel1.Controls.Add(this.label10);
-			this.panel1.Controls.Add(this.label5);
-			this.panel1.Controls.Add(this.label9);
-			this.panel1.Controls.Add(this.label2);
-			this.panel1.Controls.Add(this.label13);
-			this.panel1.Controls.Add(this.label8);
-			this.panel1.Controls.Add(this.label4);
-			this.panel1.Controls.Add(this.label7);
-			this.panel1.Controls.Add(this.label1);
-			this.panel1.Location = new System.Drawing.Point(44, 5);
+			this.panel1.BackColor = System.Drawing.Color.Transparent;
+			this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.panel1.Controls.Add(this.btnEvolution);
+			this.panel1.Controls.Add(this.lblEvolutionDesc);
+			this.panel1.Controls.Add(this.lblEvolutionTitle);
+			this.panel1.Controls.Add(this.pictureBox1);
+			this.panel1.Location = new System.Drawing.Point(12, 289);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(720, 31);
-			this.panel1.TabIndex = 3;
+			this.panel1.Size = new System.Drawing.Size(289, 122);
+			this.panel1.TabIndex = 15;
 			// 
-			// label15
+			// btnEvolution
 			// 
-			this.label15.AutoSize = true;
-			this.label15.Location = new System.Drawing.Point(689, 7);
-			this.label15.Name = "label15";
-			this.label15.Size = new System.Drawing.Size(19, 13);
-			this.label15.TabIndex = 0;
-			this.label15.Text = "14";
+			this.btnEvolution.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnEvolution.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnEvolution.Location = new System.Drawing.Point(209, 94);
+			this.btnEvolution.Name = "btnEvolution";
+			this.btnEvolution.Size = new System.Drawing.Size(75, 23);
+			this.btnEvolution.TabIndex = 3;
+			this.btnEvolution.Text = "Select";
+			this.btnEvolution.UseVisualStyleBackColor = true;
+			this.btnEvolution.Click += new System.EventHandler(this.btnEvolution_Click);
 			// 
-			// label12
+			// lblEvolutionDesc
 			// 
-			this.label12.AutoSize = true;
-			this.label12.Location = new System.Drawing.Point(545, 7);
-			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(19, 13);
-			this.label12.TabIndex = 0;
-			this.label12.Text = "11";
+			this.lblEvolutionDesc.Location = new System.Drawing.Point(117, 33);
+			this.lblEvolutionDesc.Name = "lblEvolutionDesc";
+			this.lblEvolutionDesc.Size = new System.Drawing.Size(167, 56);
+			this.lblEvolutionDesc.TabIndex = 2;
+			this.lblEvolutionDesc.Text = "Evolve your pokemon. Gain new strength with a cost of money. Cost and strength de" +
+    "pend on pokemon evolved";
 			// 
-			// label6
+			// lblEvolutionTitle
 			// 
-			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(260, 7);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(13, 13);
-			this.label6.TabIndex = 0;
-			this.label6.Text = "5";
+			this.lblEvolutionTitle.AutoSize = true;
+			this.lblEvolutionTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblEvolutionTitle.Location = new System.Drawing.Point(112, 4);
+			this.lblEvolutionTitle.Name = "lblEvolutionTitle";
+			this.lblEvolutionTitle.Size = new System.Drawing.Size(163, 25);
+			this.lblEvolutionTitle.TabIndex = 1;
+			this.lblEvolutionTitle.Text = "Evolution Stone";
 			// 
-			// label11
+			// pictureBox1
 			// 
-			this.label11.AutoSize = true;
-			this.label11.Location = new System.Drawing.Point(400, 7);
-			this.label11.Name = "label11";
-			this.label11.Size = new System.Drawing.Size(13, 13);
-			this.label11.TabIndex = 0;
-			this.label11.Text = "8";
+			this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox1.BackgroundImage = global::TowerDefenseGame.Properties.Resources.Megaevo;
+			this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+			this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(102, 98);
+			this.pictureBox1.TabIndex = 0;
+			this.pictureBox1.TabStop = false;
 			// 
-			// label3
+			// pnlCharmander
 			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(111, 7);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(13, 13);
-			this.label3.TabIndex = 0;
-			this.label3.Text = "2";
+			this.pnlCharmander.BackColor = System.Drawing.Color.Transparent;
+			this.pnlCharmander.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.pnlCharmander.Controls.Add(this.lblCharDesc);
+			this.pnlCharmander.Controls.Add(this.lblCharTitle);
+			this.pnlCharmander.Controls.Add(this.picChamanderShop);
+			this.pnlCharmander.Controls.Add(this.btnChamander);
+			this.pnlCharmander.Location = new System.Drawing.Point(12, 12);
+			this.pnlCharmander.Name = "pnlCharmander";
+			this.pnlCharmander.Size = new System.Drawing.Size(289, 122);
+			this.pnlCharmander.TabIndex = 15;
 			// 
-			// label14
+			// lblCharDesc
 			// 
-			this.label14.AutoSize = true;
-			this.label14.Location = new System.Drawing.Point(637, 7);
-			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(19, 13);
-			this.label14.TabIndex = 0;
-			this.label14.Text = "13";
+			this.lblCharDesc.Location = new System.Drawing.Point(117, 33);
+			this.lblCharDesc.Name = "lblCharDesc";
+			this.lblCharDesc.Size = new System.Drawing.Size(167, 56);
+			this.lblCharDesc.TabIndex = 2;
+			this.lblCharDesc.Text = "- Shoot in a line\r\n- Attack speed : Normal\r\n- Damage : 20\r\n- Cost : $50";
 			// 
-			// label10
+			// lblCharTitle
 			// 
-			this.label10.AutoSize = true;
-			this.label10.Location = new System.Drawing.Point(494, 7);
-			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(19, 13);
-			this.label10.TabIndex = 0;
-			this.label10.Text = "10";
+			this.lblCharTitle.AutoSize = true;
+			this.lblCharTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblCharTitle.ForeColor = System.Drawing.Color.Red;
+			this.lblCharTitle.Location = new System.Drawing.Point(112, 4);
+			this.lblCharTitle.Name = "lblCharTitle";
+			this.lblCharTitle.Size = new System.Drawing.Size(123, 25);
+			this.lblCharTitle.TabIndex = 1;
+			this.lblCharTitle.Text = "Chamander";
 			// 
-			// label5
+			// picChamanderShop
 			// 
-			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(209, 7);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(13, 13);
-			this.label5.TabIndex = 0;
-			this.label5.Text = "4";
+			this.picChamanderShop.BackColor = System.Drawing.Color.Transparent;
+			this.picChamanderShop.BackgroundImage = global::TowerDefenseGame.Properties.Resources.Charmander_Icon;
+			this.picChamanderShop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+			this.picChamanderShop.Location = new System.Drawing.Point(3, 3);
+			this.picChamanderShop.Name = "picChamanderShop";
+			this.picChamanderShop.Size = new System.Drawing.Size(102, 98);
+			this.picChamanderShop.TabIndex = 0;
+			this.picChamanderShop.TabStop = false;
 			// 
-			// label9
+			// pnlKoffing
 			// 
-			this.label9.AutoSize = true;
-			this.label9.Location = new System.Drawing.Point(353, 7);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(13, 13);
-			this.label9.TabIndex = 0;
-			this.label9.Text = "7";
+			this.pnlKoffing.BackColor = System.Drawing.Color.Transparent;
+			this.pnlKoffing.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.pnlKoffing.Controls.Add(this.lblKofDesc);
+			this.pnlKoffing.Controls.Add(this.lblKoffTitle);
+			this.pnlKoffing.Controls.Add(this.picKoffingShop);
+			this.pnlKoffing.Controls.Add(this.btnKoffing);
+			this.pnlKoffing.Location = new System.Drawing.Point(12, 140);
+			this.pnlKoffing.Name = "pnlKoffing";
+			this.pnlKoffing.Size = new System.Drawing.Size(289, 122);
+			this.pnlKoffing.TabIndex = 15;
 			// 
-			// label2
+			// lblKofDesc
 			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(64, 7);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(13, 13);
-			this.label2.TabIndex = 0;
-			this.label2.Text = "1";
+			this.lblKofDesc.Location = new System.Drawing.Point(117, 33);
+			this.lblKofDesc.Name = "lblKofDesc";
+			this.lblKofDesc.Size = new System.Drawing.Size(167, 56);
+			this.lblKofDesc.TabIndex = 2;
+			this.lblKofDesc.Text = "- Seek target around\r\n- Attack speed : Fast\r\n- Damage : 5\r\n- Cost : $75";
 			// 
-			// label13
+			// lblKoffTitle
 			// 
-			this.label13.AutoSize = true;
-			this.label13.Location = new System.Drawing.Point(591, 7);
-			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(19, 13);
-			this.label13.TabIndex = 0;
-			this.label13.Text = "12";
+			this.lblKoffTitle.AutoSize = true;
+			this.lblKoffTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblKoffTitle.ForeColor = System.Drawing.Color.Purple;
+			this.lblKoffTitle.Location = new System.Drawing.Point(112, 4);
+			this.lblKoffTitle.Name = "lblKoffTitle";
+			this.lblKoffTitle.Size = new System.Drawing.Size(79, 25);
+			this.lblKoffTitle.TabIndex = 1;
+			this.lblKoffTitle.Text = "Koffing";
 			// 
-			// label8
+			// picKoffingShop
 			// 
-			this.label8.AutoSize = true;
-			this.label8.Location = new System.Drawing.Point(447, 7);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(13, 13);
-			this.label8.TabIndex = 0;
-			this.label8.Text = "9";
+			this.picKoffingShop.BackColor = System.Drawing.Color.Transparent;
+			this.picKoffingShop.BackgroundImage = global::TowerDefenseGame.Properties.Resources.Koffing_Icon;
+			this.picKoffingShop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+			this.picKoffingShop.Location = new System.Drawing.Point(3, 3);
+			this.picKoffingShop.Name = "picKoffingShop";
+			this.picKoffingShop.Size = new System.Drawing.Size(102, 98);
+			this.picKoffingShop.TabIndex = 0;
+			this.picKoffingShop.TabStop = false;
 			// 
-			// label4
+			// tmrEvolutionRainbow
 			// 
-			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(159, 7);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(13, 13);
-			this.label4.TabIndex = 0;
-			this.label4.Text = "3";
+			this.tmrEvolutionRainbow.Enabled = true;
+			this.tmrEvolutionRainbow.Interval = 50;
+			this.tmrEvolutionRainbow.Tick += new System.EventHandler(this.tmrEvolutionRainbow_Tick);
 			// 
-			// label7
+			// panel4
 			// 
-			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(310, 7);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(13, 13);
-			this.label7.TabIndex = 0;
-			this.label7.Text = "6";
+			this.panel4.BackColor = System.Drawing.Color.Transparent;
+			this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.panel4.Controls.Add(this.lblMessage);
+			this.panel4.Location = new System.Drawing.Point(12, 502);
+			this.panel4.Name = "panel4";
+			this.panel4.Size = new System.Drawing.Size(202, 125);
+			this.panel4.TabIndex = 16;
 			// 
-			// label1
+			// lblMessage
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(19, 7);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(13, 13);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "0";
+			this.lblMessage.BackColor = System.Drawing.Color.Transparent;
+			this.lblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblMessage.ForeColor = System.Drawing.Color.Black;
+			this.lblMessage.Location = new System.Drawing.Point(3, 9);
+			this.lblMessage.Name = "lblMessage";
+			this.lblMessage.Size = new System.Drawing.Size(194, 105);
+			this.lblMessage.TabIndex = 1;
+			this.lblMessage.Text = "Select an item...";
 			// 
-			// panel2
+			// picSelecting
 			// 
-			this.panel2.Controls.Add(this.label30);
-			this.panel2.Controls.Add(this.label29);
-			this.panel2.Controls.Add(this.label27);
-			this.panel2.Controls.Add(this.label26);
-			this.panel2.Controls.Add(this.label23);
-			this.panel2.Controls.Add(this.label28);
-			this.panel2.Controls.Add(this.label22);
-			this.panel2.Controls.Add(this.label25);
-			this.panel2.Controls.Add(this.label19);
-			this.panel2.Controls.Add(this.label21);
-			this.panel2.Controls.Add(this.label24);
-			this.panel2.Controls.Add(this.label18);
-			this.panel2.Controls.Add(this.label20);
-			this.panel2.Controls.Add(this.label17);
-			this.panel2.Controls.Add(this.label16);
-			this.panel2.Location = new System.Drawing.Point(6, 42);
-			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(45, 717);
-			this.panel2.TabIndex = 4;
-			// 
-			// label27
-			// 
-			this.label27.AutoSize = true;
-			this.label27.Location = new System.Drawing.Point(13, 550);
-			this.label27.Name = "label27";
-			this.label27.Size = new System.Drawing.Size(19, 13);
-			this.label27.TabIndex = 0;
-			this.label27.Text = "11";
-			// 
-			// label26
-			// 
-			this.label26.AutoSize = true;
-			this.label26.Location = new System.Drawing.Point(13, 500);
-			this.label26.Name = "label26";
-			this.label26.Size = new System.Drawing.Size(19, 13);
-			this.label26.TabIndex = 0;
-			this.label26.Text = "10";
-			// 
-			// label23
-			// 
-			this.label23.AutoSize = true;
-			this.label23.Location = new System.Drawing.Point(13, 351);
-			this.label23.Name = "label23";
-			this.label23.Size = new System.Drawing.Size(13, 13);
-			this.label23.TabIndex = 0;
-			this.label23.Text = "7";
-			// 
-			// label22
-			// 
-			this.label22.AutoSize = true;
-			this.label22.Location = new System.Drawing.Point(13, 298);
-			this.label22.Name = "label22";
-			this.label22.Size = new System.Drawing.Size(13, 13);
-			this.label22.TabIndex = 0;
-			this.label22.Text = "6";
-			// 
-			// label25
-			// 
-			this.label25.AutoSize = true;
-			this.label25.Location = new System.Drawing.Point(13, 450);
-			this.label25.Name = "label25";
-			this.label25.Size = new System.Drawing.Size(13, 13);
-			this.label25.TabIndex = 0;
-			this.label25.Text = "9";
-			// 
-			// label19
-			// 
-			this.label19.AutoSize = true;
-			this.label19.Location = new System.Drawing.Point(13, 157);
-			this.label19.Name = "label19";
-			this.label19.Size = new System.Drawing.Size(13, 13);
-			this.label19.TabIndex = 0;
-			this.label19.Text = "3";
-			// 
-			// label21
-			// 
-			this.label21.AutoSize = true;
-			this.label21.Location = new System.Drawing.Point(13, 252);
-			this.label21.Name = "label21";
-			this.label21.Size = new System.Drawing.Size(13, 13);
-			this.label21.TabIndex = 0;
-			this.label21.Text = "5";
-			// 
-			// label24
-			// 
-			this.label24.AutoSize = true;
-			this.label24.Location = new System.Drawing.Point(13, 395);
-			this.label24.Name = "label24";
-			this.label24.Size = new System.Drawing.Size(13, 13);
-			this.label24.TabIndex = 0;
-			this.label24.Text = "8";
-			// 
-			// label18
-			// 
-			this.label18.AutoSize = true;
-			this.label18.Location = new System.Drawing.Point(13, 109);
-			this.label18.Name = "label18";
-			this.label18.Size = new System.Drawing.Size(13, 13);
-			this.label18.TabIndex = 0;
-			this.label18.Text = "2";
-			// 
-			// label20
-			// 
-			this.label20.AutoSize = true;
-			this.label20.Location = new System.Drawing.Point(13, 204);
-			this.label20.Name = "label20";
-			this.label20.Size = new System.Drawing.Size(13, 13);
-			this.label20.TabIndex = 0;
-			this.label20.Text = "4";
-			// 
-			// label17
-			// 
-			this.label17.AutoSize = true;
-			this.label17.Location = new System.Drawing.Point(13, 57);
-			this.label17.Name = "label17";
-			this.label17.Size = new System.Drawing.Size(13, 13);
-			this.label17.TabIndex = 0;
-			this.label17.Text = "1";
-			// 
-			// label16
-			// 
-			this.label16.AutoSize = true;
-			this.label16.Location = new System.Drawing.Point(13, 15);
-			this.label16.Name = "label16";
-			this.label16.Size = new System.Drawing.Size(13, 13);
-			this.label16.TabIndex = 0;
-			this.label16.Text = "0";
-			// 
-			// label28
-			// 
-			this.label28.AutoSize = true;
-			this.label28.Location = new System.Drawing.Point(13, 592);
-			this.label28.Name = "label28";
-			this.label28.Size = new System.Drawing.Size(19, 13);
-			this.label28.TabIndex = 0;
-			this.label28.Text = "12";
-			// 
-			// label29
-			// 
-			this.label29.AutoSize = true;
-			this.label29.Location = new System.Drawing.Point(13, 633);
-			this.label29.Name = "label29";
-			this.label29.Size = new System.Drawing.Size(19, 13);
-			this.label29.TabIndex = 0;
-			this.label29.Text = "13";
-			// 
-			// label30
-			// 
-			this.label30.AutoSize = true;
-			this.label30.Location = new System.Drawing.Point(13, 683);
-			this.label30.Name = "label30";
-			this.label30.Size = new System.Drawing.Size(19, 13);
-			this.label30.TabIndex = 0;
-			this.label30.Text = "14";
+			this.picSelecting.BackColor = System.Drawing.Color.Transparent;
+			this.picSelecting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+			this.picSelecting.Location = new System.Drawing.Point(269, 502);
+			this.picSelecting.Name = "picSelecting";
+			this.picSelecting.Size = new System.Drawing.Size(128, 128);
+			this.picSelecting.TabIndex = 0;
+			this.picSelecting.TabStop = false;
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-			this.ClientSize = new System.Drawing.Size(849, 765);
+			this.BackColor = System.Drawing.SystemColors.Control;
+			this.BackgroundImage = global::TowerDefenseGame.Properties.Resources.lMMX2resized;
+			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.ClientSize = new System.Drawing.Size(1227, 743);
+			this.Controls.Add(this.panel4);
+			this.Controls.Add(this.pnlKoffing);
+			this.Controls.Add(this.pnlCharmander);
+			this.Controls.Add(this.picSelecting);
 			this.Controls.Add(this.panel1);
-			this.Controls.Add(this.button1);
+			this.Controls.Add(this.lblLives);
+			this.Controls.Add(this.lblMoney);
+			this.Controls.Add(this.btnSpawnWave);
+			this.Controls.Add(this.lblWaveLevel);
 			this.Controls.Add(this.panelField);
-			this.Controls.Add(this.panel2);
+			this.DoubleBuffered = true;
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.Name = "Form1";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Tower Defense Game";
+			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
-			this.panel2.ResumeLayout(false);
-			this.panel2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			this.pnlCharmander.ResumeLayout(false);
+			this.pnlCharmander.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.picChamanderShop)).EndInit();
+			this.pnlKoffing.ResumeLayout(false);
+			this.pnlKoffing.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.picKoffingShop)).EndInit();
+			this.panel4.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.picSelecting)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
 		#endregion
 
 		private System.Windows.Forms.Panel panelField;
-        private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Label lblWaveLevel;
+		private System.Windows.Forms.Button btnSpawnWave;
+		private System.Windows.Forms.Label lblMoney;
+		private System.Windows.Forms.Timer tmrUpdateUI;
+		private System.Windows.Forms.Button btnChamander;
+		private System.Windows.Forms.Label lblLives;
+		private System.Windows.Forms.Button btnKoffing;
 		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Label label12;
-		private System.Windows.Forms.Label label11;
-		private System.Windows.Forms.Label label10;
-		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.Label label7;
-		private System.Windows.Forms.Label label15;
-		private System.Windows.Forms.Label label14;
-		private System.Windows.Forms.Label label13;
-		private System.Windows.Forms.Panel panel2;
-		private System.Windows.Forms.Label label17;
-		private System.Windows.Forms.Label label16;
-		private System.Windows.Forms.Label label23;
-		private System.Windows.Forms.Label label22;
-		private System.Windows.Forms.Label label19;
-		private System.Windows.Forms.Label label21;
-		private System.Windows.Forms.Label label18;
-		private System.Windows.Forms.Label label20;
-		private System.Windows.Forms.Label label27;
-		private System.Windows.Forms.Label label26;
-		private System.Windows.Forms.Label label25;
-		private System.Windows.Forms.Label label24;
-		private System.Windows.Forms.Label label30;
-		private System.Windows.Forms.Label label29;
-		private System.Windows.Forms.Label label28;
+		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.Label lblEvolutionTitle;
+		private System.Windows.Forms.Label lblEvolutionDesc;
+		private System.Windows.Forms.Button btnEvolution;
+		private System.Windows.Forms.Panel pnlCharmander;
+		private System.Windows.Forms.Label lblCharDesc;
+		private System.Windows.Forms.Label lblCharTitle;
+		private System.Windows.Forms.PictureBox picChamanderShop;
+		private System.Windows.Forms.Panel pnlKoffing;
+		private System.Windows.Forms.Label lblKofDesc;
+		private System.Windows.Forms.Label lblKoffTitle;
+		private System.Windows.Forms.PictureBox picKoffingShop;
+		private System.Windows.Forms.Timer tmrEvolutionRainbow;
+		private System.Windows.Forms.Panel panel4;
+		private System.Windows.Forms.Label lblMessage;
+		private System.Windows.Forms.PictureBox picSelecting;
 	}
 }
 

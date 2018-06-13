@@ -23,13 +23,17 @@ namespace TowerDefenseGame
 			}
 		}
 
-
 		//Variables
+		public static Panel panelField;
+
 		List<List<Node>> nodeList;
-		
-		
+		public List<Path> pathList;
+
+		public List<Point> waypointList;
+
+
 		//Methods
-		public void DrawNodes(Panel panelField)
+		public void DrawNodes()
 		{
 			nodeList = new List<List<Node>>();
 
@@ -71,68 +75,54 @@ namespace TowerDefenseGame
 		}
 
         
-		public void DesignPath(Panel panelField)
+		public void DesignPath()
 		{
-            List<Path> pathList = new List<Path>();
+            pathList = new List<Path>();
             int pathIndex = 0;
-			DrawPathHorizontal(panelField, new Point(1, 1), new Point(6, 1), ref pathList, ref pathIndex);
-			DrawPathVertical(panelField, new Point(6, 2), new Point(6, 4), ref pathList, ref pathIndex);
-			DrawPathHorizontal(panelField, new Point(5, 4), new Point(3, 4), ref pathList, ref pathIndex);
-			DrawPathVertical(panelField, new Point(3, 5), new Point(3, 6), ref pathList, ref pathIndex);
-			DrawPathHorizontal(panelField, new Point(4, 6), new Point(8, 6), ref pathList, ref pathIndex);
-			DrawPathVertical(panelField, new Point(8, 5), new Point(8, 2), ref pathList, ref pathIndex);
-			DrawPathHorizontal(panelField, new Point(9, 2), new Point(11, 2), ref pathList, ref pathIndex);
-			DrawPathVertical(panelField, new Point(11, 3), new Point(11, 9), ref pathList, ref pathIndex);
-			DrawPathHorizontal(panelField, new Point(10, 9), new Point(4, 9), ref pathList, ref pathIndex);
-			DrawPathVertical(panelField, new Point(4, 10), new Point(4, 13), ref pathList, ref pathIndex);
-			DrawPathHorizontal(panelField, new Point(5, 13), new Point(7, 13), ref pathList, ref pathIndex);
-			DrawPathHorizontal(panelField, new Point(7, 12), new Point(13, 12), ref pathList, ref pathIndex);
 
+			waypointList = new List<Point>();
+
+			DrawPathHorizontal(new Point(1, 1), new Point(6, 1), ref pathIndex);
+			DrawPathVertical(new Point(6, 2), new Point(6, 4), ref pathIndex);
+			DrawPathHorizontal(new Point(5, 4), new Point(3, 4), ref pathIndex);
+			DrawPathVertical(new Point(3, 5), new Point(3, 6), ref pathIndex);
+			DrawPathHorizontal(new Point(4, 6), new Point(8, 6), ref pathIndex);
+			DrawPathVertical(new Point(8, 5), new Point(8, 2), ref pathIndex);
+			DrawPathHorizontal(new Point(9, 2), new Point(11, 2), ref pathIndex);
+			DrawPathVertical(new Point(11, 3), new Point(11, 9), ref pathIndex);
+			DrawPathHorizontal(new Point(10, 9), new Point(4, 9), ref pathIndex);
+			DrawPathVertical(new Point(4, 10), new Point(4, 13), ref pathIndex);
+			DrawPathHorizontal(new Point(5, 13), new Point(7, 13), ref pathIndex);
+			DrawOnlyOnePath(new Point(7, 12), ref pathIndex);//Xử lý trường hợp gấp khúc nhỏ
+			DrawPathHorizontal(new Point(8, 12), new Point(13, 12), ref pathIndex);
+			SetStartEnd();
+			ClearAllPath();
 		}
 
-		void ReplaceNodeWithPath(Panel panelField, Node node, Path path)
+		void ClearAllPath()
+		{
+			foreach (Path path in pathList)
+			{
+				path.picPath.Dispose();
+			}
+		}
+
+		void ReplaceNodeWithPath(Node node, Path path)
 		{
 			Point pathLocation = node.picNode.Location;
 			panelField.Controls.Remove(node.picNode);
-			path.pbNode.Location = pathLocation;
-			panelField.Controls.Add(path.pbNode);
+			path.picPath.Location = pathLocation;
+			panelField.Controls.Add(path.picPath);
 		}
-		void DrawPathHorizontal(Panel panelField, Point startPoint, Point endPoint, ref List<Path> pathList, ref int pathIndex)
+		void DrawPathHorizontal(Point startPoint, Point endPoint, ref int pathIndex)
 		{
 			if (endPoint.X >= startPoint.X)
 			{
-				//Vẽ từ trên xuống
+				//Vẽ từ trái sang phải
 				for (int j = startPoint.X; j <= endPoint.X; j++)
 				{
 					Path path = new Path();
-					ReplaceNodeWithPath(panelField, nodeList[startPoint.Y][j], path);
-					pathList.Add(path);
-					path.index = pathIndex;
-					pathIndex++;
-				}
-			}
-			else
-			{
-				//Vẽ từ dưới lên
-				for (int j = startPoint.X; j >= endPoint.X; j--)
-				{
-					Path path = new Path();
-					ReplaceNodeWithPath(panelField, nodeList[startPoint.Y][j], path);
-					pathList.Add(path);
-					path.index = pathIndex;
-					pathIndex++;
-				}
-			}
-		}
-		void DrawPathVertical(Panel panelField, Point startPoint, Point endPoint, ref List<Path> pathList, ref int pathIndex)
-		{
-			if (endPoint.Y >= startPoint.Y)
-			{
-				//Vẽ từ trái sang phải
-				for (int i = startPoint.Y; i <= endPoint.Y; i++)
-				{
-					Path path = new Path();
-					ReplaceNodeWithPath(panelField, nodeList[i][startPoint.X], path);
+					ReplaceNodeWithPath(nodeList[startPoint.Y][j], path);
 					pathList.Add(path);
 					path.index = pathIndex;
 					pathIndex++;
@@ -141,15 +131,64 @@ namespace TowerDefenseGame
 			else
 			{
 				//Vẽ từ phải sang trái
-				for (int i = startPoint.Y; i >= endPoint.Y; i--)
+				for (int j = startPoint.X; j >= endPoint.X; j--)
 				{
 					Path path = new Path();
-					ReplaceNodeWithPath(panelField, nodeList[i][startPoint.X], path);
+					ReplaceNodeWithPath(nodeList[startPoint.Y][j], path);
 					pathList.Add(path);
 					path.index = pathIndex;
 					pathIndex++;
 				}
 			}
+			waypointList.Add(pathList[pathIndex - 1].GetCenterPoint());//Gán waypoint bằng ô path cuối để tạo điểm đến cho enemy
+		}
+		void DrawPathVertical(Point startPoint, Point endPoint, ref int pathIndex)
+		{
+			if (endPoint.Y >= startPoint.Y)
+			{
+				//Vẽ từ trên xuống
+				for (int i = startPoint.Y; i <= endPoint.Y; i++)
+				{
+					Path path = new Path();
+					ReplaceNodeWithPath(nodeList[i][startPoint.X], path);
+					pathList.Add(path);
+					path.index = pathIndex;
+					pathIndex++;
+				}
+			}
+			else
+			{
+				//Vẽ từ dưới lên
+				for (int i = startPoint.Y; i >= endPoint.Y; i--)
+				{
+					Path path = new Path();
+					ReplaceNodeWithPath(nodeList[i][startPoint.X], path);
+					pathList.Add(path);
+					path.index = pathIndex;
+					pathIndex++;
+				}
+			}
+			waypointList.Add(pathList[pathIndex - 1].GetCenterPoint());
+		}
+		void DrawOnlyOnePath(Point point, ref int pathIndex)
+		{
+			Path path = new Path();
+			ReplaceNodeWithPath(nodeList[point.Y][point.X], path);
+			pathList.Add(path);
+			path.index = pathIndex;
+			pathIndex++;
+			waypointList.Add(pathList[pathIndex - 1].GetCenterPoint());
+		}
+
+		void SetStartEnd()
+		{
+			pathList[0].picPath.Tag = "Start";
+			pathList[pathList.Count - 1].picPath.Tag = "End";
+		}
+		
+		void AddWaypoint(ref List<Point> waypointList, Path path)
+		{
+			waypointList.Add(path.GetCenterPoint());
 		}
 	}
 }
